@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Infralens | Projects</title>
+
+    <link rel="stylesheet" href="./src/output.css">
+
+</head>
+
+
+<body class="bg-[#F5F7FA] text-slate-800">
+
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="bg-[#15158A] text-white">
+
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+
+        <div class="h-8 flex items-center justify-end">
+
+            <div class="flex items-center gap-5 text-xs">
+
+                <span>Accessibility</span>
+
+                <span class="h-4 w-px bg-white/30"></span>
+
+                <span>English</span>
+
+                <span>A</span>
+
+                <span>◉</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="bg-white border-b border-slate-200">
+
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+
+        <div class="min-h-[86px]
+                    flex items-center
+                    justify-between gap-6">
+
+
+            <!-- BRAND -->
+
+            <div class="flex items-center gap-4">
+
+                <div class="w-14 h-14
+                            rounded-full
+                            border-2 border-[#15158A]
+                            flex items-center
+                            justify-center">
+
+                    <div class="text-center
+                                text-[#15158A]
+                                leading-none">
+
+                        <div class="text-[7px] font-bold">
+                            GOVT
+                        </div>
+
+                        <div class="text-sm font-black mt-1">
+                            IN
+                        </div>
+
+                        <div class="text-[6px] mt-1">
+                            INDIA
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="h-12 w-px bg-slate-300"></div>
+
+
+                <div>
+
+                    <div class="flex items-center gap-2">
+
+                        <h1 class="text-2xl
+                                   font-bold
+                                   text-[#15158A]">
+
+                            Infralens
+
+                        </h1>
+
+
+                        <span class="text-[9px]
+                                     font-bold
+                                     px-2 py-1
+                                     bg-[#15158A]
+                                     text-white rounded">
+
+                            AI
+
+                        </span>
+
+                    </div>
+
+
+                    <p class="text-xs
+                              text-slate-600 mt-1">
+
+                        AI-Powered Infrastructure Project Monitoring
+
+                    </p>
+
+
+                    <p class="text-[10px]
+                              text-slate-400 mt-0.5">
+
+                        Risk Intelligence • Predictive Analytics • Early Warning
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="hidden md:flex
+                        items-center gap-6">
+
+                <div class="text-right">
+
+                    <p class="text-[10px]
+                              text-slate-400">
+
+                        Monitoring Period
+
+                    </p>
+
+                    <p class="text-sm
+                              font-semibold
+                              text-[#15158A] mt-1">
+
+                        September 2026
+
+                    </p>
+
+                </div>
+
+
+                <div class="h-10 w-px bg-slate-200"></div>
+
+
+<div class="flex items-center gap-3">
+
+    <!-- Notification Bell -->
+    <div class="relative">
+        <button id="notificationBell"
+                class="relative w-10 h-10 flex items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-[#15158A]"
+                aria-label="Notifications">
+
+            <span class="text-lg">🔔</span>
+
+            <span id="notificationBadge"
+                  class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1
+                         bg-red-600 text-white text-[10px] font-bold rounded-full
+                         flex items-center justify-center">
+                3
+            </span>
+        </button>
+
+        <!-- Notification Dropdown -->
+        <div id="notificationPanel"
+             class="hidden absolute right-0 top-12 w-96 bg-white border border-slate-200
+                    rounded-lg shadow-lg z-50">
+
+            <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-semibold text-slate-900">Early Warnings</p>
+                    <p class="text-xs text-slate-500">Active project alerts</p>
+                </div>
+
+                <span id="notificationCount"
+                      class="text-xs font-semibold text-[#15158A]">
+                    3 Active
+                </span>
+            </div>
+
+            <div id="notificationList" class="max-h-96 overflow-y-auto">
+
+                <div class="px-4 py-3 border-b border-slate-100 hover:bg-slate-50">
+                    <div class="flex items-start gap-3">
+                        <span class="text-red-600">●</span>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">
+                                Eastern Highway Development
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Heavy rainfall may cause project delay.
+                            </p>
+                            <span class="text-[10px] text-red-600 font-semibold">
+                                HIGH
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-4 py-3 border-b border-slate-100 hover:bg-slate-50">
+                    <div class="flex items-start gap-3">
+                        <span class="text-red-600">●</span>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">
+                                Integrated Mining Project
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Progress slippage detected against planned milestones.
+                            </p>
+                            <span class="text-[10px] text-red-600 font-semibold">
+                                HIGH
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-4 py-3 hover:bg-slate-50">
+                    <div class="flex items-start gap-3">
+                        <span class="text-amber-500">●</span>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">
+                                Western Freight Rail Link
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Material supply disruption may affect progress.
+                            </p>
+                            <span class="text-[10px] text-amber-600 font-semibold">
+                                MEDIUM
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Login -->
+    <a href="login.html"
+       class="px-6 py-2.5 bg-[#15158A] text-white text-xs font-semibold rounded hover:bg-[#10106c]">
+        Login
+    </a>
+
+</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAV -->
+
+    <nav class="bg-[#18A5DC]">
+
+        <div class="max-w-[1400px]
+                    mx-auto
+                    px-6 lg:px-8">
+
+            <div class="h-11 flex items-center">
+
+                <a href="index.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    Dashboard
+
+                </a>
+
+
+                <a href="projects.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          font-semibold
+                          bg-white/15">
+
+                    Projects
+
+                </a>
+
+
+                <a href="analytics.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    Analytics
+
+                </a>
+
+
+                <a href="data-quality.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    data quality
+
+                </a>
+
+
+                <a href="exclusive-brief.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    Exclusive Brief
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="max-w-[1400px]
+             mx-auto
+             px-6 lg:px-8
+             py-7">
+
+
+    <!-- PAGE TITLE -->
+
+    <section class="mb-6">
+
+        <div class="flex flex-col
+                    md:flex-row
+                    md:items-end
+                    md:justify-between
+                    gap-4">
+
+            <div>
+
+                <p class="text-[11px]
+                          uppercase
+                          tracking-wider
+                          text-[#18A5DC]
+                          font-bold">
+
+                    Project Monitoring
+
+                </p>
+
+
+                <h2 class="text-2xl md:text-3xl
+                           font-semibold
+                           text-[#15158A] mt-1">
+
+                    Projects
+
+                </h2>
+
+
+                <p class="text-sm
+                          text-slate-500 mt-2">
+
+                    Explore road, railway and coal infrastructure
+                    projects using project-level monitoring data.
+
+                </p>
+
+            </div>
+
+
+            <div class="text-right">
+
+                <p class="text-[10px]
+                          uppercase
+                          tracking-wide
+                          text-slate-400">
+
+                    Last Updated
+
+                </p>
+
+                <p class="text-sm
+                          font-semibold
+                          text-slate-700 mt-1">
+
+                    September 2026
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SUMMARY
+========================================================= -->
+
+    <section class="grid grid-cols-2
+                    md:grid-cols-4
+                    gap-3 mb-6">
+
+
+        <!-- TOTAL -->
+
+        <button onclick="setRiskFilter('all')"
+                class="bg-white
+                       border border-slate-200
+                       rounded p-4
+                       text-left
+                       hover:border-[#18A5DC]">
+
+            <p class="text-xs text-slate-500">
+                Total Projects
+            </p>
+
+            <p class="text-2xl
+                      font-bold
+                      text-[#15158A] mt-2">
+
+                92
+
+            </p>
+
+            <p class="text-[10px]
+                      text-slate-400 mt-1">
+
+                Road • Rail • Coal
+
+            </p>
+
+        </button>
+
+
+        <!-- HIGH -->
+
+        <button onclick="setRiskFilter('high')"
+                class="bg-white
+                       border border-slate-200
+                       rounded p-4
+                       text-left
+                       hover:border-red-300">
+
+            <p class="text-xs text-slate-500">
+                High Risk
+            </p>
+
+            <p class="text-2xl
+                      font-bold
+                      text-[#C62828] mt-2">
+
+                16
+
+            </p>
+
+            <p class="text-[10px]
+                      text-slate-400 mt-1">
+
+                Immediate attention
+
+            </p>
+
+        </button>
+
+
+        <!-- MEDIUM -->
+
+        <button onclick="setRiskFilter('medium')"
+                class="bg-white
+                       border border-slate-200
+                       rounded p-4
+                       text-left
+                       hover:border-orange-300">
+
+            <p class="text-xs text-slate-500">
+                Medium Risk
+            </p>
+
+            <p class="text-2xl
+                      font-bold
+                      text-[#E67E22] mt-2">
+
+                24
+
+            </p>
+
+            <p class="text-[10px]
+                      text-slate-400 mt-1">
+
+                Requires monitoring
+
+            </p>
+
+        </button>
+
+
+        <!-- DELAYED -->
+
+        <button onclick="setStatusFilter('Delayed')"
+                class="bg-white
+                       border border-slate-200
+                       rounded p-4
+                       text-left
+                       hover:border-red-300">
+
+            <p class="text-xs text-slate-500">
+                Delayed
+            </p>
+
+            <p class="text-2xl
+                      font-bold
+                      text-slate-800 mt-2">
+
+                15
+
+            </p>
+
+            <p class="text-[10px]
+                      text-slate-400 mt-1">
+
+                Schedule concern
+
+            </p>
+
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         SEARCH
+========================================================= -->
+
+    <section class="bg-white
+                    border border-slate-200
+                    rounded p-5 mb-4">
+
+        <h3 class="text-sm font-semibold">
+            Search Projects
+        </h3>
+
+        <p class="text-[11px]
+                  text-slate-400 mt-1 mb-3">
+
+            Search by project name, project ID or organisation.
+
+        </p>
+
+
+        <div class="relative">
+
+            <span class="absolute
+                         left-4 top-1/2
+                         -translate-y-1/2
+                         text-slate-400">
+
+                🔍
+
+            </span>
+
+
+            <input
+                id="searchInput"
+                type="text"
+                autocomplete="off"
+                placeholder="Search by project name, project ID or organisation..."
+                class="w-full
+                       border border-slate-300
+                       rounded-md
+                       pl-11 pr-4 py-3
+                       text-sm
+                       focus:outline-none
+                       focus:border-[#18A5DC]
+                       focus:ring-2
+                       focus:ring-[#18A5DC]/20">
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FILTERS
+========================================================= -->
+
+    <section class="bg-white
+                    border border-slate-200
+                    rounded p-5 mb-4">
+
+
+        <div class="flex items-center
+                    justify-between mb-5">
+
+            <div>
+
+                <h3 class="text-sm font-semibold">
+                    Project Filters
+                </h3>
+
+                <p class="text-[11px]
+                          text-slate-400 mt-1">
+
+                    Filter the core prototype sectors.
+
+                </p>
+
+            </div>
+
+
+            <button onclick="clearFilters()"
+                    class="text-xs
+                           text-[#15158A]
+                           hover:underline">
+
+                Clear Filters
+
+            </button>
+
+        </div>
+
+
+        <div class="grid grid-cols-1
+                    sm:grid-cols-2
+                    lg:grid-cols-3
+                    xl:grid-cols-5
+                    gap-4">
+
+
+            <!-- MINISTRY -->
+
+            <div>
+
+                <label for="ministryFilter"
+                       class="block text-xs
+                              font-medium
+                              text-slate-600 mb-2">
+
+                    Ministry / Department
+
+                </label>
+
+
+                <select id="ministryFilter"
+                        class="w-full
+                               border border-slate-300
+                               rounded-md
+                               bg-white
+                               px-3 py-2.5
+                               text-sm
+                               focus:outline-none
+                               focus:border-[#18A5DC]">
+
+                    <option value="">
+                        All
+                    </option>
+
+                    <option>
+                        Road Transport & Highways
+                    </option>
+
+                    <option>
+                        Railways
+                    </option>
+
+                    <option>
+                        Coal
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SECTOR -->
+
+            <div>
+
+                <label for="sectorFilter"
+                       class="block text-xs
+                              font-medium
+                              text-slate-600 mb-2">
+
+                    Sector
+
+                </label>
+
+
+                <select id="sectorFilter"
+                        class="w-full
+                               border border-slate-300
+                               rounded-md
+                               bg-white
+                               px-3 py-2.5
+                               text-sm
+                               focus:outline-none
+                               focus:border-[#18A5DC]">
+
+                    <option value="">
+                        All
+                    </option>
+
+                    <option>
+                        Roads & Highways
+                    </option>
+
+                    <option>
+                        Railways
+                    </option>
+
+                    <option>
+                        Coal & Mining
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- STATE -->
+
+            <div>
+
+                <label for="stateFilter"
+                       class="block text-xs
+                              font-medium
+                              text-slate-600 mb-2">
+
+                    State / UT
+
+                </label>
+
+
+                <select id="stateFilter"
+                        class="w-full
+                               border border-slate-300
+                               rounded-md
+                               bg-white
+                               px-3 py-2.5
+                               text-sm
+                               focus:outline-none
+                               focus:border-[#18A5DC]">
+
+                    <option value="">
+                        All
+                    </option>
+
+                    <option>Maharashtra</option>
+                    <option>Uttar Pradesh</option>
+                    <option>Rajasthan</option>
+                    <option>Gujarat</option>
+                    <option>Karnataka</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- RISK -->
+
+            <div>
+
+                <label for="riskFilter"
+                       class="block text-xs
+                              font-medium
+                              text-slate-600 mb-2">
+
+                    Risk Zone
+
+                </label>
+
+
+                <select id="riskFilter"
+                        class="w-full
+                               border border-slate-300
+                               rounded-md
+                               bg-white
+                               px-3 py-2.5
+                               text-sm
+                               focus:outline-none
+                               focus:border-[#18A5DC]">
+
+                    <option value="">
+                        All
+                    </option>
+
+                    <option value="high">
+                        High
+                    </option>
+
+                    <option value="medium">
+                        Medium
+                    </option>
+
+                    <option value="low">
+                        Low
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div>
+
+                <label for="statusFilter"
+                       class="block text-xs
+                              font-medium
+                              text-slate-600 mb-2">
+
+                    Project Status
+
+                </label>
+
+
+                <select id="statusFilter"
+                        class="w-full
+                               border border-slate-300
+                               rounded-md
+                               bg-white
+                               px-3 py-2.5
+                               text-sm
+                               focus:outline-none
+                               focus:border-[#18A5DC]">
+
+                    <option value="">
+                        All
+                    </option>
+
+                    <option>Ongoing</option>
+                    <option>Delayed</option>
+                    <option>Completed</option>
+                    <option>On Hold</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ACTIVE FILTERS
+========================================================= -->
+
+    <section class="flex flex-col
+                    sm:flex-row
+                    sm:items-center
+                    sm:justify-between
+                    gap-3 mb-4">
+
+        <div class="flex flex-wrap
+                    items-center gap-2">
+
+            <span class="text-xs text-slate-500">
+                Showing
+            </span>
+
+            <span id="resultCount"
+                  class="text-sm
+                         font-semibold
+                         text-slate-800">
+
+                7
+
+            </span>
+
+            <span class="text-xs text-slate-500">
+                demo projects
+            </span>
+
+
+            <div id="activeFilters"
+                 class="flex flex-wrap gap-2">
+            </div>
+
+        </div>
+
+
+        <button onclick="clearFilters()"
+                class="text-xs
+                       text-[#15158A]
+                       hover:underline">
+
+            Clear All
+
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJECT TABLE
+========================================================= -->
+
+    <section class="bg-white
+                    border border-slate-200
+                    rounded overflow-hidden">
+
+
+        <div class="px-5 py-4
+                    border-b border-slate-200
+                    flex flex-col
+                    md:flex-row
+                    md:items-center
+                    md:justify-between
+                    gap-3">
+
+            <div>
+
+                <h3 class="text-sm font-semibold">
+                    Project List
+                </h3>
+
+                <p class="text-[11px]
+                          text-slate-400 mt-1">
+
+                    Road, railway and coal project portfolio.
+
+                </p>
+
+            </div>
+
+
+            <div class="flex items-center gap-2">
+
+                <label for="sortFilter"
+                       class="text-xs
+                              text-slate-500">
+
+                    Sort by
+
+                </label>
+
+
+                <select id="sortFilter"
+                        class="border
+                               border-slate-300
+                               rounded-md
+                               px-3 py-2
+                               text-xs
+                               bg-white
+                               focus:outline-none
+                               focus:border-[#18A5DC]">
+
+                    <option value="risk-desc">
+                        Risk: Highest first
+                    </option>
+
+                    <option value="risk-asc">
+                        Risk: Lowest first
+                    </option>
+
+                    <option value="cost-desc">
+                        Cost: Highest first
+                    </option>
+
+                    <option value="progress-desc">
+                        Progress: Highest first
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="overflow-x-auto">
+
+            <table class="w-full
+                          min-w-[1050px]
+                          text-sm">
+
+
+                <thead class="bg-[#F7F9FB]
+                              border-b border-slate-200">
+
+                    <tr>
+
+                        <th class="text-left
+                                   px-5 py-3
+                                   text-xs font-semibold">
+
+                            Project
+
+                        </th>
+
+                        <th class="text-left
+                                   px-4 py-3
+                                   text-xs font-semibold">
+
+                            Ministry / Department
+
+                        </th>
+
+                        <th class="text-left
+                                   px-4 py-3
+                                   text-xs font-semibold">
+
+                            Sector
+
+                        </th>
+
+                        <th class="text-right
+                                   px-4 py-3
+                                   text-xs font-semibold">
+
+                            Original Cost
+
+                        </th>
+
+                        <th class="text-center
+                                   px-4 py-3
+                                   text-xs font-semibold">
+
+                            Progress
+
+                        </th>
+
+                        <th class="text-center
+                                   px-4 py-3
+                                   text-xs font-semibold">
+
+                            Risk Score
+
+                        </th>
+
+                        <th class="text-center
+                                   px-4 py-3
+                                   text-xs font-semibold">
+
+                            Status
+
+                        </th>
+
+                        <th class="text-center
+                                   px-5 py-3
+                                   text-xs font-semibold">
+
+                            Action
+
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="projectTable">
+
+
+                    <!-- =================================================
+                         INF-001
+                    ================================================== -->
+
+                    <tr class="project-row
+                               border-b border-slate-100
+                               hover:bg-slate-50"
+
+                        data-name="Eastern Highway Development"
+                        data-ministry="Road Transport & Highways"
+                        data-sector="Roads & Highways"
+                        data-state="Maharashtra"
+                        data-risk="91"
+                        data-status="Delayed"
+                        data-cost="42500"
+                        data-progress="62">
+
+
+                        <td class="px-5 py-4">
+
+                            <p class="font-semibold
+                                      text-[#15158A]">
+
+                                Eastern Highway Development
+
+                            </p>
+
+                            <p class="text-[10px]
+                                      text-slate-400 mt-1">
+
+                                Project ID: INF-001
+
+                            </p>
+
+                        </td>
+
+
+                        <td class="px-4 py-4">
+                            Road Transport & Highways
+                        </td>
+
+
+                        <td class="px-4 py-4">
+                            Roads & Highways
+                        </td>
+
+
+                        <td class="px-4 py-4
+                                   text-right font-medium">
+
+                            ₹42,500 Cr
+
+                        </td>
+
+
+                        <td class="px-4 py-4">
+
+                            <div class="flex
+                                        justify-center
+                                        items-center gap-2">
+
+                                <div class="w-16 h-1.5
+                                            bg-slate-100
+                                            rounded-full">
+
+                                    <div class="h-1.5
+                                                bg-[#18A5DC]
+                                                rounded-full"
+                                         style="width:62%;">
+                                    </div>
+
+                                </div>
+
+                                <span class="text-xs">
+                                    62%
+                                </span>
+
+                            </div>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-red-50
+                                         text-red-700
+                                         font-semibold
+                                         text-xs">
+
+                                91
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-red-50
+                                         text-red-700
+                                         text-xs">
+
+                                Delayed
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-5 py-4 text-center">
+
+                            <a href="project-details.html?id=INF-001"
+                               class="text-[#15158A]
+                                      text-xs
+                                      font-medium
+                                      hover:underline">
+
+                                View →
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- =================================================
+                         INF-002
+                    ================================================== -->
+
+                    <tr class="project-row
+                               border-b border-slate-100
+                               hover:bg-slate-50"
+
+                        data-name="National Rail Corridor"
+                        data-ministry="Railways"
+                        data-sector="Railways"
+                        data-state="Uttar Pradesh"
+                        data-risk="87"
+                        data-status="Ongoing"
+                        data-cost="31800"
+                        data-progress="74">
+
+
+                        <td class="px-5 py-4">
+
+                            <p class="font-semibold
+                                      text-[#15158A]">
+
+                                National Rail Corridor
+
+                            </p>
+
+                            <p class="text-[10px]
+                                      text-slate-400 mt-1">
+
+                                Project ID: INF-002
+
+                            </p>
+
+                        </td>
+
+
+                        <td class="px-4 py-4">
+                            Railways
+                        </td>
+
+                        <td class="px-4 py-4">
+                            Railways
+                        </td>
+
+                        <td class="px-4 py-4 text-right font-medium">
+                            ₹31,800 Cr
+                        </td>
+
+
+                        <td class="px-4 py-4">
+
+                            <div class="flex justify-center
+                                        items-center gap-2">
+
+                                <div class="w-16 h-1.5
+                                            bg-slate-100 rounded-full">
+
+                                    <div class="h-1.5
+                                                bg-[#18A5DC]
+                                                rounded-full"
+                                         style="width:74%;">
+                                    </div>
+
+                                </div>
+
+                                <span class="text-xs">
+                                    74%
+                                </span>
+
+                            </div>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-red-50
+                                         text-red-700
+                                         font-semibold text-xs">
+
+                                87
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-blue-50
+                                         text-blue-700
+                                         text-xs">
+
+                                Ongoing
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-5 py-4 text-center">
+
+                            <a href="project-details.html?id=INF-002"
+                               class="text-[#15158A]
+                                      text-xs font-medium
+                                      hover:underline">
+
+                                View →
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- =================================================
+                         INF-004
+                    ================================================== -->
+
+                    <tr class="project-row
+                               border-b border-slate-100
+                               hover:bg-slate-50"
+
+                        data-name="Integrated Mining Project"
+                        data-ministry="Coal"
+                        data-sector="Coal & Mining"
+                        data-state="Rajasthan"
+                        data-risk="81"
+                        data-status="Delayed"
+                        data-cost="9400"
+                        data-progress="55">
+
+
+                        <td class="px-5 py-4">
+
+                            <p class="font-semibold
+                                      text-[#15158A]">
+
+                                Integrated Mining Project
+
+                            </p>
+
+                            <p class="text-[10px]
+                                      text-slate-400 mt-1">
+
+                                Project ID: INF-004
+
+                            </p>
+
+                        </td>
+
+
+                        <td class="px-4 py-4">
+                            Coal
+                        </td>
+
+                        <td class="px-4 py-4">
+                            Coal & Mining
+                        </td>
+
+                        <td class="px-4 py-4 text-right font-medium">
+                            ₹9,400 Cr
+                        </td>
+
+
+                        <td class="px-4 py-4">
+
+                            <div class="flex justify-center
+                                        items-center gap-2">
+
+                                <div class="w-16 h-1.5
+                                            bg-slate-100 rounded-full">
+
+                                    <div class="h-1.5
+                                                bg-[#18A5DC]
+                                                rounded-full"
+                                         style="width:55%;">
+                                    </div>
+
+                                </div>
+
+                                <span class="text-xs">
+                                    55%
+                                </span>
+
+                            </div>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-red-50
+                                         text-red-700
+                                         font-semibold text-xs">
+
+                                81
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-red-50
+                                         text-red-700
+                                         text-xs">
+
+                                Delayed
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-5 py-4 text-center">
+
+                            <a href="project-details.html?id=INF-004"
+                               class="text-[#15158A]
+                                      text-xs font-medium
+                                      hover:underline">
+
+                                View →
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- =================================================
+                         INF-006
+                    ================================================== -->
+
+                    <tr class="project-row
+                               border-b border-slate-100
+                               hover:bg-slate-50"
+
+                        data-name="Western Freight Rail Link"
+                        data-ministry="Railways"
+                        data-sector="Railways"
+                        data-state="Gujarat"
+                        data-risk="78"
+                        data-status="Ongoing"
+                        data-cost="24600"
+                        data-progress="57">
+
+
+                        <td class="px-5 py-4">
+
+                            <p class="font-semibold
+                                      text-[#15158A]">
+
+                                Western Freight Rail Link
+
+                            </p>
+
+                            <p class="text-[10px]
+                                      text-slate-400 mt-1">
+
+                                Project ID: INF-006
+
+                            </p>
+
+                        </td>
+
+
+                        <td class="px-4 py-4">
+                            Railways
+                        </td>
+
+                        <td class="px-4 py-4">
+                            Railways
+                        </td>
+
+                        <td class="px-4 py-4 text-right font-medium">
+                            ₹24,600 Cr
+                        </td>
+
+
+                        <td class="px-4 py-4">
+
+                            <div class="flex justify-center
+                                        items-center gap-2">
+
+                                <div class="w-16 h-1.5
+                                            bg-slate-100 rounded-full">
+
+                                    <div class="h-1.5
+                                                bg-[#18A5DC]
+                                                rounded-full"
+                                         style="width:57%;">
+                                    </div>
+
+                                </div>
+
+                                <span class="text-xs">
+                                    57%
+                                </span>
+
+                            </div>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-red-50
+                                         text-red-700
+                                         font-semibold text-xs">
+
+                                78
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-blue-50
+                                         text-blue-700
+                                         text-xs">
+
+                                Ongoing
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-5 py-4 text-center">
+
+                            <a href="project-details.html?id=INF-006"
+                               class="text-[#15158A]
+                                      text-xs font-medium
+                                      hover:underline">
+
+                                View →
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- =================================================
+                         INF-007
+                    ================================================== -->
+
+                    <tr class="project-row
+                               border-b border-slate-100
+                               hover:bg-slate-50"
+
+                        data-name="Central Coal Logistics Project"
+                        data-ministry="Coal"
+                        data-sector="Coal & Mining"
+                        data-state="Rajasthan"
+                        data-risk="74"
+                        data-status="Ongoing"
+                        data-cost="16900"
+                        data-progress="61">
+
+
+                        <td class="px-5 py-4">
+
+                            <p class="font-semibold
+                                      text-[#15158A]">
+
+                                Central Coal Logistics Project
+
+                            </p>
+
+                            <p class="text-[10px]
+                                      text-slate-400 mt-1">
+
+                                Project ID: INF-007
+
+                            </p>
+
+                        </td>
+
+
+                        <td class="px-4 py-4">
+                            Coal
+                        </td>
+
+                        <td class="px-4 py-4">
+                            Coal & Mining
+                        </td>
+
+                        <td class="px-4 py-4 text-right font-medium">
+                            ₹16,900 Cr
+                        </td>
+
+
+                        <td class="px-4 py-4">
+
+                            <div class="flex justify-center
+                                        items-center gap-2">
+
+                                <div class="w-16 h-1.5
+                                            bg-slate-100 rounded-full">
+
+                                    <div class="h-1.5
+                                                bg-[#18A5DC]
+                                                rounded-full"
+                                         style="width:61%;">
+                                    </div>
+
+                                </div>
+
+                                <span class="text-xs">
+                                    61%
+                                </span>
+
+                            </div>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-red-50
+                                         text-red-700
+                                         font-semibold text-xs">
+
+                                74
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-blue-50
+                                         text-blue-700
+                                         text-xs">
+
+                                Ongoing
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-5 py-4 text-center">
+
+                            <a href="project-details.html?id=INF-007"
+                               class="text-[#15158A]
+                                      text-xs font-medium
+                                      hover:underline">
+
+                                View →
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- =================================================
+                         INF-008
+                    ================================================== -->
+
+                    <tr class="project-row
+                               border-b border-slate-100
+                               hover:bg-slate-50"
+
+                        data-name="North-South Highway Corridor"
+                        data-ministry="Road Transport & Highways"
+                        data-sector="Roads & Highways"
+                        data-state="Maharashtra"
+                        data-risk="68"
+                        data-status="Ongoing"
+                        data-cost="13800"
+                        data-progress="69">
+
+
+                        <td class="px-5 py-4">
+
+                            <p class="font-semibold
+                                      text-[#15158A]">
+
+                                North-South Highway Corridor
+
+                            </p>
+
+                            <p class="text-[10px]
+                                      text-slate-400 mt-1">
+
+                                Project ID: INF-008
+
+                            </p>
+
+                        </td>
+
+
+                        <td class="px-4 py-4">
+                            Road Transport & Highways
+                        </td>
+
+                        <td class="px-4 py-4">
+                            Roads & Highways
+                        </td>
+
+                        <td class="px-4 py-4 text-right font-medium">
+                            ₹13,800 Cr
+                        </td>
+
+
+                        <td class="px-4 py-4">
+
+                            <div class="flex justify-center
+                                        items-center gap-2">
+
+                                <div class="w-16 h-1.5
+                                            bg-slate-100 rounded-full">
+
+                                    <div class="h-1.5
+                                                bg-[#18A5DC]
+                                                rounded-full"
+                                         style="width:69%;">
+                                    </div>
+
+                                </div>
+
+                                <span class="text-xs">
+                                    69%
+                                </span>
+
+                            </div>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-orange-50
+                                         text-orange-700
+                                         font-semibold text-xs">
+
+                                68
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-blue-50
+                                         text-blue-700
+                                         text-xs">
+
+                                Ongoing
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-5 py-4 text-center">
+
+                            <a href="project-details.html?id=INF-008"
+                               class="text-[#15158A]
+                                      text-xs font-medium
+                                      hover:underline">
+
+                                View →
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- =================================================
+                         INF-009
+                    ================================================== -->
+
+                    <tr class="project-row
+                               hover:bg-slate-50"
+
+                        data-name="Eastern Coal Development Project"
+                        data-ministry="Coal"
+                        data-sector="Coal & Mining"
+                        data-state="Rajasthan"
+                        data-risk="61"
+                        data-status="Ongoing"
+                        data-cost="8200"
+                        data-progress="66">
+
+
+                        <td class="px-5 py-4">
+
+                            <p class="font-semibold
+                                      text-[#15158A]">
+
+                                Eastern Coal Development Project
+
+                            </p>
+
+                            <p class="text-[10px]
+                                      text-slate-400 mt-1">
+
+                                Project ID: INF-009
+
+                            </p>
+
+                        </td>
+
+
+                        <td class="px-4 py-4">
+                            Coal
+                        </td>
+
+                        <td class="px-4 py-4">
+                            Coal & Mining
+                        </td>
+
+                        <td class="px-4 py-4 text-right font-medium">
+                            ₹8,200 Cr
+                        </td>
+
+
+                        <td class="px-4 py-4">
+
+                            <div class="flex justify-center
+                                        items-center gap-2">
+
+                                <div class="w-16 h-1.5
+                                            bg-slate-100 rounded-full">
+
+                                    <div class="h-1.5
+                                                bg-[#18A5DC]
+                                                rounded-full"
+                                         style="width:66%;">
+                                    </div>
+
+                                </div>
+
+                                <span class="text-xs">
+                                    66%
+                                </span>
+
+                            </div>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-orange-50
+                                         text-orange-700
+                                         font-semibold text-xs">
+
+                                61
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-4 py-4 text-center">
+
+                            <span class="px-2.5 py-1
+                                         rounded-full
+                                         bg-blue-50
+                                         text-blue-700
+                                         text-xs">
+
+                                Ongoing
+
+                            </span>
+
+                        </td>
+
+
+                        <td class="px-5 py-4 text-center">
+
+                            <a href="project-details.html?id=INF-009"
+                               class="text-[#15158A]
+                                      text-xs font-medium
+                                      hover:underline">
+
+                                View →
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- PAGINATION -->
+
+        <div class="px-5 py-4
+                    border-t border-slate-200
+                    flex flex-col
+                    sm:flex-row
+                    sm:items-center
+                    sm:justify-between
+                    gap-3">
+
+            <p class="text-xs text-slate-500">
+
+                Showing
+                <span class="font-medium text-slate-700">
+                    1–7
+                </span>
+                of
+                <span id="paginationTotal"
+                      class="font-medium text-slate-700">
+                    7
+                </span>
+                demo projects
+
+            </p>
+
+
+            <div class="flex items-center gap-1">
+
+                <button
+                    class="px-3 py-1.5
+                           border border-slate-200
+                           rounded text-xs
+                           text-slate-400">
+
+                    ← Previous
+
+                </button>
+
+
+                <button
+                    class="px-3 py-1.5
+                           rounded
+                           bg-[#15158A]
+                           text-white text-xs">
+
+                    1
+
+                </button>
+
+
+                <button
+                    class="px-3 py-1.5
+                           border border-slate-200
+                           rounded text-xs">
+
+                    2
+
+                </button>
+
+
+                <button
+                    class="px-3 py-1.5
+                           border border-slate-200
+                           rounded text-xs">
+
+                    Next →
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="bg-white
+               border-t border-slate-200
+               mt-8">
+
+    <div class="max-w-[1400px]
+                mx-auto
+                px-6 lg:px-8
+                py-6">
+
+        <div class="flex flex-col
+                    md:flex-row
+                    md:justify-between
+                    gap-4">
+
+            <div>
+
+                <p class="text-sm
+                          font-semibold
+                          text-[#15158A]">
+
+                    Infralens
+
+                </p>
+
+                <p class="text-[10px]
+                          text-slate-400 mt-1">
+
+                    AI-Powered Infrastructure Project Monitoring
+
+                </p>
+
+            </div>
+
+
+            <div class="md:text-right">
+
+                <p class="text-[10px]
+                          text-slate-400">
+
+                    Smart India Hackathon 2026
+
+                </p>
+
+                <p class="text-[10px]
+                          text-slate-400 mt-1">
+
+                    Prototype focused on Road,
+                    Rail and Coal infrastructure
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="border-t
+                    border-slate-100
+                    mt-5 pt-4">
+
+            <p class="text-[10px]
+                      text-slate-400">
+
+                © 2026 Infralens. All rights reserved.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="./js/projects.js"></script>
+<script src="js/api.js"></script>
+</body>
+</html>

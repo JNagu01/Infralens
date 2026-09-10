@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Brief | INFRALENS</title>
+
+    <link rel="stylesheet" href="src/output.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+ <!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="bg-[#15158A] text-white">
+
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+
+        <div class="h-8 flex items-center justify-end">
+
+            <div class="flex items-center gap-5 text-xs">
+
+                <span>Accessibility</span>
+
+                <span class="h-4 w-px bg-white/30"></span>
+
+                <span>English</span>
+
+                <span>A</span>
+
+                <span>◉</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="bg-white border-b border-slate-200">
+
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+
+        <div class="min-h-[86px] flex items-center
+                    justify-between gap-6">
+
+
+            <!-- BRAND -->
+
+            <div class="flex items-center gap-4">
+
+                <div class="w-14 h-14 rounded-full
+                            border-2 border-[#15158A]
+                            flex items-center justify-center">
+
+                    <div class="text-center
+                                text-[#15158A]
+                                leading-none">
+
+                        <div class="text-[7px] font-bold">
+                            GOVT
+                        </div>
+
+                        <div class="text-sm font-black mt-1">
+                            IN
+                        </div>
+
+                        <div class="text-[6px] mt-1">
+                            INDIA
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="h-12 w-px bg-slate-300"></div>
+
+
+                <div>
+
+                    <div class="flex items-center gap-2">
+
+                        <h1 class="text-2xl font-bold
+                                   text-[#15158A]">
+                            Infralens
+                        </h1>
+
+                        <span class="text-[9px]
+                                     font-bold
+                                     px-2 py-1
+                                     bg-[#15158A]
+                                     text-white rounded">
+                            AI
+                        </span>
+
+                    </div>
+
+
+                    <p class="text-xs text-slate-600 mt-1">
+                        AI-Powered Infrastructure Project Monitoring
+                    </p>
+
+
+                    <p class="text-[10px] text-slate-400 mt-0.5">
+                        Risk Intelligence • Predictive Analytics • Early Warning
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="hidden md:flex items-center gap-6">
+
+                <div class="text-right">
+
+                    <p class="text-[10px] text-slate-400">
+                        Monitoring Period
+                    </p>
+
+                    <p class="text-sm font-semibold
+                              text-[#15158A] mt-1">
+                        September 2026
+                    </p>
+
+                </div>
+
+
+                <div class="h-10 w-px bg-slate-200"></div>
+
+<div class="flex items-center gap-3">
+
+    <!-- Notification Bell -->
+    <div class="relative">
+        <button id="notificationBell"
+                class="relative w-10 h-10 flex items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-[#15158A]"
+                aria-label="Notifications">
+
+            <span class="text-lg">🔔</span>
+
+            <span id="notificationBadge"
+                  class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1
+                         bg-red-600 text-white text-[10px] font-bold rounded-full
+                         flex items-center justify-center">
+                3
+            </span>
+        </button>
+
+        <!-- Notification Dropdown -->
+        <div id="notificationPanel"
+             class="hidden absolute right-0 top-12 w-96 bg-white border border-slate-200
+                    rounded-lg shadow-lg z-50">
+
+            <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-semibold text-slate-900">Early Warnings</p>
+                    <p class="text-xs text-slate-500">Active project alerts</p>
+                </div>
+
+                <span id="notificationCount"
+                      class="text-xs font-semibold text-[#15158A]">
+                    3 Active
+                </span>
+            </div>
+
+            <div id="notificationList" class="max-h-96 overflow-y-auto">
+
+                <div class="px-4 py-3 border-b border-slate-100 hover:bg-slate-50">
+                    <div class="flex items-start gap-3">
+                        <span class="text-red-600">●</span>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">
+                                Eastern Highway Development
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Heavy rainfall may cause project delay.
+                            </p>
+                            <span class="text-[10px] text-red-600 font-semibold">
+                                HIGH
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-4 py-3 border-b border-slate-100 hover:bg-slate-50">
+                    <div class="flex items-start gap-3">
+                        <span class="text-red-600">●</span>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">
+                                Integrated Mining Project
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Progress slippage detected against planned milestones.
+                            </p>
+                            <span class="text-[10px] text-red-600 font-semibold">
+                                HIGH
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-4 py-3 hover:bg-slate-50">
+                    <div class="flex items-start gap-3">
+                        <span class="text-amber-500">●</span>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">
+                                Western Freight Rail Link
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Material supply disruption may affect progress.
+                            </p>
+                            <span class="text-[10px] text-amber-600 font-semibold">
+                                MEDIUM
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Login -->
+    <a href="login.html"
+       class="px-6 py-2.5 bg-[#15158A] text-white text-xs font-semibold rounded hover:bg-[#10106c]">
+        Login
+    </a>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="bg-[#18A5DC]">
+
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+
+            <div class="h-11 flex items-center">
+
+                <a href="index.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          font-semibold
+                          bg-white/15">
+
+                    Dashboard
+
+                </a>
+
+
+                <a href="projects.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    Projects
+
+                </a>
+
+
+                <a href="analytics.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    Analytics
+
+                </a>
+
+
+                <a href="data-quality.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    data quality
+
+                </a>
+
+
+                <a href="exclusive-brief.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    Exclusive Brief
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+    </header>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+    <main class="max-w-7xl mx-auto px-6 py-6">
+
+
+        <!-- BREADCRUMB -->
+        <div class="text-sm text-slate-500 mb-5">
+
+            <a
+                href="index.html"
+                class="hover:text-[#15158A]"
+            >
+                Dashboard
+            </a>
+
+            <span class="mx-2">→</span>
+
+            <span class="text-slate-700 font-medium">
+                Exclusive Brief
+            </span>
+
+        </div>
+
+
+        <!-- =====================================================
+             PAGE HEADER
+        ====================================================== -->
+        <section class="mb-7">
+
+            <h2 class="text-2xl font-bold text-slate-900">
+                Exclusive Brief
+            </h2>
+
+            <p class="text-sm text-slate-500 mt-1">
+                Generate a focused portfolio summary for management review and decision support.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             SEARCH & FILTER PANEL
+        ====================================================== -->
+        <section class="bg-white border border-slate-200 rounded-lg mb-7">
+
+            <div class="px-5 py-4 border-b border-slate-200">
+
+                <h3 class="text-base font-semibold text-slate-900">
+                    Select Brief Scope
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Search or filter projects before generating the exclusive brief.
+                </p>
+
+            </div>
+
+
+            <div class="p-5">
+
+                <!-- SEARCH -->
+                <div class="mb-5">
+
+                    <label
+                        for="searchInput"
+                        class="block text-xs font-semibold text-slate-600 mb-2"
+                    >
+                        Search Project
+                    </label>
+
+                    <input
+                        id="searchInput"
+                        type="text"
+                        placeholder="Search by project name or project ID..."
+                        class="w-full border border-slate-300 rounded-md px-3 py-2.5 text-sm outline-none focus:border-[#15158A] focus:ring-1 focus:ring-[#15158A]"
+                    >
+
+                </div>
+
+
+                <!-- FILTERS -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+
+                    <!-- MINISTRY -->
+                    <div>
+
+                        <label
+                            for="ministryFilter"
+                            class="block text-xs font-semibold text-slate-600 mb-2"
+                        >
+                            Ministry / Department
+                        </label>
+
+                        <select
+                            id="ministryFilter"
+                            class="w-full border border-slate-300 rounded-md px-3 py-2.5 text-sm bg-white outline-none focus:border-[#15158A]"
+                        >
+
+                            <option value="">
+                                Select Ministry / Department
+                            </option>
+
+                            <option value="Road Transport & Highways">
+                                Road Transport & Highways
+                            </option>
+
+                            <option value="Railways">
+                                Railways
+                            </option>
+
+                            <option value="Coal">
+                                Coal
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- SECTOR -->
+                    <div>
+
+                        <label
+                            for="sectorFilter"
+                            class="block text-xs font-semibold text-slate-600 mb-2"
+                        >
+                            Sector
+                        </label>
+
+                        <select
+                            id="sectorFilter"
+                            class="w-full border border-slate-300 rounded-md px-3 py-2.5 text-sm bg-white outline-none focus:border-[#15158A]"
+                        >
+
+                            <option value="">
+                                Select Sector
+                            </option>
+
+                            <option value="Roads & Highways">
+                                Roads & Highways
+                            </option>
+
+                            <option value="Railways">
+                                Railways
+                            </option>
+
+                            <option value="Coal & Mining">
+                                Coal & Mining
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- RISK -->
+                    <div>
+
+                        <label
+                            for="riskFilter"
+                            class="block text-xs font-semibold text-slate-600 mb-2"
+                        >
+                            Risk
+                        </label>
+
+                        <select
+                            id="riskFilter"
+                            class="w-full border border-slate-300 rounded-md px-3 py-2.5 text-sm bg-white outline-none focus:border-[#15158A]"
+                        >
+
+                            <option value="">
+                                Select Risk
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
+                            <option value="Medium">
+                                Medium
+                            </option>
+
+                            <option value="Low">
+                                Low
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- STATUS -->
+                    <div>
+
+                        <label
+                            for="statusFilter"
+                            class="block text-xs font-semibold text-slate-600 mb-2"
+                        >
+                            Status
+                        </label>
+
+                        <select
+                            id="statusFilter"
+                            class="w-full border border-slate-300 rounded-md px-3 py-2.5 text-sm bg-white outline-none focus:border-[#15158A]"
+                        >
+
+                            <option value="">
+                                Select Status
+                            </option>
+
+                            <option value="Ongoing">
+                                Ongoing
+                            </option>
+
+                            <option value="Delayed">
+                                Delayed
+                            </option>
+
+                            <option value="Completed">
+                                Completed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FILTER ACTIONS -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mt-5 pt-5 border-t border-slate-100">
+
+                    <p
+                        id="scopeMessage"
+                        class="text-xs text-slate-500"
+                    >
+                        Current scope: All monitored projects
+                    </p>
+
+                    <div class="flex items-center gap-2">
+
+                        <button
+                            id="clearFilters"
+                            type="button"
+                            class="px-4 py-2 text-sm border border-slate-300 rounded-md text-slate-600 hover:bg-slate-50"
+                        >
+                            Clear
+                        </button>
+
+                        <button
+                            id="generateBrief"
+                            type="button"
+                            class="px-5 py-2 bg-[#15158A] text-white text-sm font-semibold rounded-md hover:bg-[#10106F]"
+                        >
+                            Generate Brief
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             EXCLUSIVE BRIEF
+        ====================================================== -->
+        <section
+            id="briefSection"
+            class="space-y-6"
+        >
+
+
+            <!-- BRIEF HEADER -->
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="px-5 py-4 border-b border-slate-200 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+
+                    <div>
+
+                        <p class="text-xs uppercase tracking-wide text-slate-500">
+                            Generated Exclusive Brief
+                        </p>
+
+                        <h3 class="text-lg font-bold text-slate-900 mt-1">
+                            Portfolio Overview
+                        </h3>
+
+                    </div>
+
+                    <div class="text-xs text-slate-500">
+
+                        <p>
+                            Scope:
+                            <span
+                                id="briefScope"
+                                class="font-semibold text-slate-700"
+                            >
+                                All Projects
+                            </span>
+                        </p>
+
+                        <p class="mt-1">
+                            Generated:
+                            <span
+                                id="generatedDate"
+                                class="font-semibold text-slate-700"
+                            >
+                                09 Sep 2026
+                            </span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 NO. OF PROJECTS
+            ================================================== -->
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="p-5">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+
+                        <div>
+
+                            <p class="text-xs uppercase tracking-wide text-slate-500">
+                                No. of Projects
+                            </p>
+
+                            <p
+                                id="projectCount"
+                                class="text-4xl font-bold text-slate-900 mt-2"
+                            >
+                                92
+                            </p>
+
+                            <p
+                                id="projectCountDetail"
+                                class="text-sm text-slate-600 mt-3 leading-6"
+                            >
+                                92 infrastructure projects are currently included
+                                in the selected monitoring scope.
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="h-56"><canvas id="projectDistributionChart"></canvas></div>
+<p class="text-xs text-slate-500 mt-3 text-center">Project distribution by sector</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+<!-- =================================================
+     PORTFOLIO COMPOSITION
+================================================== -->
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+    <!-- SECTOR MIX CARD -->
+    <div class="bg-white border border-slate-200 rounded-lg shadow-sm">
+
+        <div class="px-5 py-4 border-b border-slate-200">
+
+            <p class="text-xs uppercase tracking-wide text-slate-500">
+                Sector Mix
+            </p>
+
+            <h3 class="text-base font-semibold text-slate-900 mt-1">
+                Project Composition
+            </h3>
+
+            <p class="text-sm text-slate-600 mt-2 leading-6">
+                Share of selected projects across Roads & Highways,
+                Railways and Coal & Mining.
+            </p>
+
+        </div>
+
+        <div class="p-5">
+
+            <div class="h-64">
+                <canvas id="sectorPieChart"></canvas>
+            </div>
+
+            <p class="text-xs text-slate-500 mt-3 text-center">
+                Project distribution by sector
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- RISK MIX CARD -->
+    <div class="bg-white border border-slate-200 rounded-lg shadow-sm">
+
+        <div class="px-5 py-4 border-b border-slate-200">
+
+<div class="flex items-start justify-between gap-4">
+    <div>
+        <p class="text-xs uppercase tracking-wide text-slate-500">
+            Risk Mix
+        </p>
+
+        <h3 id="riskMixTitle"
+            class="text-base font-semibold text-slate-900 mt-1">
+            Risk-level composition
+        </h3>
+
+        <p id="riskMixDescription"
+           class="text-sm text-slate-600 mt-2 leading-6">
+            Distribution of selected projects by AI risk category.
+        </p>
+    </div>
+ <!-- WEATHER TOGGLE -->
+    <label class="flex items-center gap-2 cursor-pointer shrink-0">
+        <span class="text-xs font-medium text-slate-500">
+            Weather Delay
+        </span>
+
+        <input
+            type="checkbox"
+            id="weatherDelayToggle"
+            class="sr-only peer"
+        >
+
+        <div class="w-10 h-5 bg-slate-300 rounded-full
+                    peer-checked:bg-[#15158A]
+                    relative transition">
+            <div class="absolute left-0.5 top-0.5
+                        w-4 h-4 bg-white rounded-full
+                        transition-transform
+                        peer-checked:translate-x-5">
+            </div>
+        </div>
+    </label>
+</div>
+
+<div class="h-64 mt-4">
+    <canvas id="riskMixChart"></canvas>
+</div>
+<div class="bg-white border border-slate-200 rounded-lg">
+
+    <div class="p-5">
+
+        <p class="text-xs uppercase tracking-wide text-slate-500">
+            Time Risk
+        </p>
+
+        <h3 class="text-base font-semibold text-slate-900 mt-1">
+            Project Delay Composition
+        </h3>
+
+        <p class="text-sm text-slate-600 mt-2 leading-6">
+            Distribution of selected projects by current time-delay status.
+        </p>
+
+        <div class="h-64 mt-4">
+            <canvas id="timeRiskChart"></canvas>
+        </div>
+
+    </div>
+
+</div>
+
+            <p class="text-xs text-slate-500 mt-3 text-center">
+                Project distribution by risk level
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+            <!-- =================================================
+                 TOTAL COST
+            ================================================== -->
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="p-5">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+
+                        <div>
+
+                            <p class="text-xs uppercase tracking-wide text-slate-500">
+                                Total Cost
+                            </p>
+
+                            <p
+                                id="totalCost"
+                                class="text-4xl font-bold text-slate-900 mt-2"
+                            >
+                                ₹6.84L Cr
+                            </p>
+
+                            <p
+                                id="totalCostDetail"
+                                class="text-sm text-slate-600 mt-3 leading-6"
+                            >
+                                Original approved project cost within the
+                                selected monitoring scope.
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="h-56"><canvas id="costDistributionChart"></canvas></div>
+<p class="text-xs text-slate-500 mt-3">Approved cost distribution by sector</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 REVISED COST
+            ================================================== -->
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="p-5">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+
+                        <div>
+
+                            <p class="text-xs uppercase tracking-wide text-slate-500">
+                                Revised Cost
+                            </p>
+
+                            <p
+                                id="revisedCost"
+                                class="text-4xl font-bold text-slate-900 mt-2"
+                            >
+                                ₹7.42L Cr
+                            </p>
+
+                            <div class="mt-4 space-y-2 text-sm">
+
+                                <div class="flex justify-between">
+
+                                    <span class="text-slate-500">
+                                        Original Cost
+                                    </span>
+
+                                    <span class="font-semibold">
+                                        ₹6.84L Cr
+                                    </span>
+
+                                </div>
+
+                                <div class="flex justify-between">
+
+                                    <span class="text-slate-500">
+                                        Increase
+                                    </span>
+
+                                    <span
+                                        id="costIncrease"
+                                        class="font-semibold text-red-600"
+                                    >
+                                        +₹0.58L Cr
+                                    </span>
+
+                                </div>
+
+                                <div class="flex justify-between">
+
+                                    <span class="text-slate-500">
+                                        Overrun
+                                    </span>
+
+                                    <span
+                                        id="costOverrun"
+                                        class="font-semibold text-red-600"
+                                    >
+                                        +8.5%
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="h-52"><canvas id="costComparisonChart"></canvas></div>
+<p class="text-xs text-slate-500 mt-3 text-center">Original vs revised cost</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 EXPENDITURE
+            ================================================== -->
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="p-5">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+
+                        <div>
+
+                            <p class="text-xs uppercase tracking-wide text-slate-500">
+                                Cumulative Expenditure
+                            </p>
+
+                            <p
+                                id="expenditure"
+                                class="text-4xl font-bold text-slate-900 mt-2"
+                            >
+                                ₹4.31L Cr
+                            </p>
+
+                            <p
+                                id="expenditureDetail"
+                                class="text-sm text-slate-600 mt-3 leading-6"
+                            >
+                                Approximately 58% of the revised portfolio cost
+                                has been incurred.
+                            </p>
+
+                            <div class="mt-4 grid grid-cols-2 gap-3">
+
+                                <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+
+                                    <p class="text-xs text-slate-500">
+                                        Financial Progress
+                                    </p>
+
+                                    <p class="text-lg font-bold mt-1">
+                                        68%
+                                    </p>
+
+                                </div>
+
+
+                                <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+
+                                    <p class="text-xs text-slate-500">
+                                        Physical Progress
+                                    </p>
+
+                                    <p class="text-lg font-bold mt-1">
+                                        62%
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="h-52"><canvas id="expenditureProgressChart"></canvas></div>
+<p class="text-xs text-slate-500 mt-3 text-center">Financial expenditure vs physical progress</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TOP RISK PROJECTS
+            ================================================== -->
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="px-5 py-4 border-b border-slate-200">
+
+                    <h3 class="text-base font-semibold text-slate-900">
+                        Top Risk Projects
+                    </h3>
+
+                    <p class="text-xs text-slate-500 mt-1">
+                        Highest-risk projects within the selected brief scope.
+                    </p>
+
+                </div>
+
+
+                <div class="p-5">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+
+                        <!-- RANKED LIST -->
+                        <div
+                            id="riskProjectList"
+                            class="space-y-3"
+                        >
+
+                            <div class="flex items-center gap-3 border border-slate-200 rounded-md p-3">
+
+                                <span class="text-sm font-bold text-slate-400">
+                                    01
+                                </span>
+
+                                <div class="flex-1">
+
+                                    <p class="text-sm font-semibold">
+                                        Eastern Highway Development
+                                    </p>
+
+                                    <p class="text-xs text-slate-500 mt-1">
+                                        Roads & Highways · Delayed
+                                    </p>
+
+                                </div>
+
+                                <span class="text-lg font-bold text-red-600">
+                                    91
+                                </span>
+
+                            </div>
+
+
+                            <div class="flex items-center gap-3 border border-slate-200 rounded-md p-3">
+
+                                <span class="text-sm font-bold text-slate-400">
+                                    02
+                                </span>
+
+                                <div class="flex-1">
+
+                                    <p class="text-sm font-semibold">
+                                        National Rail Corridor
+                                    </p>
+
+                                    <p class="text-xs text-slate-500 mt-1">
+                                        Railways · Ongoing
+                                    </p>
+
+                                </div>
+
+                                <span class="text-lg font-bold text-red-600">
+                                    87
+                                </span>
+
+                            </div>
+
+
+                            <div class="flex items-center gap-3 border border-slate-200 rounded-md p-3">
+
+                                <span class="text-sm font-bold text-slate-400">
+                                    03
+                                </span>
+
+                                <div class="flex-1">
+
+                                    <p class="text-sm font-semibold">
+                                        Integrated Mining Project
+                                    </p>
+
+                                    <p class="text-xs text-slate-500 mt-1">
+                                        Coal & Mining · Delayed
+                                    </p>
+
+                                </div>
+
+                                <span class="text-lg font-bold text-red-600">
+                                    81
+                                </span>
+
+                            </div>
+
+
+                            <div class="flex items-center gap-3 border border-slate-200 rounded-md p-3">
+
+                                <span class="text-sm font-bold text-slate-400">
+                                    04
+                                </span>
+
+                                <div class="flex-1">
+
+                                    <p class="text-sm font-semibold">
+                                        Western Freight Rail Link
+                                    </p>
+
+                                    <p class="text-xs text-slate-500 mt-1">
+                                        Railways · Ongoing
+                                    </p>
+
+                                </div>
+
+                                <span class="text-lg font-bold text-red-600">
+                                    78
+                                </span>
+
+                            </div>
+
+
+                            <div class="flex items-center gap-3 border border-slate-200 rounded-md p-3">
+
+                                <span class="text-sm font-bold text-slate-400">
+                                    05
+                                </span>
+
+                                <div class="flex-1">
+
+                                    <p class="text-sm font-semibold">
+                                        Central Coal Logistics Project
+                                    </p>
+
+                                    <p class="text-xs text-slate-500 mt-1">
+                                        Coal & Mining · Ongoing
+                                    </p>
+
+                                </div>
+
+                                <span class="text-lg font-bold text-amber-600">
+                                    74
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RISK CHART -->
+                        <div>
+
+                            <div class="h-64"><canvas id="topRiskChart"></canvas></div>
+<p class="text-xs text-slate-500 mt-3 text-center">Risk score of top projects</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 KEY OBSERVATION
+            ================================================== -->
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="px-5 py-4 border-b border-slate-200">
+
+                    <h3 class="text-base font-semibold text-slate-900">
+                        Key Exclusive Observation
+                    </h3>
+
+                </div>
+
+
+                <div class="p-5">
+
+                    <div class="border-l-4 border-[#15158A] bg-blue-50 px-5 py-4">
+
+                        <p
+                            id="keyObservation"
+                            class="text-sm text-slate-700 leading-6"
+                        >
+                            The selected portfolio shows elevated exposure to
+                            schedule and cost risks. High-risk projects should
+                            receive priority review, particularly where
+                            physical progress is lagging behind financial
+                            expenditure.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DOWNLOAD
+            ================================================== -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white border border-slate-200 rounded-lg p-5">
+
+                <div>
+
+                    <p class="font-semibold text-slate-900">
+                        Exclusive Brief Ready
+                    </p>
+
+                    <p class="text-xs text-slate-500 mt-1">
+                        Download the generated brief for management review.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="downloadBrief"
+                    type="button"
+                    class="px-5 py-2.5 bg-[#15158A] text-white text-sm font-semibold rounded-md hover:bg-[#10106F]"
+                >
+                    Download Exclusive Brief
+                </button>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer class="border-t border-slate-200 bg-white mt-10">
+
+        <div class="max-w-7xl mx-auto px-6 py-5">
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+
+                <p class="text-xs text-slate-500">
+                    INFRALENS — AI-Powered Infrastructure Monitoring
+                </p>
+
+                <p class="text-xs text-slate-500">
+                    SIH 2026 Prototype
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="node_modules/chart.js/dist/chart.umd.js"></script>
+    <script src="js/exclusive-brief.js"></script>
+<script src="js/api.js"></script>
+</body>
+</html>

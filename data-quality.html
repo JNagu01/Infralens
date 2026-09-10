@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Data Quality Center | INFRALENS</title>
+
+    <link rel="stylesheet" href="src/output.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+ <!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="bg-[#15158A] text-white">
+
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+
+        <div class="h-8 flex items-center justify-end">
+
+            <div class="flex items-center gap-5 text-xs">
+
+                <span>Accessibility</span>
+
+                <span class="h-4 w-px bg-white/30"></span>
+
+                <span>English</span>
+
+                <span>A</span>
+
+                <span>◉</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="bg-white border-b border-slate-200">
+
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+
+        <div class="min-h-[86px] flex items-center
+                    justify-between gap-6">
+
+
+            <!-- BRAND -->
+
+            <div class="flex items-center gap-4">
+
+                <div class="w-14 h-14 rounded-full
+                            border-2 border-[#15158A]
+                            flex items-center justify-center">
+
+                    <div class="text-center
+                                text-[#15158A]
+                                leading-none">
+
+                        <div class="text-[7px] font-bold">
+                            GOVT
+                        </div>
+
+                        <div class="text-sm font-black mt-1">
+                            IN
+                        </div>
+
+                        <div class="text-[6px] mt-1">
+                            INDIA
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="h-12 w-px bg-slate-300"></div>
+
+
+                <div>
+
+                    <div class="flex items-center gap-2">
+
+                        <h1 class="text-2xl font-bold
+                                   text-[#15158A]">
+                            Infralens
+                        </h1>
+
+                        <span class="text-[9px]
+                                     font-bold
+                                     px-2 py-1
+                                     bg-[#15158A]
+                                     text-white rounded">
+                            AI
+                        </span>
+
+                    </div>
+
+
+                    <p class="text-xs text-slate-600 mt-1">
+                        AI-Powered Infrastructure Project Monitoring
+                    </p>
+
+
+                    <p class="text-[10px] text-slate-400 mt-0.5">
+                        Risk Intelligence • Predictive Analytics • Early Warning
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="hidden md:flex items-center gap-6">
+
+                <div class="text-right">
+
+                    <p class="text-[10px] text-slate-400">
+                        Monitoring Period
+                    </p>
+
+                    <p class="text-sm font-semibold
+                              text-[#15158A] mt-1">
+                        September 2026
+                    </p>
+
+                </div>
+
+
+                <div class="h-10 w-px bg-slate-200"></div>
+
+
+<div class="flex items-center gap-3">
+
+    <!-- Notification Bell -->
+    <div class="relative">
+        <button id="notificationBell"
+                class="relative w-10 h-10 flex items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-[#15158A]"
+                aria-label="Notifications">
+
+            <span class="text-lg">🔔</span>
+
+            <span id="notificationBadge"
+                  class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1
+                         bg-red-600 text-white text-[10px] font-bold rounded-full
+                         flex items-center justify-center">
+                3
+            </span>
+        </button>
+
+        <!-- Notification Dropdown -->
+        <div id="notificationPanel"
+             class="hidden absolute right-0 top-12 w-96 bg-white border border-slate-200
+                    rounded-lg shadow-lg z-50">
+
+            <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-semibold text-slate-900">Early Warnings</p>
+                    <p class="text-xs text-slate-500">Active project alerts</p>
+                </div>
+
+                <span id="notificationCount"
+                      class="text-xs font-semibold text-[#15158A]">
+                    3 Active
+                </span>
+            </div>
+
+            <div id="notificationList" class="max-h-96 overflow-y-auto">
+
+                <div class="px-4 py-3 border-b border-slate-100 hover:bg-slate-50">
+                    <div class="flex items-start gap-3">
+                        <span class="text-red-600">●</span>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">
+                                Eastern Highway Development
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Heavy rainfall may cause project delay.
+                            </p>
+                            <span class="text-[10px] text-red-600 font-semibold">
+                                HIGH
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-4 py-3 border-b border-slate-100 hover:bg-slate-50">
+                    <div class="flex items-start gap-3">
+                        <span class="text-red-600">●</span>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">
+                                Integrated Mining Project
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Progress slippage detected against planned milestones.
+                            </p>
+                            <span class="text-[10px] text-red-600 font-semibold">
+                                HIGH
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-4 py-3 hover:bg-slate-50">
+                    <div class="flex items-start gap-3">
+                        <span class="text-amber-500">●</span>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">
+                                Western Freight Rail Link
+                            </p>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Material supply disruption may affect progress.
+                            </p>
+                            <span class="text-[10px] text-amber-600 font-semibold">
+                                MEDIUM
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Login -->
+    <a href="login.html"
+       class="px-6 py-2.5 bg-[#15158A] text-white text-xs font-semibold rounded hover:bg-[#10106c]">
+        Login
+    </a>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="bg-[#18A5DC]">
+
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
+
+            <div class="h-11 flex items-center">
+
+                <a href="index.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          font-semibold
+                          bg-white/15">
+
+                    Dashboard
+
+                </a>
+
+
+                <a href="projects.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    Projects
+
+                </a>
+
+
+                <a href="analytics.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    Analytics
+
+                </a>
+
+
+                <a href="data-quality.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    data quality
+
+                </a>
+
+
+                <a href="exclusive-brief.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    Exclusive Brief
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+    <main class="max-w-7xl mx-auto px-6 py-6">
+
+
+        <!-- BREADCRUMB -->
+        <div class="text-sm text-slate-500 mb-5">
+
+            <a
+                href="index.html"
+                class="hover:text-[#15158A]"
+            >
+                Dashboard
+            </a>
+
+            <span class="mx-2">→</span>
+
+            <span class="text-slate-700 font-medium">
+                Data Quality Center
+            </span>
+
+        </div>
+
+
+        <!-- =====================================================
+             PAGE HEADER
+        ====================================================== -->
+        <section class="mb-7">
+
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+
+                <div>
+
+                    <h2 class="text-2xl font-bold text-slate-900">
+                        Data Quality Center
+                    </h2>
+
+                    <p class="text-sm text-slate-500 mt-1">
+                        AI-driven validation and anomaly detection for project monitoring data.
+                    </p>
+
+                </div>
+
+                <div class="text-sm text-slate-500">
+                    Scope:
+                    <span class="font-semibold text-slate-700">
+                        Roads & Highways, Railways, Coal & Mining
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DATA QUALITY SUMMARY
+        ====================================================== -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-7">
+
+
+            <!-- TOTAL -->
+            <div class="bg-white border border-slate-200 rounded-lg p-5">
+
+                <p class="text-xs uppercase tracking-wide text-slate-500">
+                    Total Projects
+                </p>
+
+                <p class="text-2xl font-bold text-slate-900 mt-2">
+                    92
+                </p>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Projects analysed
+                </p>
+
+            </div>
+
+
+            <!-- ISSUES -->
+            <div class="bg-white border border-slate-200 rounded-lg p-5">
+
+                <p class="text-xs uppercase tracking-wide text-slate-500">
+                    Projects With Issues
+                </p>
+
+                <p class="text-2xl font-bold text-slate-900 mt-2">
+                    27
+                </p>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Require data review
+                </p>
+
+            </div>
+
+
+            <!-- CRITICAL -->
+            <div class="bg-white border border-slate-200 rounded-lg p-5">
+
+                <p class="text-xs uppercase tracking-wide text-slate-500">
+                    Critical Issues
+                </p>
+
+                <p class="text-2xl font-bold text-red-600 mt-2">
+                    8
+                </p>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Require immediate review
+                </p>
+
+            </div>
+
+
+            <!-- SCORE -->
+            <div class="bg-white border border-slate-200 rounded-lg p-5">
+
+                <p class="text-xs uppercase tracking-wide text-slate-500">
+                    Data Quality Score
+                </p>
+
+                <p class="text-2xl font-bold text-[#15158A] mt-2">
+                    82.4%
+                </p>
+
+                <p class="text-xs text-slate-500 mt-1">
+                    Portfolio data quality
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CRITICAL DATA CHECKS
+        ====================================================== -->
+        <section class="mb-7">
+
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="px-5 py-4 border-b border-slate-200">
+
+                    <h3 class="text-base font-semibold text-slate-900">
+                        Critical Data Checks
+                    </h3>
+
+                    <p class="text-xs text-slate-500 mt-1">
+                        AI-based checks designed to identify suspicious and unreliable reporting patterns.
+                    </p>
+
+                </div>
+
+
+                <div class="p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+
+                    <!-- MISSING -->
+                    <div
+    id="missingFieldsCard"
+    class="border border-slate-200 rounded-md p-4 hover:border-[#18A5DC] transition cursor-pointer"
+>
+
+                        <div class="flex items-start justify-between gap-3">
+
+                            <div class="w-9 h-9 rounded-md bg-red-50 flex items-center justify-center text-red-600 font-bold">
+                                !
+                            </div>
+
+                            <span class="text-xs font-semibold text-red-600">
+                                12 Projects
+                            </span>
+
+                        </div>
+
+                        <h4 class="font-semibold text-slate-800 mt-4">
+                            Missing Critical Fields
+                        </h4>
+
+                        <p class="text-xs text-slate-500 mt-2 leading-5">
+                            Detects missing values in important project monitoring fields.
+                        </p>
+
+                    </div>
+
+
+                    <!-- ROUND VALUES -->
+                   <div
+    id="roundValuesCard"
+    class="border border-slate-200 rounded-md p-4 hover:border-[#18A5DC] transition cursor-pointer"
+>
+
+                        <div class="flex items-start justify-between gap-3">
+
+                            <div class="w-9 h-9 rounded-md bg-amber-50 flex items-center justify-center text-amber-600 font-bold">
+                                #
+                            </div>
+
+                            <span class="text-xs font-semibold text-amber-600">
+                                7 Projects
+                            </span>
+
+                        </div>
+
+                        <h4 class="font-semibold text-slate-800 mt-4">
+                            Suspicious Round Values
+                        </h4>
+
+                        <p class="text-xs text-slate-500 mt-2 leading-5">
+                            Flags unusually rounded cost, progress or timeline values.
+                        </p>
+
+                    </div>
+
+
+                    <!-- SIMILAR REPORTS -->
+                   <div
+    id="duplicateReportsCard"
+    class="border border-slate-200 rounded-md p-4 hover:border-[#18A5DC] transition cursor-pointer"
+>
+
+                        <div class="flex items-start justify-between gap-3">
+
+                            <div class="w-9 h-9 rounded-md bg-blue-50 flex items-center justify-center text-[#15158A] font-bold">
+                                ≈
+                            </div>
+
+                            <span class="text-xs font-semibold text-[#15158A]">
+                                5 Matches
+                            </span>
+
+                        </div>
+
+                        <h4 class="font-semibold text-slate-800 mt-4">
+                            Similar Reports
+                        </h4>
+
+                        <p class="text-xs text-slate-500 mt-2 leading-5">
+                            Identifies highly similar reporting patterns across submissions.
+                        </p>
+
+                    </div>
+
+
+                    <!-- MARCH RUSH -->
+                    <div
+    id="marchRushCard"
+    class="border border-slate-200 rounded-md p-4 hover:border-[#18A5DC] transition cursor-pointer"
+>
+
+                        <div class="flex items-start justify-between gap-3">
+
+                            <div class="w-9 h-9 rounded-md bg-orange-50 flex items-center justify-center text-orange-600 font-bold">
+                                M
+                            </div>
+
+                            <span class="text-xs font-semibold text-orange-600">
+                                9 Flags
+                            </span>
+
+                        </div>
+
+                        <h4 class="font-semibold text-slate-800 mt-4">
+                            March Rush Patterns
+                        </h4>
+
+                        <p class="text-xs text-slate-500 mt-2 leading-5">
+                            Detects unusual reporting or progress spikes during March.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MISSING CRITICAL FIELDS
+        ====================================================== -->
+        <section id="missing-fields-section" class="mb-7">
+
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="px-5 py-4 border-b border-slate-200">
+
+                    <h3 class="text-base font-semibold text-slate-900">
+                        Missing Critical Fields
+                    </h3>
+
+                    <p class="text-xs text-slate-500 mt-1">
+                        Important project information requiring completion or verification.
+                    </p>
+
+                </div>
+
+
+                <div class="overflow-x-auto">
+
+                    <table class="w-full text-sm">
+
+                        <thead class="bg-slate-50 border-b border-slate-200">
+
+                            <tr class="text-left text-xs text-slate-500 uppercase tracking-wide">
+
+                                <th class="px-5 py-3 font-semibold">
+                                    Project
+                                </th>
+
+                                <th class="px-5 py-3 font-semibold">
+                                    Missing Field
+                                </th>
+
+                                <th class="px-5 py-3 font-semibold">
+                                    Importance
+                                </th>
+
+                                <th class="px-5 py-3 font-semibold">
+                                    Impact
+                                </th>
+
+                                <th class="px-5 py-3 font-semibold">
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody class="divide-y divide-slate-100">
+
+
+                            <tr>
+
+                                <td class="px-5 py-4 font-medium text-slate-800">
+                                    INF-001 Eastern Highway Development
+                                </td>
+
+                                <td class="px-5 py-4 text-slate-600">
+                                    Revised Completion Date
+                                </td>
+
+                                <td class="px-5 py-4">
+                                    <span class="px-2 py-1 rounded-full bg-red-50 text-red-600 text-xs font-semibold">
+                                        Critical
+                                    </span>
+                                </td>
+
+                                <td class="px-5 py-4 text-slate-600">
+                                    Weakens delay prediction
+                                </td>
+
+                                <td class="px-5 py-4">
+                                    <button
+                                        class="text-[#15158A] text-xs font-semibold hover:underline"
+                                    >
+                                        Review
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="px-5 py-4 font-medium text-slate-800">
+                                    INF-004 Integrated Mining Project
+                                </td>
+
+                                <td class="px-5 py-4 text-slate-600">
+                                    Latest Expenditure
+                                </td>
+
+                                <td class="px-5 py-4">
+                                    <span class="px-2 py-1 rounded-full bg-red-50 text-red-600 text-xs font-semibold">
+                                        Critical
+                                    </span>
+                                </td>
+
+                                <td class="px-5 py-4 text-slate-600">
+                                    Affects cost-risk analysis
+                                </td>
+
+                                <td class="px-5 py-4">
+                                    <button
+                                        class="text-[#15158A] text-xs font-semibold hover:underline"
+                                    >
+                                        Review
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="px-5 py-4 font-medium text-slate-800">
+                                    INF-006 Western Freight Rail Link
+                                </td>
+
+                                <td class="px-5 py-4 text-slate-600">
+                                    Milestone Status
+                                </td>
+
+                                <td class="px-5 py-4">
+                                    <span class="px-2 py-1 rounded-full bg-amber-50 text-amber-600 text-xs font-semibold">
+                                        High
+                                    </span>
+                                </td>
+
+                                <td class="px-5 py-4 text-slate-600">
+                                    Reduces schedule visibility
+                                </td>
+
+                                <td class="px-5 py-4">
+                                    <button
+                                        class="text-[#15158A] text-xs font-semibold hover:underline"
+                                    >
+                                        Review
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SUSPICIOUS ROUND VALUES
+        ====================================================== -->
+        <section id="round-values-section" class="mb-7">
+
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="px-5 py-4 border-b border-slate-200">
+
+                    <h3 class="text-base font-semibold text-slate-900">
+                        Suspicious Round Values
+                    </h3>
+
+                    <p class="text-xs text-slate-500 mt-1">
+                        Values that may indicate manual estimation, placeholder entry or low-granularity reporting.
+                    </p>
+
+                </div>
+
+
+                <div class="overflow-x-auto">
+
+                    <table class="w-full text-sm">
+
+                        <thead class="bg-slate-50 border-b border-slate-200">
+
+                            <tr class="text-left text-xs text-slate-500 uppercase tracking-wide">
+
+                                <th class="px-5 py-3">
+                                    Project
+                                </th>
+
+                                <th class="px-5 py-3">
+                                    Field
+                                </th>
+
+                                <th class="px-5 py-3">
+                                    Reported Value
+                                </th>
+
+                                <th class="px-5 py-3">
+                                    Pattern
+                                </th>
+
+                                <th class="px-5 py-3">
+                                    Flag
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody class="divide-y divide-slate-100">
+
+
+                            <tr>
+
+                                <td class="px-5 py-4 font-medium">
+                                    INF-002 National Rail Corridor
+                                </td>
+
+                                <td class="px-5 py-4 text-slate-600">
+                                    Physical Progress
+                                </td>
+
+                                <td class="px-5 py-4 font-semibold">
+                                    50%
+                                </td>
+
+                                <td class="px-5 py-4 text-slate-600">
+                                    Exact round value
+                                </td>
+
+                                <td class="px-5 py-4">
+
+                                    <span class="px-2 py-1 rounded-full bg-amber-50 text-amber-600 text-xs font-semibold">
+                                        Review
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="px-5 py-4 font-medium">
+                                    INF-007 Central Coal Logistics Project
+                                </td>
+
+                                <td class="px-5 py-4 text-slate-600">
+                                    Expenditure
+                                </td>
+
+                                <td class="px-5 py-4 font-semibold">
+                                    ₹5,000 Cr
+                                </td>
+
+                                <td class="px-5 py-4 text-slate-600">
+                                    Highly rounded amount
+                                </td>
+
+                                <td class="px-5 py-4">
+
+                                    <span class="px-2 py-1 rounded-full bg-amber-50 text-amber-600 text-xs font-semibold">
+                                        Review
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="px-5 py-4 font-medium">
+                                    INF-008 North-South Highway Corridor
+                                </td>
+
+                                <td class="px-5 py-4 text-slate-600">
+                                    Completion Duration
+                                </td>
+
+                                <td class="px-5 py-4 font-semibold">
+                                    60 Months
+                                </td>
+
+                                <td class="px-5 py-4 text-slate-600">
+                                    Rounded duration
+                                </td>
+
+                                <td class="px-5 py-4">
+
+                                    <span class="px-2 py-1 rounded-full bg-amber-50 text-amber-600 text-xs font-semibold">
+                                        Review
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SIMILAR REPORTS
+        ====================================================== -->
+        <section id="duplicate-reports-section" class="mb-7">
+
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="px-5 py-4 border-b border-slate-200">
+
+                    <h3 class="text-base font-semibold text-slate-900">
+                        Similar / Duplicate Reports
+                    </h3>
+
+                    <p class="text-xs text-slate-500 mt-1">
+                        AI-detected reporting submissions with unusually high similarity.
+                    </p>
+
+                </div>
+
+
+                <div class="p-5 space-y-4">
+
+
+                    <div class="border border-slate-200 rounded-md p-4">
+
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+
+                            <div>
+
+                                <p class="font-semibold text-slate-800">
+                                    INF-001 Eastern Highway Development
+                                </p>
+
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Monthly progress reports — February & March
+                                </p>
+
+                            </div>
+
+                            <div class="text-right">
+
+                                <p class="text-sm font-bold text-[#15158A]">
+                                    94% Similar
+                                </p>
+
+                                <p class="text-xs text-slate-500">
+                                    8 matching fields
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mt-3 h-2 bg-slate-100 rounded-full overflow-hidden">
+
+                            <div
+                                class="h-full bg-[#15158A] rounded-full"
+                                style="width:94%"
+                            ></div>
+
+                        </div>
+
+                        <p class="text-xs text-slate-500 mt-3">
+                            AI finding: Report values and narrative show unusually low variation between submissions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="border border-slate-200 rounded-md p-4">
+
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+
+                            <div>
+
+                                <p class="font-semibold text-slate-800">
+                                    INF-006 Western Freight Rail Link
+                                </p>
+
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Monthly progress reports — January & February
+                                </p>
+
+                            </div>
+
+                            <div class="text-right">
+
+                                <p class="text-sm font-bold text-[#15158A]">
+                                    89% Similar
+                                </p>
+
+                                <p class="text-xs text-slate-500">
+                                    7 matching fields
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mt-3 h-2 bg-slate-100 rounded-full overflow-hidden">
+
+                            <div
+                                class="h-full bg-[#15158A] rounded-full"
+                                style="width:89%"
+                            ></div>
+
+                        </div>
+
+                        <p class="text-xs text-slate-500 mt-3">
+                            AI finding: Progress and expenditure values closely match the previous reporting cycle.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MARCH RUSH PATTERN
+        ====================================================== -->
+        <section id="march-rush-section" class="mb-7">
+
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="px-5 py-4 border-b border-slate-200">
+
+                    <h3 class="text-base font-semibold text-slate-900">
+                        March Rush Patterns
+                    </h3>
+
+                    <p class="text-xs text-slate-500 mt-1">
+                        Detection of unusual end-of-financial-year reporting spikes.
+                    </p>
+
+                </div>
+
+
+                <div class="p-5 grid grid-cols-1 lg:grid-cols-3 gap-5">
+
+
+                    <!-- FLAGGED PROJECT -->
+                    <div class="border border-orange-200 bg-orange-50 rounded-md p-4">
+
+                        <div class="flex items-center justify-between">
+
+                            <span class="text-xs font-semibold text-orange-700">
+                                FLAGGED
+                            </span>
+
+                            <span class="text-xs text-orange-600">
+                                High
+                            </span>
+
+                        </div>
+
+                        <h4 class="font-semibold text-slate-800 mt-3">
+                            INF-001 Eastern Highway Development
+                        </h4>
+
+                        <p class="text-xs text-slate-600 mt-2 leading-5">
+                            Physical progress increased by 14 percentage points
+                            during March compared with the previous monthly trend.
+                        </p>
+
+                        <div class="mt-4 pt-3 border-t border-orange-200">
+
+                            <div class="flex justify-between text-xs">
+
+                                <span class="text-slate-500">
+                                    March Increase
+                                </span>
+
+                                <span class="font-bold text-orange-700">
+                                    +14%
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FLAGGED PROJECT -->
+                    <div class="border border-orange-200 bg-orange-50 rounded-md p-4">
+
+                        <div class="flex items-center justify-between">
+
+                            <span class="text-xs font-semibold text-orange-700">
+                                FLAGGED
+                            </span>
+
+                            <span class="text-xs text-orange-600">
+                                Medium
+                            </span>
+
+                        </div>
+
+                        <h4 class="font-semibold text-slate-800 mt-3">
+                            INF-004 Integrated Mining Project
+                        </h4>
+
+                        <p class="text-xs text-slate-600 mt-2 leading-5">
+                            Reported expenditure shows an unusual March spike
+                            relative to the preceding reporting months.
+                        </p>
+
+                        <div class="mt-4 pt-3 border-t border-orange-200">
+
+                            <div class="flex justify-between text-xs">
+
+                                <span class="text-slate-500">
+                                    March Increase
+                                </span>
+
+                                <span class="font-bold text-orange-700">
+                                    +21%
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OVERALL -->
+                    <div class="border border-slate-200 rounded-md p-4">
+
+                        <p class="text-xs uppercase tracking-wide text-slate-500">
+                            Portfolio Pattern
+                        </p>
+
+                        <p class="text-2xl font-bold text-slate-900 mt-3">
+                            9 Projects
+                        </p>
+
+                        <p class="text-xs text-slate-500 mt-2">
+                            Show unusual March reporting behaviour.
+                        </p>
+
+                        <div class="mt-4">
+
+                            <div class="flex justify-between text-xs mb-2">
+
+                                <span class="text-slate-500">
+                                    Flagged Portfolio
+                                </span>
+
+                                <span class="font-semibold">
+                                    9.8%
+                                </span>
+
+                            </div>
+
+                            <div class="h-2 bg-slate-100 rounded-full">
+
+                                <div
+                                    class="h-full bg-orange-500 rounded-full"
+                                    style="width:9.8%"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             AI INSIGHTS
+        ====================================================== -->
+        <section class="mb-7">
+
+            <div class="bg-white border border-slate-200 rounded-lg">
+
+                <div class="px-5 py-4 border-b border-slate-200">
+
+                    <h3 class="text-base font-semibold text-slate-900">
+                        AI Data Quality Insights
+                    </h3>
+
+                </div>
+
+
+                <div class="p-5 grid grid-cols-1 md:grid-cols-3 gap-4">
+
+
+                    <div class="border-l-4 border-red-500 bg-red-50 px-4 py-4">
+
+                        <p class="text-sm font-semibold text-slate-900">
+                            Immediate Attention
+                        </p>
+
+                        <p class="text-xs text-slate-600 mt-2 leading-5">
+                            Missing completion dates in high-risk projects can
+                            reduce the reliability of schedule predictions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="border-l-4 border-amber-500 bg-amber-50 px-4 py-4">
+
+                        <p class="text-sm font-semibold text-slate-900">
+                            Suspicious Reporting
+                        </p>
+
+                        <p class="text-xs text-slate-600 mt-2 leading-5">
+                            Repeated rounded values and unusually similar reports
+                            should be reviewed before model training.
+                        </p>
+
+                    </div>
+
+
+                    <div class="border-l-4 border-[#15158A] bg-blue-50 px-4 py-4">
+
+                        <p class="text-sm font-semibold text-slate-900">
+                            Recommended Action
+                        </p>
+
+                        <p class="text-xs text-slate-600 mt-2 leading-5">
+                            Resolve critical data issues before using affected
+                            records for predictive risk assessment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer class="border-t border-slate-200 bg-white mt-10">
+
+        <div class="max-w-7xl mx-auto px-6 py-5">
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+
+                <p class="text-xs text-slate-500">
+                    INFRALENS — AI-Powered Infrastructure Monitoring
+                </p>
+
+                <p class="text-xs text-slate-500">
+                    SIH 2026 Prototype
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/data-quality.js"></script>
+<script src="js/api.js"></script>
+</body>
+</html>

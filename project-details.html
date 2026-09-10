@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project Details | Infralens</title>
+
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+    <header class="bg-[#15158A] text-white border-b border-blue-900">
+
+        <div class="max-w-7xl mx-auto px-6 py-3
+                    flex items-center justify-between">
+
+            <!-- BRAND -->
+            <div>
+                <h1 class="text-xl font-bold tracking-wide">
+                    INFRALENS
+                </h1>
+
+                <p class="text-xs text-blue-100">
+                    AI-Powered Infrastructure Monitoring
+                </p>
+            </div>
+
+            <!-- NAVIGATION -->
+            <nav class="hidden md:flex items-center gap-6 text-sm">
+
+                <a href="index.html"
+                   class="hover:text-cyan-200">
+                    Dashboard
+                </a>
+
+                <a href="projects.html"
+                   class="hover:text-cyan-200">
+                    Projects
+                </a>
+
+                <a href="analytics.html"
+                   class="hover:text-cyan-200">
+                    Analytics
+                </a>
+
+                <a href="data-quality.html"
+                   class="h-full px-7
+                          flex items-center
+                          text-white text-sm
+                          hover:bg-white/10">
+
+                    data quality
+
+                </a>
+
+                <a href="exclusive-brief.html"
+                   class="hover:text-cyan-200">
+                    Exclusive Brief
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+    <main class="max-w-7xl mx-auto px-6 py-6">
+
+
+        <!-- =====================================================
+             BREADCRUMB
+        ====================================================== -->
+        <div class="text-sm text-slate-500 mb-5">
+
+            <a href="index.html"
+               class="hover:text-[#15158A]">
+                Dashboard
+            </a>
+
+            <span class="mx-2">→</span>
+
+            <a href="projects.html"
+               class="hover:text-[#15158A]">
+                Projects
+            </a>
+
+            <span class="mx-2">→</span>
+
+            <span class="text-slate-700">
+                Project Details
+            </span>
+
+        </div>
+
+
+        <!-- =====================================================
+             PROJECT HEADER
+        ====================================================== -->
+        <section class="bg-white border border-slate-200 rounded-lg p-6 mb-6">
+
+            <div class="flex flex-col lg:flex-row
+                        lg:items-start lg:justify-between gap-6">
+
+                <!-- PROJECT INFORMATION -->
+                <div>
+
+                    <div class="flex items-center gap-3 mb-2">
+
+                        <span id="projectId"
+                              class="text-sm font-semibold text-[#15158A]">
+                            INF-001
+                        </span>
+
+                        <span id="projectStatus"
+                              class="px-3 py-1 rounded-full
+                                     text-xs font-semibold
+                                     bg-red-50 text-red-700
+                                     border border-red-100">
+                            Delayed
+                        </span>
+
+                    </div>
+
+                    <h2 id="projectName"
+                        class="text-2xl font-bold text-slate-900">
+                        Eastern Highway Development
+                    </h2>
+
+                    <p id="projectDescription"
+                       class="text-sm text-slate-500 mt-2 max-w-3xl">
+                        Major highway infrastructure development project
+                        under the Roads & Highways sector.
+                    </p>
+
+                    <!-- PROJECT META -->
+                    <div class="grid grid-cols-2 md:grid-cols-4
+                                gap-5 mt-5">
+
+                        <div>
+                            <p class="text-xs text-slate-500">
+                                Ministry
+                            </p>
+
+                            <p id="projectMinistry"
+                               class="text-sm font-semibold mt-1">
+                                Road Transport & Highways
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-slate-500">
+                                Sector
+                            </p>
+
+                            <p id="projectSector"
+                               class="text-sm font-semibold mt-1">
+                                Roads & Highways
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-slate-500">
+                                State
+                            </p>
+
+                            <p id="projectState"
+                               class="text-sm font-semibold mt-1">
+                                Maharashtra
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-slate-500">
+                                Project Year
+                            </p>
+
+                            <p id="projectYear"
+                               class="text-sm font-semibold mt-1">
+                                2024-25
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RISK SCORE -->
+                <div class="min-w-[180px] text-center
+                            border border-red-100
+                            bg-red-50 rounded-lg p-5">
+
+                    <p class="text-xs font-semibold
+                              text-red-700 uppercase tracking-wide">
+                        AI Risk Score
+                    </p>
+
+                    <p id="riskScore"
+                       class="text-4xl font-bold text-red-700 mt-2">
+                        91
+                    </p>
+
+                    <p id="riskZone"
+                       class="text-sm font-semibold text-red-700 mt-1">
+                        High Risk
+                    </p>
+
+                    <p class="text-xs text-slate-500 mt-2">
+                        Scale: 0–100
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 1 — PROJECT OVERVIEW
+        ====================================================== -->
+        <section class="mb-6">
+
+            <div class="mb-4">
+                <h3 class="text-lg font-bold text-slate-900">
+                    Project Overview
+                </h3>
+
+                <p class="text-sm text-slate-500">
+                    Current financial, physical and timeline position
+                    of the project.
+                </p>
+            </div>
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2
+                        lg:grid-cols-4 gap-4">
+
+                <!-- ORIGINAL COST -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-5">
+
+                    <p class="text-xs text-slate-500">
+                        Original Approved Cost
+                    </p>
+
+                    <p id="originalCost"
+                       class="text-xl font-bold text-slate-900 mt-2">
+                        ₹42,500 Cr
+                    </p>
+
+                </div>
+
+
+                <!-- REVISED COST -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-5">
+
+                    <p class="text-xs text-slate-500">
+                        Revised Cost
+                    </p>
+
+                    <p id="revisedCost"
+                       class="text-xl font-bold text-slate-900 mt-2">
+                        ₹47,200 Cr
+                    </p>
+
+                    <p class="text-xs text-red-600 mt-1">
+                        +11.1% from original
+                    </p>
+
+                </div>
+
+
+                <!-- EXPENDITURE -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-5">
+
+                    <p class="text-xs text-slate-500">
+                        Cumulative Expenditure
+                    </p>
+
+                    <p id="expenditure"
+                       class="text-xl font-bold text-slate-900 mt-2">
+                        ₹28,700 Cr
+                    </p>
+
+                </div>
+
+
+                <!-- COMPLETION -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-5">
+
+                    <p class="text-xs text-slate-500">
+                        Expected Completion
+                    </p>
+
+                    <p id="expectedCompletion"
+                       class="text-xl font-bold text-slate-900 mt-2">
+                        Dec 2027
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 2 — PROGRESS SNAPSHOT
+        ====================================================== -->
+        <section class="mb-6">
+
+            <div class="mb-4">
+
+                <h3 class="text-lg font-bold text-slate-900">
+                    Progress Snapshot
+                </h3>
+
+                <p class="text-sm text-slate-500">
+                    Current physical and financial performance.
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2
+                        lg:grid-cols-5 gap-4">
+
+
+                <!-- PHYSICAL -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-5">
+
+                    <div class="flex justify-between">
+                        <p class="text-xs text-slate-500">
+                            Physical Progress
+                        </p>
+
+                        <span class="text-xs font-semibold
+                                     text-[#15158A]">
+                            Actual
+                        </span>
+                    </div>
+
+                    <p id="physicalProgress"
+                       class="text-2xl font-bold mt-3">
+                        62%
+                    </p>
+
+                    <div class="w-full bg-slate-100
+                                rounded-full h-2 mt-3">
+
+                        <div id="physicalBar"
+                             class="bg-[#15158A] h-2 rounded-full"
+                             style="width:62%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FINANCIAL -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-5">
+
+                    <div class="flex justify-between">
+
+                        <p class="text-xs text-slate-500">
+                            Financial Progress
+                        </p>
+
+                        <span class="text-xs font-semibold
+                                     text-blue-700">
+                            Actual
+                        </span>
+
+                    </div>
+
+                    <p id="financialProgress"
+                       class="text-2xl font-bold mt-3">
+                        68%
+                    </p>
+
+                    <div class="w-full bg-slate-100
+                                rounded-full h-2 mt-3">
+
+                        <div id="financialBar"
+                             class="bg-blue-600 h-2 rounded-full"
+                             style="width:68%">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GAP -->
+                <div class="bg-white border border-red-100
+                            rounded-lg p-5">
+
+                    <p class="text-xs text-slate-500">
+                        Progress–Expenditure Gap
+                    </p>
+
+                    <p id="progressGap"
+                       class="text-2xl font-bold text-red-600 mt-3">
+                        +6%
+                    </p>
+
+                    <p class="text-xs text-slate-500 mt-2">
+                        Expenditure ahead of physical progress
+                    </p>
+
+                </div>
+
+
+                <!-- TIME ELAPSED -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-5">
+
+                    <p class="text-xs text-slate-500">
+                        Time Elapsed
+                    </p>
+
+                    <p id="timeElapsed"
+                       class="text-2xl font-bold mt-3">
+                        72%
+                    </p>
+
+                    <p class="text-xs text-red-600 mt-2">
+                        Higher than physical progress
+                    </p>
+
+                </div>
+
+
+                <!-- REMAINING -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-5">
+
+                    <p class="text-xs text-slate-500">
+                        Work Remaining
+                    </p>
+
+                    <p id="remainingWork"
+                       class="text-2xl font-bold mt-3">
+                        38%
+                    </p>
+
+                    <p class="text-xs text-slate-500 mt-2">
+                        Estimated physical work
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 3 — PHYSICAL PROGRESS VS EXPENDITURE
+        ====================================================== -->
+        <section class="mb-6">
+
+            <div class="bg-white border border-slate-200
+                        rounded-lg p-6">
+
+                <div class="mb-5">
+
+                    <h3 class="text-lg font-bold text-slate-900">
+                        Physical Progress vs Expenditure
+                    </h3>
+
+                    <p class="text-sm text-slate-500 mt-1">
+                        Comparison of physical output against
+                        financial utilisation.
+                    </p>
+
+                </div>
+
+
+                <!-- COMPARISON -->
+                <div class="grid grid-cols-1 md:grid-cols-2
+                            gap-6">
+
+                    <!-- PHYSICAL -->
+                    <div>
+
+                        <div class="flex justify-between mb-2">
+
+                            <span class="text-sm font-medium">
+                                Physical Progress
+                            </span>
+
+                            <span class="font-bold">
+                                62%
+                            </span>
+
+                        </div>
+
+                        <div class="h-4 bg-slate-100 rounded-full">
+
+                            <div class="h-4 rounded-full
+                                        bg-[#15158A]"
+                                 style="width:62%">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EXPENDITURE -->
+                    <div>
+
+                        <div class="flex justify-between mb-2">
+
+                            <span class="text-sm font-medium">
+                                Expenditure Utilisation
+                            </span>
+
+                            <span class="font-bold">
+                                68%
+                            </span>
+
+                        </div>
+
+                        <div class="h-4 bg-slate-100 rounded-full">
+
+                            <div class="h-4 rounded-full
+                                        bg-blue-500"
+                                 style="width:68%">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INTERPRETATION -->
+                <div class="mt-6 p-4 rounded-lg
+                            bg-amber-50 border border-amber-100">
+
+                    <p class="text-sm font-semibold text-amber-800">
+                        AI Observation
+                    </p>
+
+                    <p class="text-sm text-amber-700 mt-1">
+                        Expenditure is approximately 6 percentage
+                        points ahead of physical progress. Continued
+                        divergence may indicate inefficient expenditure
+                        or emerging cost pressure.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 4 — PROGRESS TRACKING
+        ====================================================== -->
+        <section class="mb-6">
+
+            <div class="mb-4">
+
+                <h3 class="text-lg font-bold text-slate-900">
+                    Progress Tracking
+                </h3>
+
+                <p class="text-sm text-slate-500">
+                    Planned versus actual project progress over time.
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+
+                <!-- PLANNED VS ACTUAL -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-6">
+
+                    <h4 class="font-semibold text-slate-900">
+                        Planned vs Actual Progress
+                    </h4>
+
+                    <div class="mt-5 space-y-5">
+
+                        <div>
+
+                            <div class="flex justify-between text-sm mb-2">
+
+                                <span>Planned</span>
+                                <span>74%</span>
+
+                            </div>
+
+                            <div class="h-3 bg-slate-100 rounded-full">
+
+                                <div class="h-3 rounded-full
+                                            bg-slate-400"
+                                     style="width:74%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="flex justify-between text-sm mb-2">
+
+                                <span>Actual</span>
+                                <span>62%</span>
+
+                            </div>
+
+                            <div class="h-3 bg-slate-100 rounded-full">
+
+                                <div class="h-3 rounded-full
+                                            bg-[#15158A]"
+                                     style="width:62%">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-3 bg-red-50
+                                    border border-red-100 rounded-lg">
+
+                            <p class="text-sm font-semibold
+                                      text-red-700">
+                                Current Slippage: 12 percentage points
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MONTHLY PROGRESS -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-6">
+
+                    <h4 class="font-semibold text-slate-900">
+                        Monthly Progress
+                    </h4>
+
+                    <div id="progressChart"
+                         class="mt-5 h-56 flex items-end
+                                justify-between gap-2">
+
+                        <!-- JS WILL GENERATE BARS -->
+
+                    </div>
+
+                    <div class="flex justify-between
+                                text-xs text-slate-400 mt-3">
+
+                        <span>Jan</span>
+                        <span>Feb</span>
+                        <span>Mar</span>
+                        <span>Apr</span>
+                        <span>May</span>
+                        <span>Jun</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 5 — MILESTONES
+        ====================================================== -->
+        <section class="mb-6">
+
+            <div class="bg-white border border-slate-200
+                        rounded-lg p-6">
+
+                <div class="mb-5">
+
+                    <h3 class="text-lg font-bold text-slate-900">
+                        Milestone Progress
+                    </h3>
+
+                    <p class="text-sm text-slate-500">
+                        Status of key project milestones.
+                    </p>
+
+                </div>
+
+
+                <div class="space-y-3">
+
+                    <!-- MILESTONE -->
+                    <div class="flex flex-col md:flex-row
+                                md:items-center md:justify-between
+                                gap-3 p-4 border border-slate-100
+                                rounded-lg">
+
+                        <div>
+
+                        
+                            <p class="text-xs text-slate-500">
+                                Target: Mar 2025
+                            </p>
+
+                        </div>
+
+                        <span class="px-3 py-1 rounded-full
+                                     bg-green-50 text-green-700
+                                     text-xs font-semibold">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex flex-col md:flex-row
+                                md:items-center md:justify-between
+                                gap-3 p-4 border border-slate-100
+                                rounded-lg">
+
+                        <div>
+
+                            <p class="font-semibold text-sm">
+                                Major Civil Works
+                            </p>
+
+                            <p class="text-xs text-slate-500">
+                                Target: Sep 2026
+                            </p>
+
+                        </div>
+
+                        <span class="px-3 py-1 rounded-full
+                                     bg-amber-50 text-amber-700
+                                     text-xs font-semibold">
+                            Delayed
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex flex-col md:flex-row
+                                md:items-center md:justify-between
+                                gap-3 p-4 border border-slate-100
+                                rounded-lg">
+
+                        <div>
+
+                            <p class="font-semibold text-sm">
+                                Final Surfacing
+                            </p>
+
+                            <p class="text-xs text-slate-500">
+                                Target: Jun 2027
+                            </p>
+
+                        </div>
+
+                        <span class="px-3 py-1 rounded-full
+                                     bg-blue-50 text-blue-700
+                                     text-xs font-semibold">
+                            Pending
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 6 — AI RISK ASSESSMENT
+        ====================================================== -->
+        <section class="mb-6">
+
+            <div class="mb-4">
+
+                <h3 class="text-lg font-bold text-slate-900">
+                    AI Risk Assessment
+                </h3>
+
+                <p class="text-sm text-slate-500">
+                    Risk indicators generated from project performance
+                    and monitoring variables.
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+
+                <div class="bg-white border border-red-100
+                            rounded-lg p-5">
+
+                    <p class="text-xs text-slate-500">
+                        Cost Overrun Risk
+                    </p>
+
+                    <p class="text-2xl font-bold text-red-600 mt-2">
+                        High
+                    </p>
+
+                    <p class="text-xs text-slate-500 mt-2">
+                        78% estimated risk
+                    </p>
+
+                </div>
+
+
+                <div class="bg-white border border-red-100
+                            rounded-lg p-5">
+
+                    <p class="text-xs text-slate-500">
+                        Time Overrun Risk
+                    </p>
+
+                    <p class="text-2xl font-bold text-red-600 mt-2">
+                        High
+                    </p>
+
+                    <p class="text-xs text-slate-500 mt-2">
+                        82% estimated risk
+                    </p>
+
+                </div>
+
+
+                <div class="bg-white border border-amber-100
+                            rounded-lg p-5">
+
+                    <p class="text-xs text-slate-500">
+                        Milestone Risk
+                    </p>
+
+                    <p class="text-2xl font-bold text-amber-600 mt-2">
+                        Medium
+                    </p>
+
+                    <p class="text-xs text-slate-500 mt-2">
+                        64% estimated risk
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 7 — PREDICTIONS
+        ====================================================== -->
+        <section class="mb-6">
+
+            <div class="bg-white border border-slate-200
+                        rounded-lg p-6">
+
+                <h3 class="text-lg font-bold text-slate-900">
+                    AI Predictions
+                </h3>
+
+                <p class="text-sm text-slate-500 mt-1">
+                    Forecasted project outcomes based on current
+                    monitoring indicators.
+                </p>
+
+
+                <div class="grid grid-cols-1 sm:grid-cols-2
+                            lg:grid-cols-4 gap-4 mt-5">
+
+
+                    <div class="bg-slate-50 rounded-lg p-4">
+
+                        <p class="text-xs text-slate-500">
+                            Predicted Cost Overrun
+                        </p>
+
+                        <p class="text-xl font-bold mt-2">
+                            11.8%
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-slate-50 rounded-lg p-4">
+
+                        <p class="text-xs text-slate-500">
+                            Predicted Delay
+                        </p>
+
+                        <p class="text-xl font-bold mt-2">
+                            7.4 Months
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-slate-50 rounded-lg p-4">
+
+                        <p class="text-xs text-slate-500">
+                            Expected Completion
+                        </p>
+
+                        <p class="text-xl font-bold mt-2">
+                            Dec 2027
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-slate-50 rounded-lg p-4">
+
+                        <p class="text-xs text-slate-500">
+                            Model Confidence
+                        </p>
+
+                        <p class="text-xl font-bold mt-2">
+                            86.2%
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 8 — RISK DRIVERS
+        ====================================================== -->
+        <section class="mb-6">
+
+            <div class="bg-white border border-slate-200
+                        rounded-lg p-6">
+
+                <h3 class="text-lg font-bold text-slate-900">
+                    Key Risk Drivers
+                </h3>
+
+                <div class="mt-5 space-y-4">
+
+
+                    <div>
+
+                        <div class="flex justify-between text-sm mb-2">
+
+                            <span>
+                                Progress Slippage
+                            </span>
+
+                            <span class="font-semibold">
+                                High
+                            </span>
+
+                        </div>
+
+                        <div class="h-2 bg-slate-100 rounded-full">
+
+                            <div class="h-2 bg-red-500 rounded-full"
+                                 style="width:82%">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="flex justify-between text-sm mb-2">
+
+                            <span>
+                                Expenditure vs Physical Output
+                            </span>
+
+                            <span class="font-semibold">
+                                High
+                            </span>
+
+                        </div>
+
+                        <div class="h-2 bg-slate-100 rounded-full">
+
+                            <div class="h-2 bg-red-500 rounded-full"
+                                 style="width:76%">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="flex justify-between text-sm mb-2">
+
+                            <span>
+                                Milestone Delay
+                            </span>
+
+                            <span class="font-semibold">
+                                Medium
+                            </span>
+
+                        </div>
+
+                        <div class="h-2 bg-slate-100 rounded-full">
+
+                            <div class="h-2 bg-amber-500 rounded-full"
+                                 style="width:64%">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 9 — EXTERNAL FACTORS
+        ====================================================== -->
+        <section class="mb-6">
+
+            <div class="mb-4">
+
+                <h3 class="text-lg font-bold text-slate-900">
+                    External Factors Causing Delay
+                </h3>
+
+                <p class="text-sm text-slate-500">
+                    External conditions that may influence project
+                    execution and timelines.
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2
+                        lg:grid-cols-4 gap-4">
+
+
+                <!-- WEATHER -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-5">
+
+                    <div class="flex justify-between items-start">
+
+                        <div>
+
+                            <p class="text-sm font-semibold">
+                                Weather
+                            </p>
+
+                            <p class="text-xs text-slate-500 mt-1">
+                                Heavy rainfall
+                            </p>
+
+                        </div>
+
+                        <span class="px-2 py-1 rounded-full
+                                     bg-red-50 text-red-700
+                                     text-xs font-semibold">
+                            High
+                        </span>
+
+                    </div>
+
+                    <p class="text-xs text-slate-600 mt-4">
+                        Reduced construction activity during
+                        weather-sensitive work.
+                    </p>
+
+                    <p class="text-xs font-semibold text-red-600 mt-3">
+                        Estimated impact: 18 days
+                    </p>
+
+                </div>
+
+
+
+                </div>
+
+
+                <!-- MATERIAL -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-5">
+
+                    <div class="flex justify-between items-start">
+
+                        <div>
+
+                            <p class="text-sm font-semibold">
+                                Material Availability
+                            </p>
+
+                            <p class="text-xs text-slate-500 mt-1">
+                                Supply disruption
+                            </p>
+
+                        </div>
+
+                        <span class="px-2 py-1 rounded-full
+                                     bg-amber-50 text-amber-700
+                                     text-xs font-semibold">
+                            Medium
+                        </span>
+
+                    </div>
+
+                    <p class="text-xs text-slate-600 mt-4">
+                        Delayed delivery affecting selected
+                        construction packages.
+                    </p>
+
+                </div>
+
+
+                <!-- APPROVAL -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-5">
+
+                    <div class="flex justify-between items-start">
+
+                        <div>
+
+                            <p class="text-sm font-semibold">
+                                Regulatory / Approval
+                            </p>
+
+                            <p class="text-xs text-slate-500 mt-1">
+                                Pending clearance
+                            </p>
+
+                        </div>
+
+                        <span class="px-2 py-1 rounded-full
+                                     bg-blue-50 text-blue-700
+                                     text-xs font-semibold">
+                            Medium
+                        </span>
+
+                    </div>
+
+                    <p class="text-xs text-slate-600 mt-4">
+                        Approval dependency affecting one
+                        construction package.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 10 — EARLY WARNINGS
+        ====================================================== -->
+        <section class="mb-6">
+
+            <div class="bg-white border border-slate-200
+                        rounded-lg p-6">
+
+                <h3 class="text-lg font-bold text-slate-900">
+                    Early Warning Signals
+                </h3>
+
+                <div class="mt-5 space-y-3">
+
+
+                    <div class="p-4 rounded-lg bg-red-50
+                                border border-red-100">
+
+                        <div class="flex justify-between gap-4">
+
+                            <div>
+
+                                <p class="text-sm font-semibold
+                                          text-red-800">
+                                    Physical progress is below plan
+                                </p>
+
+                                <p class="text-xs text-red-700 mt-1">
+                                    Actual progress is 12 percentage
+                                    points behind planned progress.
+                                </p>
+
+                            </div>
+
+                            <span class="text-xs font-bold
+                                         text-red-700">
+                                HIGH
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="p-4 rounded-lg bg-amber-50
+                                border border-amber-100">
+
+                        <div class="flex justify-between gap-4">
+
+                            <div>
+
+                                <p class="text-sm font-semibold
+                                          text-amber-800">
+                                    Expenditure is ahead of physical output
+                                </p>
+
+                                <p class="text-xs text-amber-700 mt-1">
+                                    Financial utilisation exceeds physical
+                                    progress by approximately 6 points.
+                                </p>
+
+                            </div>
+
+                            <span class="text-xs font-bold
+                                         text-amber-700">
+                                MEDIUM
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SECTION 12 — ACTIONABLE PLAYBOOK
+        ====================================================== -->
+        <section class="mb-6">
+
+            <div class="bg-white border border-slate-200
+                        rounded-lg p-6">
+
+                <div class="mb-6">
+
+                    <div class="flex items-center gap-3">
+
+                        <h3 class="text-lg font-bold text-slate-900">
+                            Actionable Playbook
+                        </h3>
+
+                        <span class="px-2.5 py-1 rounded-full
+                                     bg-[#15158A] text-white
+                                     text-xs font-semibold">
+                            AI RESPONSE PLAN
+                        </span>
+
+                    </div>
+
+                    <p class="text-sm text-slate-500 mt-2">
+                        Structured response plan translating detected
+                        risks into operational actions.
+                    </p>
+
+                </div>
+
+
+                <!-- PLAYBOOK TABLE -->
+                <div class="overflow-x-auto">
+
+                    <table class="w-full text-sm">
+
+                        <thead>
+
+                            <tr class="border-b border-slate-200
+                                       text-left">
+
+                                <th class="py-3 px-3
+                                           text-xs uppercase
+                                           text-slate-500">
+                                    Trigger
+                                </th>
+
+                                <th class="py-3 px-3
+                                           text-xs uppercase
+                                           text-slate-500">
+                                    Diagnosis
+                                </th>
+
+                                <th class="py-3 px-3
+                                           text-xs uppercase
+                                           text-slate-500">
+                                    Recommended Response
+                                </th>
+
+                                <th class="py-3 px-3
+                                           text-xs uppercase
+                                           text-slate-500">
+                                    Priority
+                                </th>
+
+                                <th class="py-3 px-3
+                                           text-xs uppercase
+                                           text-slate-500">
+                                    Responsible Area
+                                </th>
+
+                                <th class="py-3 px-3
+                                           text-xs uppercase
+                                           text-slate-500">
+                                    Expected Outcome
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody class="divide-y divide-slate-100">
+
+
+                            <!-- PLAYBOOK 1 -->
+                            <tr class="align-top">
+
+                                <td class="py-4 px-3 font-semibold">
+                                    Progress slippage
+                                </td>
+
+                                <td class="py-4 px-3 text-slate-600">
+                                    Actual progress is significantly
+                                    below planned progress.
+                                </td>
+
+                                <td class="py-4 px-3">
+                                    Accelerate critical work packages
+                                    and increase resource deployment.
+                                </td>
+
+                                <td class="py-4 px-3">
+
+                                    <span class="px-2 py-1
+                                                 rounded-full
+                                                 bg-red-50
+                                                 text-red-700
+                                                 text-xs font-semibold">
+                                        HIGH
+                                    </span>
+
+                                </td>
+
+                                <td class="py-4 px-3 text-slate-600">
+                                    Project Authority /
+                                    Contractor
+                                </td>
+
+                                <td class="py-4 px-3 text-slate-600">
+                                    Reduce schedule slippage.
+                                </td>
+
+                            </tr>
+
+
+                            <!-- PLAYBOOK 2 -->
+                            <tr class="align-top">
+
+                                <td class="py-4 px-3 font-semibold">
+                                    Expenditure ahead of output
+                                </td>
+
+                                <td class="py-4 px-3 text-slate-600">
+                                    Financial utilisation is ahead of
+                                    physical progress.
+                                </td>
+
+                                <td class="py-4 px-3">
+                                    Conduct expenditure-output review
+                                    for major work packages.
+                                </td>
+
+                                <td class="py-4 px-3">
+
+                                    <span class="px-2 py-1
+                                                 rounded-full
+                                                 bg-amber-50
+                                                 text-amber-700
+                                                 text-xs font-semibold">
+                                        MEDIUM
+                                    </span>
+
+                                </td>
+
+                                <td class="py-4 px-3 text-slate-600">
+                                    Finance / Project Authority
+                                </td>
+
+                                <td class="py-4 px-3 text-slate-600">
+                                    Improve expenditure efficiency.
+                                </td>
+
+                            </tr>
+
+
+                            <!-- PLAYBOOK 3 -->
+                            <tr class="align-top">
+
+                                <td class="py-4 px-3 font-semibold">
+                                    Weather disruption
+                                </td>
+
+                                <td class="py-4 px-3 text-slate-600">
+                                    Weather-sensitive activities
+                                    are affecting execution.
+                                </td>
+
+                                <td class="py-4 px-3">
+                                    Shift activities to alternate work
+                                    fronts and activate contingency
+                                    scheduling.
+                                </td>
+
+                                <td class="py-4 px-3">
+
+                                    <span class="px-2 py-1
+                                                 rounded-full
+                                                 bg-amber-50
+                                                 text-amber-700
+                                                 text-xs font-semibold">
+                                        MEDIUM
+                                    </span>
+
+                                </td>
+
+                                <td class="py-4 px-3 text-slate-600">
+                                    Finance / Project Authority
+                                </td>
+
+                                <td class="py-4 px-3 text-slate-600">
+                                    Minimise weather-related delay.
+                                </td>
+
+                            </tr>
+
+
+                            <!-- PLAYBOOK 4 -->
+                            <tr class="align-top">
+
+                                <td class="py-4 px-3 font-semibold">
+                                    Milestone delay
+                                </td>
+
+                                <td class="py-4 px-3 text-slate-600">
+                                    Critical milestone has crossed
+                                    its planned completion window.
+                                </td>
+
+                                <td class="py-4 px-3">
+                                    Escalate milestone and establish
+                                    a recovery schedule.
+                                </td>
+
+                                <td class="py-4 px-3">
+
+                                    <span class="px-2 py-1
+                                                 rounded-full
+                                                 bg-red-50
+                                                 text-red-700
+                                                 text-xs font-semibold">
+                                        HIGH
+                                    </span>
+
+                                </td>
+
+                                <td class="py-4 px-3 text-slate-600">
+                                    Project Authority
+                                </td>
+
+                                <td class="py-4 px-3 text-slate-600">
+                                    Recover critical path.
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- PLAYBOOK FOOTER -->
+                <div class="mt-5 p-4 rounded-lg
+                            bg-blue-50 border border-blue-100">
+
+                    <p class="text-sm font-semibold text-blue-800">
+                        Playbook objective
+                    </p>
+
+                    <p class="text-sm text-blue-700 mt-1">
+                        Convert AI-detected risk into a structured
+                        intervention plan that project authorities
+                        can review and act upon.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+        <footer class="border-t border-slate-200 pt-5 pb-8">
+
+            <div class="flex flex-col md:flex-row
+                        justify-between gap-3">
+
+                <p class="text-xs text-slate-500">
+                    Infralens — AI-powered infrastructure
+                    project monitoring prototype.
+                </p>
+
+                <p class="text-xs text-slate-400">
+                    Demo data for SIH 2026
+                </p>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <!-- PROJECT DETAILS JS -->
+    <script src="./js/project-details.js"></script>
+<script src="js/api.js"></script>
+</body>
+</html>
