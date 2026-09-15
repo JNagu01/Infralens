@@ -8,6 +8,92 @@
     <title>Infralens | Infrastructure Project Monitoring</title>
 
     <link rel="stylesheet" href="./src/output.css">
+
+    <style>
+        /* =====================================================
+           INFRALENS DASHBOARD ENHANCEMENTS
+        ===================================================== */
+
+        .dashboard-card {
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+            border-color: #18A5DC;
+        }
+
+        .dashboard-subcard {
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease,
+                background-color 0.2s ease;
+        }
+
+        .dashboard-subcard:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(15, 23, 42, 0.07);
+            border-color: #18A5DC;
+            background-color: #ffffff;
+        }
+
+        .project-row {
+            position: relative;
+            transition:
+                background-color 0.2s ease,
+                padding-left 0.2s ease;
+        }
+
+        .project-row:hover {
+            background-color: #f8fafc;
+            padding-left: 1.35rem;
+        }
+
+        .project-row::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #18A5DC;
+            transform: scaleY(0);
+            transform-origin: center;
+            transition: transform 0.2s ease;
+        }
+
+        .project-row:hover::before {
+            transform: scaleY(1);
+        }
+
+        .warning-row {
+            transition:
+                background-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .warning-row:hover {
+            background-color: #f8fafc;
+            transform: translateX(3px);
+        }
+
+        .table-row {
+            transition: background-color 0.2s ease;
+        }
+
+        .table-row:hover {
+            background-color: #f8fafc;
+        }
+
+        .kpi-value {
+            letter-spacing: -0.02em;
+        }
+    </style>
 </head>
 
 
@@ -126,124 +212,211 @@
             <!-- RIGHT -->
 
             <div class="hidden md:flex items-center gap-6">
+    <!-- Infralens Logo -->
 
-                <div class="text-right">
+    <div class="flex items-center justify-center px-4">
 
-                    <p class="text-[10px] text-slate-400">
-                        Monitoring Period
-                    </p>
+        <img src="./assets/infralens-logo.png"
+             alt="Infralens Logo"
+             class="h-12 w-auto object-contain">
 
-                    <p class="text-sm font-semibold
-                              text-[#15158A] mt-1">
-                        September 2026
-                    </p>
-
-                </div>
-
+    </div>
 
                 <div class="h-10 w-px bg-slate-200"></div>
 
 
-<div class="flex items-center gap-3">
+                <div class="flex items-center gap-3">
 
-    <!-- Notification Bell -->
-    <div class="relative">
-        <button id="notificationBell"
-                class="relative w-10 h-10 flex items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-[#15158A]"
-                aria-label="Notifications">
+                    <!-- Notification Bell -->
 
-            <span class="text-lg">🔔</span>
+                    <div class="relative">
 
-            <span id="notificationBadge"
-                  class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1
-                         bg-red-600 text-white text-[10px] font-bold rounded-full
-                         flex items-center justify-center">
-                3
-            </span>
-        </button>
+                        <button id="notificationBell"
+                                class="relative w-10 h-10
+                                       flex items-center justify-center
+                                       rounded-md border border-slate-200
+                                       text-slate-600
+                                       hover:bg-blue-50
+                                       hover:text-[#15158A]"
+                                aria-label="Notifications">
 
-        <!-- Notification Dropdown -->
-        <div id="notificationPanel"
-             class="hidden absolute right-0 top-12 w-96 bg-white border border-slate-200
-                    rounded-lg shadow-lg z-50">
+                            <span class="text-lg">🔔</span>
 
-            <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
-                <div>
-                    <p class="text-sm font-semibold text-slate-900">Early Warnings</p>
-                    <p class="text-xs text-slate-500">Active project alerts</p>
-                </div>
-
-                <span id="notificationCount"
-                      class="text-xs font-semibold text-[#15158A]">
-                    3 Active
-                </span>
-            </div>
-
-            <div id="notificationList" class="max-h-96 overflow-y-auto">
-
-                <div class="px-4 py-3 border-b border-slate-100 hover:bg-slate-50">
-                    <div class="flex items-start gap-3">
-                        <span class="text-red-600">●</span>
-                        <div>
-                            <p class="text-sm font-semibold text-slate-800">
-                                Eastern Highway Development
-                            </p>
-                            <p class="text-xs text-slate-500 mt-1">
-                                Heavy rainfall may cause project delay.
-                            </p>
-                            <span class="text-[10px] text-red-600 font-semibold">
-                                HIGH
+                            <span id="notificationBadge"
+                                  class="absolute -top-1 -right-1
+                                         min-w-[18px] h-[18px] px-1
+                                         bg-red-600 text-white
+                                         text-[10px] font-bold
+                                         rounded-full
+                                         flex items-center justify-center">
+                                3
                             </span>
+
+                        </button>
+
+
+                        <!-- Notification Dropdown -->
+
+                        <div id="notificationPanel"
+                             class="hidden absolute right-0 top-12
+                                    w-96 bg-white
+                                    border border-slate-200
+                                    rounded-lg shadow-lg z-50">
+
+                            <div class="px-4 py-3
+                                        border-b border-slate-200
+                                        flex items-center justify-between">
+
+                                <div>
+
+                                    <p class="text-sm font-semibold
+                                              text-slate-900">
+                                        Early Warnings
+                                    </p>
+
+                                    <p class="text-xs text-slate-500">
+                                        Active project alerts
+                                    </p>
+
+                                </div>
+
+                                <span id="notificationCount"
+                                      class="text-xs font-semibold
+                                             text-[#15158A]">
+                                    3 Active
+                                </span>
+
+                            </div>
+
+
+                            <div id="notificationList"
+                                 class="max-h-96 overflow-y-auto">
+
+
+                                <div class="px-4 py-3
+                                            border-b border-slate-100
+                                            hover:bg-slate-50">
+
+                                    <div class="flex items-start gap-3">
+
+                                        <span class="text-red-600">
+                                            ●
+                                        </span>
+
+                                        <div>
+
+                                            <p class="text-sm font-semibold
+                                                      text-slate-800">
+                                                Eastern Highway Development
+                                            </p>
+
+                                            <p class="text-xs
+                                                      text-slate-500 mt-1">
+                                                Heavy rainfall may cause project delay.
+                                            </p>
+
+                                            <span class="text-[10px]
+                                                         text-red-600
+                                                         font-semibold">
+                                                HIGH
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="px-4 py-3
+                                            border-b border-slate-100
+                                            hover:bg-slate-50">
+
+                                    <div class="flex items-start gap-3">
+
+                                        <span class="text-red-600">
+                                            ●
+                                        </span>
+
+                                        <div>
+
+                                            <p class="text-sm font-semibold
+                                                      text-slate-800">
+                                                Integrated Mining Project
+                                            </p>
+
+                                            <p class="text-xs
+                                                      text-slate-500 mt-1">
+                                                Progress slippage detected against planned milestones.
+                                            </p>
+
+                                            <span class="text-[10px]
+                                                         text-red-600
+                                                         font-semibold">
+                                                HIGH
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="px-4 py-3
+                                            hover:bg-slate-50">
+
+                                    <div class="flex items-start gap-3">
+
+                                        <span class="text-amber-500">
+                                            ●
+                                        </span>
+
+                                        <div>
+
+                                            <p class="text-sm font-semibold
+                                                      text-slate-800">
+                                                Western Freight Rail Link
+                                            </p>
+
+                                            <p class="text-xs
+                                                      text-slate-500 mt-1">
+                                                Material supply disruption may affect progress.
+                                            </p>
+
+                                            <span class="text-[10px]
+                                                         text-amber-600
+                                                         font-semibold">
+                                                MEDIUM
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
                         </div>
+
                     </div>
+
+
+                    <!-- Login -->
+
+                    <a href="login.html"
+                       class="px-6 py-2.5
+                              bg-[#15158A]
+                              text-white text-xs
+                              font-semibold rounded
+                              hover:bg-[#10106c]">
+
+                        Login
+
+                    </a>
+
                 </div>
-
-                <div class="px-4 py-3 border-b border-slate-100 hover:bg-slate-50">
-                    <div class="flex items-start gap-3">
-                        <span class="text-red-600">●</span>
-                        <div>
-                            <p class="text-sm font-semibold text-slate-800">
-                                Integrated Mining Project
-                            </p>
-                            <p class="text-xs text-slate-500 mt-1">
-                                Progress slippage detected against planned milestones.
-                            </p>
-                            <span class="text-[10px] text-red-600 font-semibold">
-                                HIGH
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="px-4 py-3 hover:bg-slate-50">
-                    <div class="flex items-start gap-3">
-                        <span class="text-amber-500">●</span>
-                        <div>
-                            <p class="text-sm font-semibold text-slate-800">
-                                Western Freight Rail Link
-                            </p>
-                            <p class="text-xs text-slate-500 mt-1">
-                                Material supply disruption may affect progress.
-                            </p>
-                            <span class="text-[10px] text-amber-600 font-semibold">
-                                MEDIUM
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Login -->
-    <a href="login.html"
-       class="px-6 py-2.5 bg-[#15158A] text-white text-xs font-semibold rounded hover:bg-[#10106c]">
-        Login
-    </a>
-
-</div>
-
 
             </div>
 
@@ -300,7 +473,7 @@
                           text-white text-sm
                           hover:bg-white/10">
 
-                    data quality
+                    Data Quality
 
                 </a>
 
@@ -332,13 +505,21 @@
              px-6 lg:px-8 py-7">
 
 
-    <!-- PAGE TITLE -->
+<!-- =====================================================
+     PAGE TITLE
+====================================================== -->
 
-    <section class="mb-6">
+<section class="mb-6">
+
+    <div class="bg-white
+                border border-slate-200
+                rounded-xl
+                px-6 py-6
+                border-l-4 border-l-[#15158A]">
 
         <div class="flex flex-col
                     md:flex-row
-                    md:items-end
+                    md:items-center
                     md:justify-between
                     gap-4">
 
@@ -354,7 +535,6 @@
 
                 </p>
 
-
                 <h2 class="text-2xl md:text-3xl
                            font-semibold
                            text-[#15158A]">
@@ -362,7 +542,6 @@
                     Portfolio Overview
 
                 </h2>
-
 
                 <p class="text-sm
                           text-slate-500 mt-2">
@@ -374,7 +553,6 @@
                 </p>
 
             </div>
-
 
             <div class="text-right">
 
@@ -399,195 +577,206 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PORTFOLIO OVERVIEW
+====================================================== -->
+
+<section class="mb-7">
+
+    <div class="flex items-center justify-between mb-3">
+
+        <div>
+
+            <h3 class="text-base font-semibold">
+                Portfolio Overview
+            </h3>
+
+            <p class="text-xs text-slate-500 mt-1">
+                Overall financial and implementation status
+            </p>
+
+        </div>
+
+    </div>
 
 
-    <!-- =====================================================
-         PORTFOLIO OVERVIEW
-    ====================================================== -->
+    <div class="grid grid-cols-2
+                md:grid-cols-3
+                lg:grid-cols-5
+                gap-3">
 
-    <section class="mb-7">
 
-        <div class="flex items-center
-                    justify-between mb-3">
+        <!-- TOTAL PROJECTS -->
 
-            <div>
+        <div class="bg-white
+                    border border-slate-200
+                    rounded p-4
+                    shadow-md
+                    transition-all duration-200
+                    hover:-translate-y-1
+                    hover:shadow-lg
+                    hover:border-[#15158A]">
 
-                <h3 class="text-base font-semibold">
-                    Portfolio Overview
-                </h3>
+            <p class="text-xs text-slate-500">
+                Total Projects
+            </p>
 
-                <p class="text-xs text-slate-500 mt-1">
-                    Overall financial and implementation status
-                </p>
+            <p class="text-2xl font-bold
+                      text-[#15158A] mt-2">
+                92
+            </p>
 
-            </div>
+            <p class="text-[10px]
+                      text-slate-400 mt-1">
+                Road, Rail & Coal
+            </p>
 
         </div>
 
 
-        <div class="grid grid-cols-2
-                    md:grid-cols-3
-                    lg:grid-cols-5
-                    gap-3">
+        <!-- ORIGINAL APPROVED COST -->
 
+        <div class="bg-white
+                    border border-slate-200
+                    rounded p-4
+                    shadow-md
+                    transition-all duration-200
+                    hover:-translate-y-1
+                    hover:shadow-lg
+                    hover:border-[#18A5DC]">
 
-            <!-- TOTAL -->
+            <p class="text-xs text-slate-500">
+                Original Approved Cost
+            </p>
 
-            <div class="bg-white
-                        border border-slate-200
-                        rounded p-4">
+            <p class="text-2xl font-bold
+                      text-slate-800 mt-2">
+                ₹6.84L Cr
+            </p>
 
-                <p class="text-xs text-slate-500">
-                    Total Projects
-                </p>
-
-                <p class="text-2xl font-bold
-                          text-[#15158A] mt-2">
-
-                    92
-
-                </p>
-
-                <p class="text-[10px]
-                          text-slate-400 mt-1">
-
-                    Road, Rail & Coal
-
-                </p>
-
-            </div>
-
-
-            <!-- ORIGINAL COST -->
-
-            <div class="bg-white
-                        border border-slate-200
-                        rounded p-4">
-
-                <p class="text-xs text-slate-500">
-                    Original Approved Cost
-                </p>
-
-                <p class="text-2xl font-bold
-                          text-slate-800 mt-2">
-
-                    ₹6.84L Cr
-
-                </p>
-
-                <p class="text-[10px]
-                          text-slate-400 mt-1">
-
-                    Aggregate project value
-
-                </p>
-
-            </div>
-
-
-            <!-- REVISED -->
-
-            <div class="bg-white
-                        border border-slate-200
-                        rounded p-4">
-
-                <p class="text-xs text-slate-500">
-                    Revised Cost
-                </p>
-
-                <p class="text-2xl font-bold
-                          text-[#C62828] mt-2">
-
-                    ₹7.42L Cr
-
-                </p>
-
-                <p class="text-[10px]
-                          text-red-500 mt-1">
-
-                    +8.5% from original
-
-                </p>
-
-            </div>
-
-
-            <!-- EXPENDITURE -->
-
-            <div class="bg-white
-                        border border-slate-200
-                        rounded p-4">
-
-                <p class="text-xs text-slate-500">
-                    Cumulative Expenditure
-                </p>
-
-                <p class="text-2xl font-bold
-                          text-slate-800 mt-2">
-
-                    ₹4.31L Cr
-
-                </p>
-
-                <p class="text-[10px]
-                          text-slate-400 mt-1">
-
-                    Portfolio expenditure
-
-                </p>
-
-            </div>
-
-
-            <!-- PROGRESS -->
-
-            <div class="bg-white
-                        border border-slate-200
-                        rounded p-4">
-
-                <p class="text-xs text-slate-500">
-                    Physical Progress
-                </p>
-
-                <p class="text-2xl font-bold
-                          text-[#2E8B57] mt-2">
-
-                    67.8%
-
-                </p>
-
-                <p class="text-[10px]
-                          text-slate-400 mt-1">
-
-                    Portfolio average
-
-                </p>
-
-            </div>
+            <p class="text-[10px]
+                      text-slate-400 mt-1">
+                Aggregate project value
+            </p>
 
         </div>
 
-    </section>
+
+        <!-- REVISED COST -->
+
+        <div class="bg-white
+                    border border-slate-200
+                    rounded p-4
+                    shadow-md
+                    transition-all duration-200
+                    hover:-translate-y-1
+                    hover:shadow-lg
+                    hover:border-[#C62828]">
+
+            <p class="text-xs text-slate-500">
+                Revised Cost
+            </p>
+
+            <p class="text-2xl font-bold
+                      text-[#C62828] mt-2">
+                ₹7.42L Cr
+            </p>
+
+            <p class="text-[10px]
+                      text-red-500 mt-1">
+                +8.5% from original
+            </p>
+
+        </div>
 
 
-    <!-- =====================================================
+        <!-- CUMULATIVE EXPENDITURE -->
+
+        <div class="bg-white
+                    border border-slate-200
+                    rounded p-4
+                    shadow-md
+                    transition-all duration-200
+                    hover:-translate-y-1
+                    hover:shadow-lg
+                    hover:border-[#18A5DC]">
+
+            <p class="text-xs text-slate-500">
+                Cumulative Expenditure
+            </p>
+
+            <p class="text-2xl font-bold
+                      text-slate-800 mt-2">
+                ₹4.31L Cr
+            </p>
+
+            <p class="text-[10px]
+                      text-slate-400 mt-1">
+                Portfolio expenditure
+            </p>
+
+        </div>
+
+
+        <!-- PHYSICAL PROGRESS -->
+
+        <div class="bg-white
+                    border border-slate-200
+                    rounded p-4
+                    shadow-md
+                    transition-all duration-200
+                    hover:-translate-y-1
+                    hover:shadow-lg
+                    hover:border-[#2E8B57]">
+
+            <p class="text-xs text-slate-500">
+                Physical Progress
+            </p>
+
+            <p class="text-2xl font-bold
+                      text-[#2E8B57] mt-2">
+                67.8%
+            </p>
+
+            <p class="text-[10px]
+                      text-slate-400 mt-1">
+                Portfolio average
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
          AI RISK OVERVIEW
     ====================================================== -->
 
-    <section class="mb-7">
+    <section class="mb-9">
 
         <div class="flex items-center
-                    justify-between mb-3">
+                    justify-between mb-4">
 
             <div>
 
-                <h3 class="text-base font-semibold">
+                <h3 class="text-base
+                           font-semibold
+                           text-slate-900">
+
                     AI Risk Overview
+
                 </h3>
 
-                <p class="text-xs text-slate-500 mt-1">
+                <p class="text-xs
+                          text-slate-500 mt-1">
+
                     Predictive assessment of implementation risk
+
                 </p>
 
             </div>
@@ -607,50 +796,84 @@
 
 
         <div class="grid grid-cols-1
-                    lg:grid-cols-3 gap-4">
+                    lg:grid-cols-3
+                    gap-5">
 
 
             <!-- RISK DISTRIBUTION -->
 
-            <div class="bg-white
+            <div class="dashboard-card
+                        bg-white
                         border border-slate-200
-                        rounded p-5">
+                        rounded-xl p-5">
 
-                <h4 class="text-sm font-semibold">
-                    Risk Distribution
-                </h4>
+                <div class="flex items-center
+                            justify-between">
+
+                    <div>
+
+                        <h4 class="text-sm
+                                   font-semibold
+                                   text-slate-900">
+
+                            Risk Distribution
+
+                        </h4>
+
+                        <p class="text-[10px]
+                                  text-slate-400 mt-1">
+
+                            Current portfolio exposure
+
+                        </p>
+
+                    </div>
 
 
-                <div class="mt-5 space-y-4">
+                    <span class="text-[10px]
+                                 font-semibold
+                                 px-2 py-1
+                                 rounded-full
+                                 bg-slate-100
+                                 text-slate-600">
 
+                        92 Projects
+
+                    </span>
+
+                </div>
+
+
+                <div class="mt-6 space-y-5">
+
+
+                    <!-- HIGH -->
 
                     <div>
 
                         <div class="flex justify-between
-                                    text-xs mb-1">
+                                    text-xs mb-2">
 
-                            <span>
+                            <span class="text-slate-600">
                                 High Risk
                             </span>
 
                             <span class="font-semibold
                                          text-[#C62828]">
-
                                 16
-
                             </span>
 
                         </div>
 
                         <div class="h-2
                                     bg-slate-100
-                                    rounded-full">
+                                    rounded-full
+                                    overflow-hidden">
 
-                            <div class="h-2
+                            <div class="h-full
                                         bg-[#C62828]
                                         rounded-full"
                                  style="width:17%;">
-
                             </div>
 
                         </div>
@@ -658,33 +881,33 @@
                     </div>
 
 
+                    <!-- MEDIUM -->
+
                     <div>
 
                         <div class="flex justify-between
-                                    text-xs mb-1">
+                                    text-xs mb-2">
 
-                            <span>
+                            <span class="text-slate-600">
                                 Medium Risk
                             </span>
 
                             <span class="font-semibold
                                          text-[#E67E22]">
-
                                 24
-
                             </span>
 
                         </div>
 
                         <div class="h-2
                                     bg-slate-100
-                                    rounded-full">
+                                    rounded-full
+                                    overflow-hidden">
 
-                            <div class="h-2
+                            <div class="h-full
                                         bg-[#E67E22]
                                         rounded-full"
                                  style="width:26%;">
-
                             </div>
 
                         </div>
@@ -692,33 +915,33 @@
                     </div>
 
 
+                    <!-- LOW -->
+
                     <div>
 
                         <div class="flex justify-between
-                                    text-xs mb-1">
+                                    text-xs mb-2">
 
-                            <span>
+                            <span class="text-slate-600">
                                 Low Risk
                             </span>
 
                             <span class="font-semibold
                                          text-[#2E8B57]">
-
                                 52
-
                             </span>
 
                         </div>
 
                         <div class="h-2
                                     bg-slate-100
-                                    rounded-full">
+                                    rounded-full
+                                    overflow-hidden">
 
-                            <div class="h-2
+                            <div class="h-full
                                         bg-[#2E8B57]
                                         rounded-full"
                                  style="width:57%;">
-
                             </div>
 
                         </div>
@@ -732,28 +955,63 @@
 
             <!-- RISK SCORE -->
 
-            <div class="bg-white
+            <div class="dashboard-card
+                        bg-white
                         border border-slate-200
-                        rounded p-5">
-
-                <h4 class="text-sm font-semibold">
-                    Portfolio Risk Score
-                </h4>
-
+                        rounded-xl p-5">
 
                 <div class="flex items-center
-                            gap-6 mt-5">
+                            justify-between">
 
-                    <div class="w-28 h-28
+                    <div>
+
+                        <h4 class="text-sm
+                                   font-semibold
+                                   text-slate-900">
+
+                            Portfolio Risk Score
+
+                        </h4>
+
+                        <p class="text-[10px]
+                                  text-slate-400 mt-1">
+
+                            AI-generated assessment
+
+                        </p>
+
+                    </div>
+
+
+                    <span class="text-[10px]
+                                 px-2 py-1
+                                 rounded-full
+                                 bg-orange-50
+                                 text-orange-700
+                                 font-semibold">
+
+                        Moderate
+
+                    </span>
+
+                </div>
+
+
+                <div class="flex flex-col
+                            items-center
+                            justify-center
+                            text-center mt-5">
+
+                    <div class="w-32 h-32
                                 rounded-full
                                 border-[12px]
                                 border-orange-200
                                 flex items-center
                                 justify-center">
 
-                        <div class="text-center">
+                        <div>
 
-                            <p class="text-3xl
+                            <p class="text-4xl
                                       font-bold
                                       text-[#E67E22]">
 
@@ -773,27 +1031,25 @@
                     </div>
 
 
-                    <div>
+                    <p class="text-sm
+                              font-semibold
+                              text-[#E67E22] mt-4">
 
-                        <p class="text-sm
-                                  font-semibold
-                                  text-[#E67E22]">
+                        Moderate Risk
 
-                            Moderate Risk
+                    </p>
 
-                        </p>
 
-                        <p class="text-xs
-                                  text-slate-500
-                                  mt-2 leading-5">
+                    <p class="text-xs
+                              text-slate-500
+                              mt-2 leading-5
+                              max-w-xs">
 
-                            Overall risk based on cost,
-                            schedule, physical progress
-                            and milestone indicators.
+                        Overall risk based on cost,
+                        schedule, physical progress
+                        and milestone indicators.
 
-                        </p>
-
-                    </div>
+                    </p>
 
                 </div>
 
@@ -802,28 +1058,62 @@
 
             <!-- PREDICTIVE INDICATORS -->
 
-            <div class="bg-white
+            <div class="dashboard-card
+                        bg-white
                         border border-slate-200
-                        rounded p-5">
+                        rounded-xl p-5">
 
-                <h4 class="text-sm font-semibold">
-                    Predictive Risk Indicators
-                </h4>
+                <div>
+
+                    <h4 class="text-sm
+                               font-semibold
+                               text-slate-900">
+
+                        Predictive Risk Indicators
+
+                    </h4>
+
+                    <p class="text-[10px]
+                              text-slate-400 mt-1">
+
+                        Active AI risk signals
+
+                    </p>
+
+                </div>
 
 
-                <div class="mt-4">
+                <div class="mt-4 space-y-1">
 
 
-                    <div class="flex justify-between
-                                py-3 border-b
-                                border-slate-100">
+                    <div class="dashboard-subcard
+                                flex justify-between
+                                items-center
+                                py-3 px-3
+                                rounded-lg
+                                border border-transparent">
 
-                        <span class="text-xs text-slate-500">
-                            Cost Overrun Risk
-                        </span>
+                        <div>
+
+                            <p class="text-xs
+                                      font-medium
+                                      text-slate-700">
+
+                                Cost Overrun Risk
+
+                            </p>
+
+                            <p class="text-[10px]
+                                      text-slate-400 mt-1">
+
+                                Projects affected
+
+                            </p>
+
+                        </div>
 
                         <span class="text-xs
-                                     font-semibold
+                                     font-bold
                                      text-[#C62828]">
 
                             14 Projects
@@ -833,16 +1123,34 @@
                     </div>
 
 
-                    <div class="flex justify-between
-                                py-3 border-b
-                                border-slate-100">
+                    <div class="dashboard-subcard
+                                flex justify-between
+                                items-center
+                                py-3 px-3
+                                rounded-lg
+                                border border-transparent">
 
-                        <span class="text-xs text-slate-500">
-                            Time Overrun Risk
-                        </span>
+                        <div>
+
+                            <p class="text-xs
+                                      font-medium
+                                      text-slate-700">
+
+                                Time Overrun Risk
+
+                            </p>
+
+                            <p class="text-[10px]
+                                      text-slate-400 mt-1">
+
+                                Projects affected
+
+                            </p>
+
+                        </div>
 
                         <span class="text-xs
-                                     font-semibold
+                                     font-bold
                                      text-[#C62828]">
 
                             19 Projects
@@ -852,16 +1160,34 @@
                     </div>
 
 
-                    <div class="flex justify-between
-                                py-3 border-b
-                                border-slate-100">
+                    <div class="dashboard-subcard
+                                flex justify-between
+                                items-center
+                                py-3 px-3
+                                rounded-lg
+                                border border-transparent">
 
-                        <span class="text-xs text-slate-500">
-                            Milestone Risk
-                        </span>
+                        <div>
+
+                            <p class="text-xs
+                                      font-medium
+                                      text-slate-700">
+
+                                Milestone Risk
+
+                            </p>
+
+                            <p class="text-[10px]
+                                      text-slate-400 mt-1">
+
+                                Projects affected
+
+                            </p>
+
+                        </div>
 
                         <span class="text-xs
-                                     font-semibold
+                                     font-bold
                                      text-[#E67E22]">
 
                             23 Projects
@@ -871,15 +1197,34 @@
                     </div>
 
 
-                    <div class="flex justify-between
-                                py-3">
+                    <div class="dashboard-subcard
+                                flex justify-between
+                                items-center
+                                py-3 px-3
+                                rounded-lg
+                                border border-transparent">
 
-                        <span class="text-xs text-slate-500">
-                            Early Warning Signals
-                        </span>
+                        <div>
+
+                            <p class="text-xs
+                                      font-medium
+                                      text-slate-700">
+
+                                Early Warning Signals
+
+                            </p>
+
+                            <p class="text-[10px]
+                                      text-slate-400 mt-1">
+
+                                Currently active
+
+                            </p>
+
+                        </div>
 
                         <span class="text-xs
-                                     font-semibold
+                                     font-bold
                                      text-[#15158A]">
 
                             27 Active
@@ -897,301 +1242,275 @@
     </section>
 
 
-    <!-- =====================================================
-         SECTOR-WISE OVERVIEW
-    ====================================================== -->
+ <section class="mb-7">
 
-    <section class="mb-7">
+    <div class="flex items-center
+                justify-between mb-3">
 
-        <div class="flex items-center
-                    justify-between mb-3">
+        <div>
 
-            <div>
+            <h3 class="text-base font-semibold">
+                Sector-wise Overview
+            </h3>
 
-                <h3 class="text-base font-semibold">
-                    Sector-wise Overview
-                </h3>
-
-                <p class="text-xs
-                          text-slate-500 mt-1">
-
-                    Core prototype sectors
-
-                </p>
-
-            </div>
-
-
-            <a href="analytics.html"
-               class="text-xs
-                      text-[#15158A]
-                      hover:underline">
-
-                Detailed Analytics →
-
-            </a>
+            <p class="text-xs text-slate-500 mt-1">
+                Core prototype sectors
+            </p>
 
         </div>
 
 
-        <div class="bg-white
-                    border border-slate-200
-                    rounded overflow-hidden">
+        <a href="analytics.html"
+           class="text-xs
+                  text-[#15158A]
+                  hover:underline">
 
-            <div class="overflow-x-auto">
+            Detailed Analytics →
 
-                <table class="w-full
-                              min-w-[750px]
-                              text-sm">
+        </a>
 
-                    <thead class="bg-[#F7F9FB]
-                                  border-b
-                                  border-slate-200">
-
-                        <tr>
-
-                            <th class="text-left
-                                       px-5 py-3
-                                       text-xs
-                                       font-semibold
-                                       text-slate-600">
-
-                                Sector
-
-                            </th>
-
-                            <th class="text-center
-                                       px-4 py-3
-                                       text-xs
-                                       font-semibold
-                                       text-slate-600">
-
-                                Projects
-
-                            </th>
-
-                            <th class="text-center
-                                       px-4 py-3
-                                       text-xs
-                                       font-semibold
-                                       text-slate-600">
-
-                                Avg. Progress
-
-                            </th>
-
-                            <th class="text-center
-                                       px-4 py-3
-                                       text-xs
-                                       font-semibold
-                                       text-slate-600">
-
-                                High Risk
-
-                            </th>
-
-                            <th class="px-5 py-3
-                                       text-left
-                                       text-xs
-                                       font-semibold
-                                       text-slate-600">
-
-                                Portfolio Progress
-
-                            </th>
-
-                        </tr>
-
-                    </thead>
+    </div>
 
 
-                    <tbody>
+    <!-- STATIC TABLE CARD -->
+
+    <div class="bg-white
+                border border-slate-200
+                rounded-xl
+                overflow-hidden">
+
+        <div class="overflow-x-auto">
+
+            <table class="w-full
+                          min-w-[750px]
+                          text-sm">
+
+                <thead class="bg-[#F7F9FB]
+                              border-b
+                              border-slate-200">
+
+                    <tr>
+
+                        <th class="text-left
+                                   px-5 py-3
+                                   text-xs
+                                   font-semibold
+                                   text-slate-600">
+
+                            Sector
+
+                        </th>
+
+                        <th class="text-center
+                                   px-4 py-3
+                                   text-xs
+                                   font-semibold
+                                   text-slate-600">
+
+                            Projects
+
+                        </th>
+
+                        <th class="text-center
+                                   px-4 py-3
+                                   text-xs
+                                   font-semibold
+                                   text-slate-600">
+
+                            Avg. Progress
+
+                        </th>
+
+                        <th class="text-center
+                                   px-4 py-3
+                                   text-xs
+                                   font-semibold
+                                   text-slate-600">
+
+                            High Risk
+
+                        </th>
+
+                        <th class="px-5 py-3
+                                   text-left
+                                   text-xs
+                                   font-semibold
+                                   text-slate-600">
+
+                            Portfolio Progress
+
+                        </th>
+
+                    </tr>
+
+                </thead>
 
 
-                        <!-- ROADS -->
+                <tbody>
 
-                        <tr class="border-b
-                                   border-slate-100
-                                   hover:bg-slate-50">
+                    <tr class="border-b
+                               border-slate-100">
 
-                            <td class="px-5 py-4
-                                       font-medium">
+                        <td class="px-5 py-4 font-medium">
+                            Roads & Highways
+                        </td>
 
-                                Roads & Highways
+                        <td class="text-center px-4 py-4">
+                            42
+                        </td>
 
-                            </td>
+                        <td class="text-center px-4 py-4">
+                            71%
+                        </td>
 
-                            <td class="text-center px-4 py-4">
-                                42
-                            </td>
+                        <td class="text-center px-4 py-4
+                                   font-semibold
+                                   text-[#C62828]">
 
-                            <td class="text-center px-4 py-4">
-                                71%
-                            </td>
+                            7
 
-                            <td class="text-center px-4 py-4
-                                       font-semibold
-                                       text-[#C62828]">
+                        </td>
 
-                                7
+                        <td class="px-5 py-4">
 
-                            </td>
+                            <div class="flex items-center gap-3">
 
-                            <td class="px-5 py-4">
+                                <div class="w-full
+                                            max-w-[260px]
+                                            h-2
+                                            bg-slate-100
+                                            rounded-full">
 
-                                <div class="flex items-center gap-3">
-
-                                    <div class="w-full
-                                                max-w-[260px]
-                                                h-2
-                                                bg-slate-100
-                                                rounded-full">
-
-                                        <div class="h-2
-                                                    bg-[#18A5DC]
-                                                    rounded-full"
-                                             style="width:71%;">
-
-                                        </div>
-
+                                    <div class="h-2
+                                                bg-[#18A5DC]
+                                                rounded-full"
+                                         style="width:71%;">
                                     </div>
-
-                                    <span class="text-xs">
-                                        71%
-                                    </span>
 
                                 </div>
 
-                            </td>
+                                <span class="text-xs">
+                                    71%
+                                </span>
 
-                        </tr>
+                            </div>
+
+                        </td>
+
+                    </tr>
 
 
-                        <!-- RAILWAYS -->
+                    <tr class="border-b
+                               border-slate-100">
 
-                        <tr class="border-b
-                                   border-slate-100
-                                   hover:bg-slate-50">
+                        <td class="px-5 py-4 font-medium">
+                            Railways
+                        </td>
 
-                            <td class="px-5 py-4
-                                       font-medium">
+                        <td class="text-center px-4 py-4">
+                            31
+                        </td>
 
-                                Railways
+                        <td class="text-center px-4 py-4">
+                            74%
+                        </td>
 
-                            </td>
+                        <td class="text-center px-4 py-4
+                                   font-semibold
+                                   text-[#C62828]">
 
-                            <td class="text-center px-4 py-4">
-                                31
-                            </td>
+                            4
 
-                            <td class="text-center px-4 py-4">
-                                74%
-                            </td>
+                        </td>
 
-                            <td class="text-center px-4 py-4
-                                       font-semibold
-                                       text-[#C62828]">
+                        <td class="px-5 py-4">
 
-                                4
+                            <div class="flex items-center gap-3">
 
-                            </td>
+                                <div class="w-full
+                                            max-w-[260px]
+                                            h-2
+                                            bg-slate-100
+                                            rounded-full">
 
-                            <td class="px-5 py-4">
-
-                                <div class="flex items-center gap-3">
-
-                                    <div class="w-full
-                                                max-w-[260px]
-                                                h-2
-                                                bg-slate-100
-                                                rounded-full">
-
-                                        <div class="h-2
-                                                    bg-[#18A5DC]
-                                                    rounded-full"
-                                             style="width:74%;">
-
-                                        </div>
-
+                                    <div class="h-2
+                                                bg-[#18A5DC]
+                                                rounded-full"
+                                         style="width:74%;">
                                     </div>
-
-                                    <span class="text-xs">
-                                        74%
-                                    </span>
 
                                 </div>
 
-                            </td>
+                                <span class="text-xs">
+                                    74%
+                                </span>
 
-                        </tr>
+                            </div>
+
+                        </td>
+
+                    </tr>
 
 
-                        <!-- COAL -->
+                    <tr>
 
-                        <tr class="hover:bg-slate-50">
+                        <td class="px-5 py-4 font-medium">
+                            Coal & Mining
+                        </td>
 
-                            <td class="px-5 py-4
-                                       font-medium">
+                        <td class="text-center px-4 py-4">
+                            19
+                        </td>
 
-                                Coal & Mining
+                        <td class="text-center px-4 py-4">
+                            59%
+                        </td>
 
-                            </td>
+                        <td class="text-center px-4 py-4
+                                   font-semibold
+                                   text-[#C62828]">
 
-                            <td class="text-center px-4 py-4">
-                                19
-                            </td>
+                            5
 
-                            <td class="text-center px-4 py-4">
-                                59%
-                            </td>
+                        </td>
 
-                            <td class="text-center px-4 py-4
-                                       font-semibold
-                                       text-[#C62828]">
+                        <td class="px-5 py-4">
 
-                                5
+                            <div class="flex items-center gap-3">
 
-                            </td>
+                                <div class="w-full
+                                            max-w-[260px]
+                                            h-2
+                                            bg-slate-100
+                                            rounded-full">
 
-                            <td class="px-5 py-4">
-
-                                <div class="flex items-center gap-3">
-
-                                    <div class="w-full
-                                                max-w-[260px]
-                                                h-2
-                                                bg-slate-100
-                                                rounded-full">
-
-                                        <div class="h-2
-                                                    bg-[#18A5DC]
-                                                    rounded-full"
-                                             style="width:59%;">
-
-                                        </div>
-
+                                    <div class="h-2
+                                                bg-[#18A5DC]
+                                                rounded-full"
+                                         style="width:59%;">
                                     </div>
-
-                                    <span class="text-xs">
-                                        59%
-                                    </span>
 
                                 </div>
 
-                            </td>
+                                <span class="text-xs">
+                                    59%
+                                </span>
 
-                        </tr>
+                            </div>
 
-                    </tbody>
+                        </td>
 
-                </table>
+                    </tr>
 
-            </div>
+                </tbody>
+
+            </table>
 
         </div>
 
-    </section>
+    </div>
 
+</section>
 
     <!-- =====================================================
          TOP 5 HIGH RISK + HIGH VALUE
@@ -1199,14 +1518,16 @@
 
     <section class="grid grid-cols-1
                     xl:grid-cols-2
-                    gap-5 mb-7">
+                    gap-5 mb-9">
 
 
         <!-- HIGH RISK -->
 
-        <div class="bg-white
+        <div class="dashboard-card
+                    bg-white
                     border border-slate-200
-                    rounded overflow-hidden">
+                    rounded-xl
+                    overflow-hidden">
 
             <div class="px-5 py-4
                         border-b border-slate-200
@@ -1215,8 +1536,11 @@
 
                 <div>
 
-                    <h3 class="font-semibold">
+                    <h3 class="font-semibold
+                               text-slate-900">
+
                         Top 5 High-Risk Projects
+
                     </h3>
 
                     <p class="text-xs
@@ -1248,12 +1572,13 @@
                 <!-- 1 -->
 
                 <a href="project-details.html?id=INF-001"
-                   class="px-5 py-4
-                          flex items-center gap-4
-                          hover:bg-slate-50">
+                   class="project-row px-5 py-4
+                          flex items-center gap-4">
 
-                    <div class="w-10 h-10
-                                rounded bg-red-50
+                    <div class="w-11 h-11
+                                shrink-0
+                                rounded-lg
+                                bg-red-50
                                 text-[#C62828]
                                 flex items-center
                                 justify-center
@@ -1264,7 +1589,7 @@
                     </div>
 
 
-                    <div class="flex-1">
+                    <div class="flex-1 min-w-0">
 
                         <p class="text-sm
                                   font-semibold
@@ -1285,13 +1610,19 @@
 
 
                     <span class="text-[10px]
-                                 px-2 py-1
+                                 px-2.5 py-1
                                  rounded-full
                                  bg-red-50
-                                 text-red-700">
+                                 text-red-700
+                                 font-medium">
 
                         Delayed
 
+                    </span>
+
+
+                    <span class="text-slate-300">
+                        →
                     </span>
 
                 </a>
@@ -1300,12 +1631,13 @@
                 <!-- 2 -->
 
                 <a href="project-details.html?id=INF-002"
-                   class="px-5 py-4
-                          flex items-center gap-4
-                          hover:bg-slate-50">
+                   class="project-row px-5 py-4
+                          flex items-center gap-4">
 
-                    <div class="w-10 h-10
-                                rounded bg-red-50
+                    <div class="w-11 h-11
+                                shrink-0
+                                rounded-lg
+                                bg-red-50
                                 text-[#C62828]
                                 flex items-center
                                 justify-center
@@ -1316,7 +1648,7 @@
                     </div>
 
 
-                    <div class="flex-1">
+                    <div class="flex-1 min-w-0">
 
                         <p class="text-sm
                                   font-semibold
@@ -1337,13 +1669,19 @@
 
 
                     <span class="text-[10px]
-                                 px-2 py-1
+                                 px-2.5 py-1
                                  rounded-full
                                  bg-red-50
-                                 text-red-700">
+                                 text-red-700
+                                 font-medium">
 
                         High
 
+                    </span>
+
+
+                    <span class="text-slate-300">
+                        →
                     </span>
 
                 </a>
@@ -1352,12 +1690,13 @@
                 <!-- 3 -->
 
                 <a href="project-details.html?id=INF-004"
-                   class="px-5 py-4
-                          flex items-center gap-4
-                          hover:bg-slate-50">
+                   class="project-row px-5 py-4
+                          flex items-center gap-4">
 
-                    <div class="w-10 h-10
-                                rounded bg-red-50
+                    <div class="w-11 h-11
+                                shrink-0
+                                rounded-lg
+                                bg-red-50
                                 text-[#C62828]
                                 flex items-center
                                 justify-center
@@ -1368,7 +1707,7 @@
                     </div>
 
 
-                    <div class="flex-1">
+                    <div class="flex-1 min-w-0">
 
                         <p class="text-sm
                                   font-semibold
@@ -1389,13 +1728,19 @@
 
 
                     <span class="text-[10px]
-                                 px-2 py-1
+                                 px-2.5 py-1
                                  rounded-full
                                  bg-red-50
-                                 text-red-700">
+                                 text-red-700
+                                 font-medium">
 
                         Delayed
 
+                    </span>
+
+
+                    <span class="text-slate-300">
+                        →
                     </span>
 
                 </a>
@@ -1404,12 +1749,13 @@
                 <!-- 4 -->
 
                 <a href="project-details.html?id=INF-006"
-                   class="px-5 py-4
-                          flex items-center gap-4
-                          hover:bg-slate-50">
+                   class="project-row px-5 py-4
+                          flex items-center gap-4">
 
-                    <div class="w-10 h-10
-                                rounded bg-red-50
+                    <div class="w-11 h-11
+                                shrink-0
+                                rounded-lg
+                                bg-red-50
                                 text-[#C62828]
                                 flex items-center
                                 justify-center
@@ -1420,7 +1766,7 @@
                     </div>
 
 
-                    <div class="flex-1">
+                    <div class="flex-1 min-w-0">
 
                         <p class="text-sm
                                   font-semibold
@@ -1441,13 +1787,19 @@
 
 
                     <span class="text-[10px]
-                                 px-2 py-1
+                                 px-2.5 py-1
                                  rounded-full
                                  bg-orange-50
-                                 text-orange-700">
+                                 text-orange-700
+                                 font-medium">
 
                         High
 
+                    </span>
+
+
+                    <span class="text-slate-300">
+                        →
                     </span>
 
                 </a>
@@ -1456,12 +1808,13 @@
                 <!-- 5 -->
 
                 <a href="project-details.html?id=INF-007"
-                   class="px-5 py-4
-                          flex items-center gap-4
-                          hover:bg-slate-50">
+                   class="project-row px-5 py-4
+                          flex items-center gap-4">
 
-                    <div class="w-10 h-10
-                                rounded bg-orange-50
+                    <div class="w-11 h-11
+                                shrink-0
+                                rounded-lg
+                                bg-orange-50
                                 text-[#E67E22]
                                 flex items-center
                                 justify-center
@@ -1472,7 +1825,7 @@
                     </div>
 
 
-                    <div class="flex-1">
+                    <div class="flex-1 min-w-0">
 
                         <p class="text-sm
                                   font-semibold
@@ -1493,13 +1846,19 @@
 
 
                     <span class="text-[10px]
-                                 px-2 py-1
+                                 px-2.5 py-1
                                  rounded-full
                                  bg-orange-50
-                                 text-orange-700">
+                                 text-orange-700
+                                 font-medium">
 
                         High
 
+                    </span>
+
+
+                    <span class="text-slate-300">
+                        →
                     </span>
 
                 </a>
@@ -1511,15 +1870,20 @@
 
         <!-- HIGH VALUE -->
 
-        <div class="bg-white
+        <div class="dashboard-card
+                    bg-white
                     border border-slate-200
-                    rounded overflow-hidden">
+                    rounded-xl
+                    overflow-hidden">
 
             <div class="px-5 py-4
                         border-b border-slate-200">
 
-                <h3 class="font-semibold">
+                <h3 class="font-semibold
+                           text-slate-900">
+
                     High Value Projects
+
                 </h3>
 
                 <p class="text-xs
@@ -1535,12 +1899,16 @@
             <div class="p-5 space-y-4">
 
 
-                <div class="border
-                            border-slate-200
-                            rounded p-4">
+                <!-- PROJECT 1 -->
+
+                <a href="project-details.html?id=INF-001"
+                   class="dashboard-subcard block
+                          border border-slate-200
+                          rounded-xl p-4">
 
                     <div class="flex
-                                justify-between gap-4">
+                                justify-between
+                                gap-4">
 
                         <div>
 
@@ -1575,6 +1943,7 @@
                                 text-slate-500">
 
                         <span>Progress</span>
+
                         <span>62%</span>
 
                     </div>
@@ -1582,9 +1951,10 @@
 
                     <div class="h-1.5
                                 bg-slate-100
-                                rounded-full mt-1">
+                                rounded-full mt-1
+                                overflow-hidden">
 
-                        <div class="h-1.5
+                        <div class="h-full
                                     bg-[#18A5DC]
                                     rounded-full"
                              style="width:62%;">
@@ -1593,15 +1963,19 @@
 
                     </div>
 
-                </div>
+                </a>
 
 
-                <div class="border
-                            border-slate-200
-                            rounded p-4">
+                <!-- PROJECT 2 -->
+
+                <a href="project-details.html?id=INF-002"
+                   class="dashboard-subcard block
+                          border border-slate-200
+                          rounded-xl p-4">
 
                     <div class="flex
-                                justify-between gap-4">
+                                justify-between
+                                gap-4">
 
                         <div>
 
@@ -1636,6 +2010,7 @@
                                 text-slate-500">
 
                         <span>Progress</span>
+
                         <span>74%</span>
 
                     </div>
@@ -1643,9 +2018,10 @@
 
                     <div class="h-1.5
                                 bg-slate-100
-                                rounded-full mt-1">
+                                rounded-full mt-1
+                                overflow-hidden">
 
-                        <div class="h-1.5
+                        <div class="h-full
                                     bg-[#18A5DC]
                                     rounded-full"
                              style="width:74%;">
@@ -1654,15 +2030,19 @@
 
                     </div>
 
-                </div>
+                </a>
 
 
-                <div class="border
-                            border-slate-200
-                            rounded p-4">
+                <!-- PROJECT 3 -->
+
+                <a href="project-details.html?id=INF-006"
+                   class="dashboard-subcard block
+                          border border-slate-200
+                          rounded-xl p-4">
 
                     <div class="flex
-                                justify-between gap-4">
+                                justify-between
+                                gap-4">
 
                         <div>
 
@@ -1697,6 +2077,7 @@
                                 text-slate-500">
 
                         <span>Progress</span>
+
                         <span>57%</span>
 
                     </div>
@@ -1704,9 +2085,10 @@
 
                     <div class="h-1.5
                                 bg-slate-100
-                                rounded-full mt-1">
+                                rounded-full mt-1
+                                overflow-hidden">
 
-                        <div class="h-1.5
+                        <div class="h-full
                                     bg-[#18A5DC]
                                     rounded-full"
                              style="width:57%;">
@@ -1715,15 +2097,19 @@
 
                     </div>
 
-                </div>
+                </a>
 
 
-                <div class="border
-                            border-slate-200
-                            rounded p-4">
+                <!-- PROJECT 4 -->
+
+                <a href="project-details.html?id=INF-007"
+                   class="dashboard-subcard block
+                          border border-slate-200
+                          rounded-xl p-4">
 
                     <div class="flex
-                                justify-between gap-4">
+                                justify-between
+                                gap-4">
 
                         <div>
 
@@ -1758,6 +2144,7 @@
                                 text-slate-500">
 
                         <span>Progress</span>
+
                         <span>61%</span>
 
                     </div>
@@ -1765,9 +2152,10 @@
 
                     <div class="h-1.5
                                 bg-slate-100
-                                rounded-full mt-1">
+                                rounded-full mt-1
+                                overflow-hidden">
 
-                        <div class="h-1.5
+                        <div class="h-full
                                     bg-[#18A5DC]
                                     rounded-full"
                              style="width:61%;">
@@ -1776,7 +2164,7 @@
 
                     </div>
 
-                </div>
+                </a>
 
             </div>
 
@@ -1789,15 +2177,19 @@
          PREDICTIVE ANALYTICS
     ====================================================== -->
 
-    <section class="mb-7">
+    <section class="mb-9">
 
         <div class="flex items-center
-                    justify-between mb-3">
+                    justify-between mb-4">
 
             <div>
 
-                <h3 class="text-base font-semibold">
+                <h3 class="text-base
+                           font-semibold
+                           text-slate-900">
+
                     Predictive Analytics
+
                 </h3>
 
                 <p class="text-xs
@@ -1823,22 +2215,27 @@
 
 
         <div class="grid grid-cols-1
-                    md:grid-cols-3 gap-4">
+                    md:grid-cols-3
+                    gap-5">
 
 
             <!-- COST -->
 
-            <div class="bg-white
+            <div class="dashboard-card
+                        bg-white
                         border border-slate-200
-                        rounded p-5">
+                        rounded-xl p-5">
 
-                <p class="text-xs text-slate-500">
+                <p class="text-xs
+                          text-slate-500">
+
                     Cost Overrun Prediction
+
                 </p>
 
-                <p class="text-2xl
+                <p class="kpi-value text-3xl
                           font-bold
-                          text-[#C62828] mt-2">
+                          text-[#C62828] mt-3">
 
                     11.8%
 
@@ -1856,26 +2253,37 @@
 
             <!-- DELAY -->
 
-            <div class="bg-white
+            <div class="dashboard-card
+                        bg-white
                         border border-slate-200
-                        rounded p-5">
+                        rounded-xl p-5">
 
-                <p class="text-xs text-slate-500">
+                <p class="text-xs
+                          text-slate-500">
+
                     Time Overrun Prediction
+
                 </p>
 
-                <p class="text-2xl
+                <p class="kpi-value text-3xl
                           font-bold
-                          text-[#E67E22] mt-2">
+                          text-[#E67E22] mt-3">
 
-                    7.4 months
+                    7.4
+
+                </p>
+
+                <p class="text-xs
+                          text-slate-500 mt-1">
+
+                    months average predicted delay
 
                 </p>
 
                 <p class="text-[10px]
                           text-slate-400 mt-3">
 
-                    Average predicted delay among flagged projects
+                    Among flagged projects
 
                 </p>
 
@@ -1884,27 +2292,33 @@
 
             <!-- CONFIDENCE -->
 
-            <div class="bg-white
+            <div class="dashboard-card
+                        bg-white
                         border border-slate-200
-                        rounded p-5">
+                        rounded-xl p-5">
 
-                <p class="text-xs text-slate-500">
+                <p class="text-xs
+                          text-slate-500">
+
                     Model Confidence
+
                 </p>
 
-                <p class="text-2xl
+                <p class="kpi-value text-3xl
                           font-bold
-                          text-[#2E8B57] mt-2">
+                          text-[#2E8B57] mt-3">
 
                     86.2%
 
                 </p>
 
+
                 <div class="h-2
                             bg-slate-100
-                            rounded-full mt-5">
+                            rounded-full mt-5
+                            overflow-hidden">
 
-                    <div class="h-2
+                    <div class="h-full
                                 bg-[#2E8B57]
                                 rounded-full"
                          style="width:86.2%;">
@@ -1912,6 +2326,7 @@
                     </div>
 
                 </div>
+
 
                 <p class="text-[10px]
                           text-slate-400 mt-3">
@@ -1931,15 +2346,19 @@
          EARLY WARNING
     ====================================================== -->
 
-    <section class="mb-7">
+    <section class="mb-9">
 
         <div class="flex items-center
-                    justify-between mb-3">
+                    justify-between mb-4">
 
             <div>
 
-                <h3 class="text-base font-semibold">
+                <h3 class="text-base
+                           font-semibold
+                           text-slate-900">
+
                     Early Warning
+
                 </h3>
 
                 <p class="text-xs
@@ -1952,33 +2371,26 @@
             </div>
 
 
-            <a href="early-warnings.html"
-               class="text-xs
-                      text-[#15158A]
-                      hover:underline">
-
-                View All Warnings →
-
-            </a>
-
         </div>
 
 
-        <div class="bg-white
+        <div class="dashboard-card
+                    bg-white
                     border border-slate-200
-                    rounded overflow-hidden">
+                    rounded-xl
+                    overflow-hidden">
 
 
             <!-- WARNING 1 -->
 
-            <div class="px-5 py-4
-                        border-b
-                        border-slate-100
-                        flex items-center gap-4">
+            <a href="project-details.html?id=INF-001"
+               class="warning-row px-5 py-4
+                      border-b border-slate-100
+                      flex items-center gap-4">
 
-                <div class="w-9 h-9
+                <div class="w-10 h-10
                             shrink-0
-                            rounded
+                            rounded-lg
                             bg-red-50
                             text-[#C62828]
                             flex items-center
@@ -1992,8 +2404,11 @@
 
                 <div class="flex-1">
 
-                    <p class="text-sm font-semibold">
+                    <p class="text-sm
+                              font-semibold">
+
                         Eastern Highway Development
+
                     </p>
 
                     <p class="text-xs
@@ -2017,19 +2432,23 @@
 
                 </span>
 
-            </div>
+                <span class="text-slate-300">
+                    →
+                </span>
+
+            </a>
 
 
             <!-- WARNING 2 -->
 
-            <div class="px-5 py-4
-                        border-b
-                        border-slate-100
-                        flex items-center gap-4">
+            <a href="project-details.html?id=INF-004"
+               class="warning-row px-5 py-4
+                      border-b border-slate-100
+                      flex items-center gap-4">
 
-                <div class="w-9 h-9
+                <div class="w-10 h-10
                             shrink-0
-                            rounded
+                            rounded-lg
                             bg-orange-50
                             text-[#E67E22]
                             flex items-center
@@ -2043,8 +2462,11 @@
 
                 <div class="flex-1">
 
-                    <p class="text-sm font-semibold">
+                    <p class="text-sm
+                              font-semibold">
+
                         Integrated Mining Project
+
                     </p>
 
                     <p class="text-xs
@@ -2068,17 +2490,22 @@
 
                 </span>
 
-            </div>
+                <span class="text-slate-300">
+                    →
+                </span>
+
+            </a>
 
 
             <!-- WARNING 3 -->
 
-            <div class="px-5 py-4
-                        flex items-center gap-4">
+            <a href="project-details.html?id=INF-006"
+               class="warning-row px-5 py-4
+                      flex items-center gap-4">
 
-                <div class="w-9 h-9
+                <div class="w-10 h-10
                             shrink-0
-                            rounded
+                            rounded-lg
                             bg-yellow-50
                             text-yellow-700
                             flex items-center
@@ -2092,8 +2519,11 @@
 
                 <div class="flex-1">
 
-                    <p class="text-sm font-semibold">
+                    <p class="text-sm
+                              font-semibold">
+
                         Western Freight Rail Link
+
                     </p>
 
                     <p class="text-xs
@@ -2117,7 +2547,11 @@
 
                 </span>
 
-            </div>
+                <span class="text-slate-300">
+                    →
+                </span>
+
+            </a>
 
         </div>
 
@@ -2130,15 +2564,29 @@
 
     <section>
 
-        <div class="bg-[#15158A]
-                    rounded px-6 py-6
+        <div class="relative
+                    overflow-hidden
+                    bg-[#15158A]
+                    rounded-xl
+                    px-7 py-7
                     flex flex-col
                     md:flex-row
                     md:items-center
                     md:justify-between
-                    gap-5">
+                    gap-6
+                    shadow-sm">
 
-            <div>
+            <div class="absolute
+                        right-0 top-0
+                        w-64 h-64
+                        rounded-full
+                        bg-white/5
+                        -translate-y-1/2
+                        translate-x-1/3">
+            </div>
+
+
+            <div class="relative">
 
                 <p class="text-xs
                           uppercase
@@ -2162,7 +2610,8 @@
 
                 <p class="text-xs
                           text-blue-100
-                          mt-2 max-w-2xl">
+                          mt-2
+                          max-w-2xl">
 
                     Generate a concise summary of high-risk
                     road, railway and coal projects, predicted
@@ -2173,14 +2622,21 @@
             </div>
 
 
-            <a href="reports.html"
-               class="px-6 py-3
+            <a href="exclusive-brief.html"
+               class="relative
+                      shrink-0
+                      px-6 py-3
                       bg-white
                       text-[#15158A]
-                      rounded
+                      rounded-lg
                       text-sm
                       font-semibold
-                      hover:bg-slate-100">
+                      shadow-sm
+                      transition-all
+                      duration-200
+                      hover:-translate-y-1
+                      hover:shadow-lg
+                      hover:bg-slate-50">
 
                 Generate Exclusive Brief →
 
@@ -2200,7 +2656,7 @@
 <footer class="bg-white
                border-t
                border-slate-200
-               mt-8">
+               mt-10">
 
     <div class="max-w-[1400px]
                 mx-auto
@@ -2273,5 +2729,6 @@
 
 <script src="./js/dashboard.js"></script>
 <script src="js/api.js"></script>
+
 </body>
 </html>

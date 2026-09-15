@@ -142,36 +142,23 @@
             </div>
 
 
-            <!-- RIGHT -->
+  <!-- RIGHT -->
 
-            <div class="hidden md:flex
-                        items-center gap-6">
+            <div class="hidden md:flex items-center gap-6">
+    <!-- Infralens Logo -->
 
-                <div class="text-right">
+    <div class="flex items-center justify-center px-4">
 
-                    <p class="text-[10px]
-                              text-slate-400">
+        <img src="./assets/infralens-logo.png"
+             alt="Infralens Logo"
+             class="h-12 w-auto object-contain">
 
-                        Monitoring Period
-
-                    </p>
-
-                    <p class="text-sm
-                              font-semibold
-                              text-[#15158A] mt-1">
-
-                        September 2026
-
-                    </p>
-
-                </div>
-
+    </div>
 
                 <div class="h-10 w-px bg-slate-200"></div>
 
 
-<div class="flex items-center gap-3">
-
+                <div class="flex items-center gap-3">
     <!-- Notification Bell -->
     <div class="relative">
         <button id="notificationBell"
@@ -360,22 +347,51 @@
              px-6 lg:px-8
              py-7">
 
+        <!-- BREADCRUMB -->
+        <div class="text-xs text-slate-500 mb-6 flex items-center">
 
-    <!-- PAGE TITLE -->
+            <a
+                href="index.html"
+                class="hover:text-[#15158A]"
+            >
+                Dashboard
+            </a>
 
-    <section class="mb-6">
+            <span class="mx-2">→</span>
+
+            <span class="text-slate-700 font-medium">
+                Projects
+            </span>
+
+        </div>
+
+<!-- =====================================================
+     PAGE TITLE / TOP CARD
+===================================================== -->
+
+<section class="mb-6">
+
+    <div class="bg-white
+                border border-slate-200
+                border-l-4 border-l-[#15158A]
+                rounded-xl
+                px-8 py-6
+                shadow-sm
+                transition-all duration-200 ease-out">
 
         <div class="flex flex-col
                     md:flex-row
-                    md:items-end
+                    md:items-center
                     md:justify-between
-                    gap-4">
+                    gap-5">
+
+            <!-- LEFT -->
 
             <div>
 
                 <p class="text-[11px]
                           uppercase
-                          tracking-wider
+                          tracking-[0.18em]
                           text-[#18A5DC]
                           font-bold">
 
@@ -383,18 +399,18 @@
 
                 </p>
 
-
-                <h2 class="text-2xl md:text-3xl
+                <h2 class="text-3xl
                            font-semibold
-                           text-[#15158A] mt-1">
+                           text-[#15158A]
+                           mt-2">
 
                     Projects
 
                 </h2>
 
-
                 <p class="text-sm
-                          text-slate-500 mt-2">
+                          text-slate-500
+                          mt-2">
 
                     Explore road, railway and coal infrastructure
                     projects using project-level monitoring data.
@@ -404,31 +420,38 @@
             </div>
 
 
-            <div class="text-right">
+            <!-- RIGHT -->
 
-                <p class="text-[10px]
-                          uppercase
-                          tracking-wide
-                          text-slate-400">
+            <div class="shrink-0">
 
-                    Last Updated
+                <div class="px-5 py-3
+                            bg-slate-50
+                            border border-slate-200
+                            rounded-lg">
 
-                </p>
+                    <p class="text-xs
+                              text-slate-500">
 
-                <p class="text-sm
-                          font-semibold
-                          text-slate-700 mt-1">
+                        Reporting period:
 
-                    September 2026
+                        <span class="font-semibold
+                                     text-slate-800">
 
-                </p>
+                            September 2026
+
+                        </span>
+
+                    </p>
+
+                </div>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
+</section>
 
     <!-- =====================================================
          SUMMARY
@@ -446,7 +469,10 @@
                        border border-slate-200
                        rounded p-4
                        text-left
-                       hover:border-[#18A5DC]">
+                       hover:border-[#18A5DC]
+                       transition-all duration-200 ease-out
+                       hover:-translate-y-1
+                       hover:shadow-md">
 
             <p class="text-xs text-slate-500">
                 Total Projects
@@ -477,7 +503,10 @@
                        border border-slate-200
                        rounded p-4
                        text-left
-                       hover:border-red-300">
+                       hover:border-red-300
+                       transition-all duration-200 ease-out
+                       hover:-translate-y-1
+                       hover:shadow-md">
 
             <p class="text-xs text-slate-500">
                 High Risk
@@ -508,7 +537,10 @@
                        border border-slate-200
                        rounded p-4
                        text-left
-                       hover:border-orange-300">
+                       hover:border-orange-300
+                       transition-all duration-200 ease-out
+                       hover:-translate-y-1
+                       hover:shadow-md">
 
             <p class="text-xs text-slate-500">
                 Medium Risk
@@ -539,7 +571,10 @@
                        border border-slate-200
                        rounded p-4
                        text-left
-                       hover:border-red-300">
+                       hover:border-red-300
+                       transition-all duration-200 ease-out
+                       hover:-translate-y-1
+                       hover:shadow-md">
 
             <p class="text-xs text-slate-500">
                 Delayed
@@ -569,9 +604,10 @@
          SEARCH
 ========================================================= -->
 
-    <section class="bg-white
-                    border border-slate-200
-                    rounded p-5 mb-4">
+<section class="bg-white
+                border border-slate-200
+                rounded p-5 mb-4
+                section-border-hover">
 
         <h3 class="text-sm font-semibold">
             Search Projects

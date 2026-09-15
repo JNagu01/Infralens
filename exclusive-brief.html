@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="src/output.css">
 </head>
 
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-[#f3f6fa] text-slate-800 antialiased">
 
  <!-- =========================================================
      TOP BAR
 ========================================================= -->
 
-<div class="bg-[#15158A] text-white">
+<div class="bg-[#11156f] text-white shadow-sm">
 
     <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
 
@@ -44,7 +44,7 @@
      HEADER
 ========================================================= -->
 
-<header class="bg-white border-b border-slate-200">
+<header class="bg-white border-b border-slate-200 shadow-sm">
 
     <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
 
@@ -118,28 +118,23 @@
             </div>
 
 
-            <!-- RIGHT -->
+  <!-- RIGHT -->
 
             <div class="hidden md:flex items-center gap-6">
+    <!-- Infralens Logo -->
 
-                <div class="text-right">
+    <div class="flex items-center justify-center px-4">
 
-                    <p class="text-[10px] text-slate-400">
-                        Monitoring Period
-                    </p>
+        <img src="./assets/infralens-logo.png"
+             alt="Infralens Logo"
+             class="h-12 w-auto object-contain">
 
-                    <p class="text-sm font-semibold
-                              text-[#15158A] mt-1">
-                        September 2026
-                    </p>
-
-                </div>
-
+    </div>
 
                 <div class="h-10 w-px bg-slate-200"></div>
 
-<div class="flex items-center gap-3">
 
+                <div class="flex items-center gap-3">
     <!-- Notification Bell -->
     <div class="relative">
         <button id="notificationBell"
@@ -246,7 +241,7 @@
 
     <!-- NAVIGATION -->
 
-    <nav class="bg-[#18A5DC]">
+    <nav class="bg-[#18A5DC] shadow-sm">
 
         <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
 
@@ -256,8 +251,7 @@
                    class="h-full px-7
                           flex items-center
                           text-white text-sm
-                          font-semibold
-                          bg-white/15">
+                          font-semibold tracking-[0.01em]">
 
                     Dashboard
 
@@ -301,7 +295,8 @@
                    class="h-full px-7
                           flex items-center
                           text-white text-sm
-                          hover:bg-white/10">
+                          hover:bg-white/10
+                          bg-white/15">
 
                     Exclusive Brief
 
@@ -320,11 +315,11 @@
     <!-- =========================================================
          MAIN CONTENT
     ========================================================== -->
-    <main class="max-w-7xl mx-auto px-6 py-6">
+    <main class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
 
 
         <!-- BREADCRUMB -->
-        <div class="text-sm text-slate-500 mb-5">
+        <div class="text-xs text-slate-500 mb-6 flex items-center">
 
             <a
                 href="index.html"
@@ -345,15 +340,39 @@
         <!-- =====================================================
              PAGE HEADER
         ====================================================== -->
-        <section class="mb-7">
+        <section class="mb-7 bg-white border border-slate-200 border-l-4 border-l-[#15158A]
+                   rounded-xl shadow-sm px-5 py-5">
 
-            <h2 class="text-2xl font-bold text-slate-900">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-[10px] font-bold uppercase tracking-[0.16em] text-[#15158A]">
+                            Management Intelligence
+                        </span>
+                        <span class="h-1 w-1 rounded-full bg-slate-300"></span>
+                        <span class="text-[10px] uppercase tracking-wide text-slate-400">
+                            SIH 2026 Prototype
+                        </span>
+                    </div>
+
+            <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 tracking-tight">
                 Exclusive Brief
             </h2>
 
-            <p class="text-sm text-slate-500 mt-1">
+            <p class="text-sm text-slate-500 mt-2 max-w-3xl leading-6">
                 Generate a focused portfolio summary for management review and decision support.
             </p>
+
+                </div>
+
+                <div class="hidden md:flex items-center gap-2 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
+                    <span class="px-3 py-1.5 rounded-full border border-slate-200 bg-slate-50">
+                        Official Monitoring View
+                    </span>
+                </div>
+
+            </div>
 
         </section>
 
@@ -361,10 +380,13 @@
         <!-- =====================================================
              SEARCH & FILTER PANEL
         ====================================================== -->
-        <section class="bg-white border border-slate-200 rounded-lg mb-7">
+        <section class="bg-white border border-slate-200 rounded-xl shadow-sm mb-7 overflow-hidden">
 
-            <div class="px-5 py-4 border-b border-slate-200">
+            <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/80">
 
+                <div class="flex items-center gap-3">
+                    <div class="w-1.5 h-7 rounded-full bg-[#15158A]"></div>
+                    <div>
                 <h3 class="text-base font-semibold text-slate-900">
                     Select Brief Scope
                 </h3>
@@ -372,6 +394,8 @@
                 <p class="text-xs text-slate-500 mt-1">
                     Search or filter projects before generating the exclusive brief.
                 </p>
+                    </div>
+                </div>
 
             </div>
 
@@ -392,7 +416,7 @@
                         id="searchInput"
                         type="text"
                         placeholder="Search by project name or project ID..."
-                        class="w-full border border-slate-300 rounded-md px-3 py-2.5 text-sm outline-none focus:border-[#15158A] focus:ring-1 focus:ring-[#15158A]"
+                        class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm bg-white shadow-sm outline-none focus:border-[#15158A] focus:ring-1 focus:ring-[#15158A]"
                     >
 
                 </div>
@@ -414,7 +438,7 @@
 
                         <select
                             id="ministryFilter"
-                            class="w-full border border-slate-300 rounded-md px-3 py-2.5 text-sm bg-white outline-none focus:border-[#15158A]"
+                            class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm bg-white shadow-sm bg-white outline-none focus:border-[#15158A]"
                         >
 
                             <option value="">
@@ -450,7 +474,7 @@
 
                         <select
                             id="sectorFilter"
-                            class="w-full border border-slate-300 rounded-md px-3 py-2.5 text-sm bg-white outline-none focus:border-[#15158A]"
+                            class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm bg-white shadow-sm bg-white outline-none focus:border-[#15158A]"
                         >
 
                             <option value="">
@@ -486,7 +510,7 @@
 
                         <select
                             id="riskFilter"
-                            class="w-full border border-slate-300 rounded-md px-3 py-2.5 text-sm bg-white outline-none focus:border-[#15158A]"
+                            class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm bg-white shadow-sm bg-white outline-none focus:border-[#15158A]"
                         >
 
                             <option value="">
@@ -522,7 +546,7 @@
 
                         <select
                             id="statusFilter"
-                            class="w-full border border-slate-300 rounded-md px-3 py-2.5 text-sm bg-white outline-none focus:border-[#15158A]"
+                            class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm bg-white shadow-sm bg-white outline-none focus:border-[#15158A]"
                         >
 
                             <option value="">
@@ -549,7 +573,7 @@
 
 
                 <!-- FILTER ACTIONS -->
-                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mt-5 pt-5 border-t border-slate-100">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mt-5 pt-5 border-t border-slate-200">
 
                     <p
                         id="scopeMessage"
@@ -595,9 +619,9 @@
 
 
             <!-- BRIEF HEADER -->
-            <div class="bg-white border border-slate-200 rounded-lg">
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm">
 
-                <div class="px-5 py-4 border-b border-slate-200 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/80 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
 
                     <div>
 
@@ -643,7 +667,7 @@
             <!-- =================================================
                  NO. OF PROJECTS
             ================================================== -->
-            <div class="bg-white border border-slate-200 rounded-lg">
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm">
 
                 <div class="p-5">
 
@@ -657,7 +681,7 @@
 
                             <p
                                 id="projectCount"
-                                class="text-4xl font-bold text-slate-900 mt-2"
+                                class="text-4xl lg:text-5xl font-bold text-[#15158A] mt-2 tracking-tight"
                             >
                                 92
                             </p>
@@ -692,128 +716,115 @@
      PORTFOLIO COMPOSITION
 ================================================== -->
 
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="space-y-6">
 
-    <!-- SECTOR MIX CARD -->
-    <div class="bg-white border border-slate-200 rounded-lg shadow-sm">
 
-        <div class="px-5 py-4 border-b border-slate-200">
 
-            <p class="text-xs uppercase tracking-wide text-slate-500">
-                Sector Mix
+    <!-- CHART 1 + CHART 2 -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- SECTOR MIX -->
+        <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+            <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/80">
+                <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-[#15158A]">
+                    Sector Mix
+                </p>
+                <h3 class="text-base font-semibold text-slate-900 mt-1">
+                    Project Composition
+                </h3>
+                <p class="text-xs text-slate-500 mt-1.5 leading-5">
+                    Share of selected projects across major infrastructure sectors.
+                </p>
+            </div>
+
+            <div class="p-5">
+                <div class="h-64">
+                    <canvas id="sectorPieChart"></canvas>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-center">
+                    <p class="text-[10px] uppercase tracking-wide font-semibold text-slate-400">
+                        Project distribution by sector
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RISK MIX -->
+        <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+            <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/80">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-[#15158A]">
+                            Risk Mix
+                        </p>
+                        <h3 id="riskMixTitle" class="text-base font-semibold text-slate-900 mt-1">
+                            Risk-level composition
+                        </h3>
+                        <p id="riskMixDescription" class="text-xs text-slate-500 mt-1.5 leading-5">
+                            Distribution of selected projects by AI risk category.
+                        </p>
+                    </div>
+
+                    <!-- WEATHER TOGGLE — unchanged functionality -->
+                    <label class="flex items-center gap-2 cursor-pointer shrink-0">
+                        <span class="text-[10px] font-semibold uppercase tracking-wide text-slate-500">
+                            Weather Delay
+                        </span>
+                        <input type="checkbox" id="weatherDelayToggle" class="sr-only peer">
+                        <div class="w-10 h-5 bg-slate-300 rounded-full peer-checked:bg-[#15158A] relative transition">
+                            <div class="absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-5"></div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="p-5">
+                <div class="h-64">
+                    <canvas id="riskMixChart"></canvas>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 text-center">
+                    <p class="text-[10px] uppercase tracking-wide font-semibold text-slate-400">
+                        Project distribution by risk level
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CHART 3 — FULL WIDTH -->
+    <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+        <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/80">
+            <p class="text-[10px] font-bold uppercase tracking-[0.14em] text-[#15158A]">
+                Time Risk
             </p>
-
             <h3 class="text-base font-semibold text-slate-900 mt-1">
-                Project Composition
+                Project Delay Composition
             </h3>
-
-            <p class="text-sm text-slate-600 mt-2 leading-6">
-                Share of selected projects across Roads & Highways,
-                Railways and Coal & Mining.
+            <p class="text-xs text-slate-500 mt-1.5 leading-5">
+                Distribution of selected projects by current time-delay status.
             </p>
-
         </div>
 
         <div class="p-5">
-
-            <div class="h-64">
-                <canvas id="sectorPieChart"></canvas>
+            <div class="h-72 max-w-3xl mx-auto">
+                <canvas id="timeRiskChart"></canvas>
             </div>
-
-            <p class="text-xs text-slate-500 mt-3 text-center">
-                Project distribution by sector
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- RISK MIX CARD -->
-    <div class="bg-white border border-slate-200 rounded-lg shadow-sm">
-
-        <div class="px-5 py-4 border-b border-slate-200">
-
-<div class="flex items-start justify-between gap-4">
-    <div>
-        <p class="text-xs uppercase tracking-wide text-slate-500">
-            Risk Mix
-        </p>
-
-        <h3 id="riskMixTitle"
-            class="text-base font-semibold text-slate-900 mt-1">
-            Risk-level composition
-        </h3>
-
-        <p id="riskMixDescription"
-           class="text-sm text-slate-600 mt-2 leading-6">
-            Distribution of selected projects by AI risk category.
-        </p>
-    </div>
- <!-- WEATHER TOGGLE -->
-    <label class="flex items-center gap-2 cursor-pointer shrink-0">
-        <span class="text-xs font-medium text-slate-500">
-            Weather Delay
-        </span>
-
-        <input
-            type="checkbox"
-            id="weatherDelayToggle"
-            class="sr-only peer"
-        >
-
-        <div class="w-10 h-5 bg-slate-300 rounded-full
-                    peer-checked:bg-[#15158A]
-                    relative transition">
-            <div class="absolute left-0.5 top-0.5
-                        w-4 h-4 bg-white rounded-full
-                        transition-transform
-                        peer-checked:translate-x-5">
+            <div class="mt-4 pt-3 border-t border-slate-100 text-center">
+                <p class="text-[10px] uppercase tracking-wide font-semibold text-slate-400">
+                    Current project distribution by time-delay status
+                </p>
             </div>
         </div>
-    </label>
-</div>
-
-<div class="h-64 mt-4">
-    <canvas id="riskMixChart"></canvas>
-</div>
-<div class="bg-white border border-slate-200 rounded-lg">
-
-    <div class="p-5">
-
-        <p class="text-xs uppercase tracking-wide text-slate-500">
-            Time Risk
-        </p>
-
-        <h3 class="text-base font-semibold text-slate-900 mt-1">
-            Project Delay Composition
-        </h3>
-
-        <p class="text-sm text-slate-600 mt-2 leading-6">
-            Distribution of selected projects by current time-delay status.
-        </p>
-
-        <div class="h-64 mt-4">
-            <canvas id="timeRiskChart"></canvas>
-        </div>
-
     </div>
 
 </div>
 
-            <p class="text-xs text-slate-500 mt-3 text-center">
-                Project distribution by risk level
-            </p>
 
-        </div>
-
-    </div>
-
-</div>
             <!-- =================================================
                  TOTAL COST
             ================================================== -->
-            <div class="bg-white border border-slate-200 rounded-lg">
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm">
 
                 <div class="p-5">
 
@@ -827,7 +838,7 @@
 
                             <p
                                 id="totalCost"
-                                class="text-4xl font-bold text-slate-900 mt-2"
+                                class="text-4xl lg:text-5xl font-bold text-[#15158A] mt-2 tracking-tight"
                             >
                                 ₹6.84L Cr
                             </p>
@@ -860,7 +871,7 @@
             <!-- =================================================
                  REVISED COST
             ================================================== -->
-            <div class="bg-white border border-slate-200 rounded-lg">
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm">
 
                 <div class="p-5">
 
@@ -874,7 +885,7 @@
 
                             <p
                                 id="revisedCost"
-                                class="text-4xl font-bold text-slate-900 mt-2"
+                                class="text-4xl lg:text-5xl font-bold text-[#15158A] mt-2 tracking-tight"
                             >
                                 ₹7.42L Cr
                             </p>
@@ -945,7 +956,7 @@
             <!-- =================================================
                  EXPENDITURE
             ================================================== -->
-            <div class="bg-white border border-slate-200 rounded-lg">
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm">
 
                 <div class="p-5">
 
@@ -959,7 +970,7 @@
 
                             <p
                                 id="expenditure"
-                                class="text-4xl font-bold text-slate-900 mt-2"
+                                class="text-4xl lg:text-5xl font-bold text-[#15158A] mt-2 tracking-tight"
                             >
                                 ₹4.31L Cr
                             </p>
@@ -974,7 +985,7 @@
 
                             <div class="mt-4 grid grid-cols-2 gap-3">
 
-                                <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+                                <div class="bg-slate-50 border border-slate-200 rounded-lg p-3 shadow-sm">
 
                                     <p class="text-xs text-slate-500">
                                         Financial Progress
@@ -987,7 +998,7 @@
                                 </div>
 
 
-                                <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+                                <div class="bg-slate-50 border border-slate-200 rounded-lg p-3 shadow-sm">
 
                                     <p class="text-xs text-slate-500">
                                         Physical Progress
@@ -1021,9 +1032,9 @@
             <!-- =================================================
                  TOP RISK PROJECTS
             ================================================== -->
-            <div class="bg-white border border-slate-200 rounded-lg">
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm">
 
-                <div class="px-5 py-4 border-b border-slate-200">
+                <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/80">
 
                     <h3 class="text-base font-semibold text-slate-900">
                         Top Risk Projects
@@ -1047,7 +1058,7 @@
                             class="space-y-3"
                         >
 
-                            <div class="flex items-center gap-3 border border-slate-200 rounded-md p-3">
+                            <div class="flex items-center gap-3 border border-slate-200 rounded-lg p-3 bg-slate-50/40 hover:bg-slate-50 transition">
 
                                 <span class="text-sm font-bold text-slate-400">
                                     01
@@ -1072,7 +1083,7 @@
                             </div>
 
 
-                            <div class="flex items-center gap-3 border border-slate-200 rounded-md p-3">
+                            <div class="flex items-center gap-3 border border-slate-200 rounded-lg p-3 bg-slate-50/40 hover:bg-slate-50 transition">
 
                                 <span class="text-sm font-bold text-slate-400">
                                     02
@@ -1097,7 +1108,7 @@
                             </div>
 
 
-                            <div class="flex items-center gap-3 border border-slate-200 rounded-md p-3">
+                            <div class="flex items-center gap-3 border border-slate-200 rounded-lg p-3 bg-slate-50/40 hover:bg-slate-50 transition">
 
                                 <span class="text-sm font-bold text-slate-400">
                                     03
@@ -1122,7 +1133,7 @@
                             </div>
 
 
-                            <div class="flex items-center gap-3 border border-slate-200 rounded-md p-3">
+                            <div class="flex items-center gap-3 border border-slate-200 rounded-lg p-3 bg-slate-50/40 hover:bg-slate-50 transition">
 
                                 <span class="text-sm font-bold text-slate-400">
                                     04
@@ -1147,7 +1158,7 @@
                             </div>
 
 
-                            <div class="flex items-center gap-3 border border-slate-200 rounded-md p-3">
+                            <div class="flex items-center gap-3 border border-slate-200 rounded-lg p-3 bg-slate-50/40 hover:bg-slate-50 transition">
 
                                 <span class="text-sm font-bold text-slate-400">
                                     05
@@ -1192,9 +1203,9 @@
             <!-- =================================================
                  KEY OBSERVATION
             ================================================== -->
-            <div class="bg-white border border-slate-200 rounded-lg">
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm">
 
-                <div class="px-5 py-4 border-b border-slate-200">
+                <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/80">
 
                     <h3 class="text-base font-semibold text-slate-900">
                         Key Exclusive Observation
@@ -1205,7 +1216,7 @@
 
                 <div class="p-5">
 
-                    <div class="border-l-4 border-[#15158A] bg-blue-50 px-5 py-4">
+                    <div class="border-l-4 border-[#15158A] bg-[#eef5ff] rounded-r-lg px-5 py-4 shadow-sm">
 
                         <p
                             id="keyObservation"
@@ -1228,7 +1239,7 @@
             <!-- =================================================
                  DOWNLOAD
             ================================================== -->
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white border border-slate-200 rounded-lg p-5">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white border border-slate-200 rounded-xl shadow-sm p-5">
 
                 <div>
 
@@ -1262,7 +1273,7 @@
     <!-- =========================================================
          FOOTER
     ========================================================== -->
-    <footer class="border-t border-slate-200 bg-white mt-10">
+    <footer class="border-t border-slate-200 bg-white mt-12">
 
         <div class="max-w-7xl mx-auto px-6 py-5">
 

@@ -3,1156 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Analytics | INFRALENS</title>
-
     <link rel="stylesheet" href="src/output.css">
 </head>
 
 <body class="bg-slate-50 text-slate-800">
 
- <!-- =========================================================
-     TOP BAR
-========================================================= -->
-
 <div class="bg-[#15158A] text-white">
-
     <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
-
         <div class="h-8 flex items-center justify-end">
-
             <div class="flex items-center gap-5 text-xs">
-
-                <span>Accessibility</span>
-
-                <span class="h-4 w-px bg-white/30"></span>
-
-                <span>English</span>
-
-                <span>A</span>
-
-                <span>◉</span>
-
+                <span>Accessibility</span><span class="h-4 w-px bg-white/30"></span>
+                <span>English</span><span>A</span><span>◉</span>
             </div>
-
         </div>
-
     </div>
-
 </div>
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
-<header class="bg-white border-b border-slate-200">
-
+<header class="bg-white border-b border-slate-200 shadow-sm">
     <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
-
-        <div class="min-h-[86px] flex items-center
-                    justify-between gap-6">
-
-
-            <!-- BRAND -->
-
+        <div class="min-h-[86px] flex items-center justify-between gap-6">
             <div class="flex items-center gap-4">
-
-                <div class="w-14 h-14 rounded-full
-                            border-2 border-[#15158A]
-                            flex items-center justify-center">
-
-                    <div class="text-center
-                                text-[#15158A]
-                                leading-none">
-
-                        <div class="text-[7px] font-bold">
-                            GOVT
-                        </div>
-
-                        <div class="text-sm font-black mt-1">
-                            IN
-                        </div>
-
-                        <div class="text-[6px] mt-1">
-                            INDIA
-                        </div>
-
+                <div class="w-14 h-14 rounded-full border-2 border-[#15158A] flex items-center justify-center">
+                    <div class="text-center text-[#15158A] leading-none">
+                        <div class="text-[7px] font-bold">GOVT</div>
+                        <div class="text-sm font-black mt-1">IN</div>
+                        <div class="text-[6px] mt-1">INDIA</div>
                     </div>
-
                 </div>
-
-
                 <div class="h-12 w-px bg-slate-300"></div>
-
-
                 <div>
-
                     <div class="flex items-center gap-2">
-
-                        <h1 class="text-2xl font-bold
-                                   text-[#15158A]">
-                            Infralens
-                        </h1>
-
-                        <span class="text-[9px]
-                                     font-bold
-                                     px-2 py-1
-                                     bg-[#15158A]
-                                     text-white rounded">
-                            AI
-                        </span>
-
+                        <h1 class="text-2xl font-bold text-[#15158A]">Infralens</h1>
+                        <span class="text-[9px] font-bold px-2 py-1 bg-[#15158A] text-white rounded">AI</span>
                     </div>
-
-
-                    <p class="text-xs text-slate-600 mt-1">
-                        AI-Powered Infrastructure Project Monitoring
-                    </p>
-
-
-                    <p class="text-[10px] text-slate-400 mt-0.5">
-                        Risk Intelligence • Predictive Analytics • Early Warning
-                    </p>
-
+                    <p class="text-xs text-slate-600 mt-1">AI-Powered Infrastructure Project Monitoring</p>
+                    <p class="text-[10px] text-slate-400 mt-0.5">Risk Intelligence • Predictive Analytics • Early Warning</p>
                 </div>
-
             </div>
-
-
-            <!-- RIGHT -->
+  <!-- RIGHT -->
 
             <div class="hidden md:flex items-center gap-6">
+    <!-- Infralens Logo -->
 
-                <div class="text-right">
+    <div class="flex items-center justify-center px-4">
 
-                    <p class="text-[10px] text-slate-400">
-                        Monitoring Period
-                    </p>
+        <img src="./assets/infralens-logo.png"
+             alt="Infralens Logo"
+             class="h-12 w-auto object-contain">
 
-                    <p class="text-sm font-semibold
-                              text-[#15158A] mt-1">
-                        September 2026
-                    </p>
-
-                </div>
-
+    </div>
 
                 <div class="h-10 w-px bg-slate-200"></div>
 
 
-
-<div class="flex items-center gap-3">
-
-    <!-- Notification Bell -->
-    <div class="relative">
-        <button id="notificationBell"
-                class="relative w-10 h-10 flex items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-[#15158A]"
-                aria-label="Notifications">
-
-            <span class="text-lg">🔔</span>
-
-            <span id="notificationBadge"
-                  class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1
-                         bg-red-600 text-white text-[10px] font-bold rounded-full
-                         flex items-center justify-center">
-                3
-            </span>
-        </button>
-
-        <!-- Notification Dropdown -->
-        <div id="notificationPanel"
-             class="hidden absolute right-0 top-12 w-96 bg-white border border-slate-200
-                    rounded-lg shadow-lg z-50">
-
-            <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
-                <div>
-                    <p class="text-sm font-semibold text-slate-900">Early Warnings</p>
-                    <p class="text-xs text-slate-500">Active project alerts</p>
-                </div>
-
-                <span id="notificationCount"
-                      class="text-xs font-semibold text-[#15158A]">
-                    3 Active
-                </span>
-            </div>
-
-            <div id="notificationList" class="max-h-96 overflow-y-auto">
-
-                <div class="px-4 py-3 border-b border-slate-100 hover:bg-slate-50">
-                    <div class="flex items-start gap-3">
-                        <span class="text-red-600">●</span>
-                        <div>
-                            <p class="text-sm font-semibold text-slate-800">
-                                Eastern Highway Development
-                            </p>
-                            <p class="text-xs text-slate-500 mt-1">
-                                Heavy rainfall may cause project delay.
-                            </p>
-                            <span class="text-[10px] text-red-600 font-semibold">
-                                HIGH
-                            </span>
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <button id="notificationBell" class="relative w-10 h-10 flex items-center justify-center rounded-md border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-[#15158A]" aria-label="Notifications">
+                            <span class="text-lg">🔔</span>
+                            <span id="notificationBadge" class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 bg-red-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center">3</span>
+                        </button>
+                        <div id="notificationPanel" class="hidden absolute right-0 top-12 w-96 bg-white border border-slate-200 rounded-lg shadow-xl z-50">
+                            <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
+                                <div><p class="text-sm font-semibold text-slate-900">Early Warnings</p><p class="text-xs text-slate-500">Active project alerts</p></div>
+                                <span id="notificationCount" class="text-xs font-semibold text-[#15158A]">3 Active</span>
+                            </div>
+                            <div id="notificationList" class="max-h-96 overflow-y-auto">
+                                <div class="px-4 py-3 border-b border-slate-100 hover:bg-slate-50"><div class="flex items-start gap-3"><span class="text-red-600">●</span><div><p class="text-sm font-semibold text-slate-800">Eastern Highway Development</p><p class="text-xs text-slate-500 mt-1">Heavy rainfall may cause project delay.</p><span class="text-[10px] text-red-600 font-semibold">HIGH</span></div></div></div>
+                                <div class="px-4 py-3 border-b border-slate-100 hover:bg-slate-50"><div class="flex items-start gap-3"><span class="text-red-600">●</span><div><p class="text-sm font-semibold text-slate-800">Integrated Mining Project</p><p class="text-xs text-slate-500 mt-1">Progress slippage detected against planned milestones.</p><span class="text-[10px] text-red-600 font-semibold">HIGH</span></div></div></div>
+                                <div class="px-4 py-3 hover:bg-slate-50"><div class="flex items-start gap-3"><span class="text-amber-500">●</span><div><p class="text-sm font-semibold text-slate-800">Western Freight Rail Link</p><p class="text-xs text-slate-500 mt-1">Material supply disruption may affect progress.</p><span class="text-[10px] text-amber-600 font-semibold">MEDIUM</span></div></div></div>
+                            </div>
                         </div>
                     </div>
+                    <a href="login.html" class="px-6 py-2.5 bg-[#15158A] text-white text-xs font-semibold rounded hover:bg-[#10106c] shadow-sm">Login</a>
                 </div>
-
-                <div class="px-4 py-3 border-b border-slate-100 hover:bg-slate-50">
-                    <div class="flex items-start gap-3">
-                        <span class="text-red-600">●</span>
-                        <div>
-                            <p class="text-sm font-semibold text-slate-800">
-                                Integrated Mining Project
-                            </p>
-                            <p class="text-xs text-slate-500 mt-1">
-                                Progress slippage detected against planned milestones.
-                            </p>
-                            <span class="text-[10px] text-red-600 font-semibold">
-                                HIGH
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="px-4 py-3 hover:bg-slate-50">
-                    <div class="flex items-start gap-3">
-                        <span class="text-amber-500">●</span>
-                        <div>
-                            <p class="text-sm font-semibold text-slate-800">
-                                Western Freight Rail Link
-                            </p>
-                            <p class="text-xs text-slate-500 mt-1">
-                                Material supply disruption may affect progress.
-                            </p>
-                            <span class="text-[10px] text-amber-600 font-semibold">
-                                MEDIUM
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
-
-    <!-- Login -->
-    <a href="login.html"
-       class="px-6 py-2.5 bg-[#15158A] text-white text-xs font-semibold rounded hover:bg-[#10106c]">
-        Login
-    </a>
-
-</div>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- NAVIGATION -->
 
     <nav class="bg-[#18A5DC]">
-
         <div class="max-w-[1400px] mx-auto px-6 lg:px-8">
-
             <div class="h-11 flex items-center">
-
-                <a href="index.html"
-                   class="h-full px-7
-                          flex items-center
-                          text-white text-sm
-                          font-semibold
-                          bg-white/15">
-
-                    Dashboard
-
-                </a>
-
-
-                <a href="projects.html"
-                   class="h-full px-7
-                          flex items-center
-                          text-white text-sm
-                          hover:bg-white/10">
-
-                    Projects
-
-                </a>
-
-
-                <a href="analytics.html"
-                   class="h-full px-7
-                          flex items-center
-                          text-white text-sm
-                          hover:bg-white/10">
-
-                    Analytics
-
-                </a>
-
-
-                <a href="data-quality.html"
-                   class="h-full px-7
-                          flex items-center
-                          text-white text-sm
-                          hover:bg-white/10">
-
-                    data quality
-
-                </a>
-
-
-                <a href="exclusive-brief.html"
-                   class="h-full px-7
-                          flex items-center
-                          text-white text-sm
-                          hover:bg-white/10">
-
-                    Exclusive Brief
-
-                </a>
-
+                <a href="index.html" class="h-full px-7 flex items-center text-white text-sm font-semibold">Dashboard</a>
+                <a href="projects.html" class="h-full px-7 flex items-center text-white text-sm hover:bg-white/10">Projects</a>
+                <a href="analytics.html" class="h-full px-7 flex items-center text-white text-sm hover:bg-white/10 bg-white/15 font-semibold">Analytics</a>
+                <a href="data-quality.html" class="h-full px-7 flex items-center text-white text-sm hover:bg-white/10">data quality</a>
+                <a href="exclusive-brief.html" class="h-full px-7 flex items-center text-white text-sm hover:bg-white/10">Exclusive Brief</a>
             </div>
-
         </div>
-
     </nav>
-
 </header>
 
+<main class="max-w-7xl mx-auto px-6 py-7">
 
-    <!-- =========================================================
-         MAIN CONTENT
-    ========================================================== -->
-    <main class="max-w-7xl mx-auto px-6 py-6">
+    <div class="flex items-center gap-2 text-sm text-slate-500 mb-5">
+        <a href="index.html" class="hover:text-[#15158A]">Dashboard</a>
+        <span>→</span><span class="text-slate-700 font-medium">Analytics</span>
+    </div>
+
+    <section class="mb-7 rounded-xl border border-slate-200 border-l-4 border-l-[#15158A] bg-white shadow-sm overflow-hidden">
+        <div class="px-6 py-5">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                <div>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#15158A]">Portfolio Intelligence</p>
+                    <h2 class="text-2xl font-bold text-slate-900 mt-1">Portfolio Analytics</h2>
+                    <p class="text-sm text-slate-500 mt-1">AI-assisted analysis of infrastructure project performance, cost, progress and risk.</p>
+                </div>
+                <div class="text-xs text-slate-500 border border-slate-200 rounded-lg px-4 py-2 bg-slate-50">
+                    Reporting period: <span class="font-semibold text-slate-800">September 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-7">
+        <div class="bg-white border border-slate-200 border-t-4 border-t-[#15158A] rounded-xl p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <p class="text-xs uppercase tracking-wide text-slate-500">Total Projects</p><p class="text-2xl font-bold text-slate-900 mt-2">92</p><p class="text-xs text-slate-500 mt-1">Active portfolio</p>
+        </div>
+        <div class="bg-white border border-slate-200 border-t-4 border-t-[#18A5DC] rounded-xl p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <p class="text-xs uppercase tracking-wide text-slate-500">Avg. Physical Progress</p><p class="text-2xl font-bold text-slate-900 mt-2">67.8%</p><p class="text-xs text-slate-500 mt-1">Portfolio average</p>
+        </div>
+        <div class="bg-white border border-slate-200 border-t-4 border-t-red-500 rounded-xl p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <p class="text-xs uppercase tracking-wide text-slate-500">Cost Risk</p><p class="text-2xl font-bold text-slate-900 mt-2">14</p><p class="text-xs text-slate-500 mt-1">Projects with cost risk</p>
+        </div>
+        <div class="bg-white border border-slate-200 border-t-4 border-t-amber-400 rounded-xl p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <p class="text-xs uppercase tracking-wide text-slate-500">Time Risk</p><p class="text-2xl font-bold text-slate-900 mt-2">19</p><p class="text-xs text-slate-500 mt-1">Projects with delay risk</p>
+        </div>
+    </section>
+
+    <section class="mb-7">
+        <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+            <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/70">
+                <div class="flex items-center gap-3"><span class="w-1.5 h-8 rounded-full bg-[#18A5DC]"></span><div><h3 class="text-base font-semibold text-slate-900">Sector-wise Analysis</h3><p class="text-xs text-slate-500 mt-1">Portfolio distribution across monitored infrastructure sectors.</p></div></div>
+            </div>
+            <div class="p-5 grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="border border-slate-200 rounded-lg p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                    <div class="flex items-center justify-between"><div><p class="font-semibold text-slate-800">Roads & Highways</p><p class="text-xs text-slate-500 mt-1">42 Projects</p></div><span class="text-sm font-semibold text-[#15158A]">46%</span></div>
+                    <div class="mt-4 h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-[#15158A] rounded-full" style="width:46%"></div></div>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                    <div class="flex items-center justify-between"><div><p class="font-semibold text-slate-800">Railways</p><p class="text-xs text-slate-500 mt-1">31 Projects</p></div><span class="text-sm font-semibold text-[#15158A]">34%</span></div>
+                    <div class="mt-4 h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-[#15158A] rounded-full" style="width:34%"></div></div>
+                </div>
+                <div class="border border-slate-200 rounded-lg p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                    <div class="flex items-center justify-between"><div><p class="font-semibold text-slate-800">Coal & Mining</p><p class="text-xs text-slate-500 mt-1">19 Projects</p></div><span class="text-sm font-semibold text-[#15158A]">20%</span></div>
+                    <div class="mt-4 h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-[#15158A] rounded-full" style="width:20%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-7">
+        <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+            <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/70"><div class="flex items-center gap-3"><span class="w-1.5 h-8 rounded-full bg-red-500"></span><div><h3 class="text-base font-semibold text-slate-900">Risk Distribution</h3><p class="text-xs text-slate-500 mt-1">Current AI risk classification across the portfolio.</p></div></div></div>
+            <div class="p-5 space-y-5">
+                <div><div class="flex justify-between text-sm mb-2"><span class="font-medium text-slate-700">High Risk</span><span class="font-semibold text-slate-900">16 Projects</span></div><div class="h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-red-500 rounded-full" style="width:17%"></div></div></div>
+                <div><div class="flex justify-between text-sm mb-2"><span class="font-medium text-slate-700">Medium Risk</span><span class="font-semibold text-slate-900">24 Projects</span></div><div class="h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-amber-400 rounded-full" style="width:26%"></div></div></div>
+                <div><div class="flex justify-between text-sm mb-2"><span class="font-medium text-slate-700">Low Risk</span><span class="font-semibold text-slate-900">52 Projects</span></div><div class="h-2 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-emerald-500 rounded-full" style="width:57%"></div></div></div>
+            </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+            <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/70"><div class="flex items-center gap-3"><span class="w-1.5 h-8 rounded-full bg-[#18A5DC]"></span><div><h3 class="text-base font-semibold text-slate-900">Progress Analysis</h3><p class="text-xs text-slate-500 mt-1">Physical progress performance across sectors.</p></div></div></div>
+            <div class="p-5 space-y-5">
+                <div><div class="flex justify-between text-sm mb-2"><span class="font-medium text-slate-700">Roads & Highways</span><span class="font-semibold">69%</span></div><div class="h-2 bg-slate-100 rounded-full"><div class="h-full bg-[#18A5DC] rounded-full" style="width:69%"></div></div></div>
+                <div><div class="flex justify-between text-sm mb-2"><span class="font-medium text-slate-700">Railways</span><span class="font-semibold">66%</span></div><div class="h-2 bg-slate-100 rounded-full"><div class="h-full bg-[#18A5DC] rounded-full" style="width:66%"></div></div></div>
+                <div><div class="flex justify-between text-sm mb-2"><span class="font-medium text-slate-700">Coal & Mining</span><span class="font-semibold">65%</span></div><div class="h-2 bg-slate-100 rounded-full"><div class="h-full bg-[#18A5DC] rounded-full" style="width:65%"></div></div></div>
+                <div class="pt-3 border-t border-slate-100 flex justify-between"><span class="text-sm text-slate-600">Portfolio Average</span><span class="text-sm font-bold text-[#15158A]">67.8%</span></div>
+            </div>
+        </div>
+    </section>
 
 
-        <!-- BREADCRUMB -->
-        <div class="text-sm text-slate-500 mb-5">
 
-            <a
-                href="index.html"
-                class="hover:text-[#15158A]"
-            >
-                Dashboard
-            </a>
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-7">
 
-            <span class="mx-2">→</span>
+    <!-- COST ANALYSIS -->
+    <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
 
-            <span class="text-slate-700 font-medium">
-                Analytics
-            </span>
+        <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/70">
+            <div class="flex items-center gap-3">
+                <span class="w-1.5 h-8 rounded-full bg-[#15158A]"></span>
+
+                <h3 class="text-base font-semibold text-slate-900">
+                    Cost Analysis
+                </h3>
+            </div>
+        </div>
+
+        <div class="p-5 grid grid-cols-2 gap-4">
+
+            <!-- Original Approved Cost -->
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4
+                        transition-all duration-200 ease-out
+                        hover:border-[#18A5DC]
+                        hover:shadow-md
+                        hover:-translate-y-1">
+
+                <p class="text-xs text-slate-500">
+                    Original Approved Cost
+                </p>
+
+                <p class="text-lg font-bold text-slate-900 mt-2">
+                    ₹6.84L Cr
+                </p>
+
+            </div>
+
+
+            <!-- Revised Cost -->
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4
+                        transition-all duration-200 ease-out
+                        hover:border-[#18A5DC]
+                        hover:shadow-md
+                        hover:-translate-y-1">
+
+                <p class="text-xs text-slate-500">
+                    Revised Cost
+                </p>
+
+                <p class="text-lg font-bold text-slate-900 mt-2">
+                    ₹7.42L Cr
+                </p>
+
+            </div>
+
+
+            <!-- Cost Increase -->
+            <div class="bg-red-50 border border-red-100 rounded-lg p-4
+                        transition-all duration-200 ease-out
+                        hover:border-red-400
+                        hover:shadow-md
+                        hover:-translate-y-1">
+
+                <p class="text-xs text-slate-500">
+                    Cost Increase
+                </p>
+
+                <p class="text-lg font-bold text-red-600 mt-2">
+                    +8.5%
+                </p>
+
+            </div>
+
+
+            <!-- Expenditure -->
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4
+                        transition-all duration-200 ease-out
+                        hover:border-[#18A5DC]
+                        hover:shadow-md
+                        hover:-translate-y-1">
+
+                <p class="text-xs text-slate-500">
+                    Expenditure
+                </p>
+
+                <p class="text-lg font-bold text-slate-900 mt-2">
+                    ₹4.31L Cr
+                </p>
+
+            </div>
 
         </div>
 
-
-        <!-- PAGE HEADER -->
-        <section class="mb-7">
-
-            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-
-                <div>
-
-                    <h2 class="text-2xl font-bold text-slate-900">
-                        Portfolio Analytics
-                    </h2>
-
-                    <p class="text-sm text-slate-500 mt-1">
-                        AI-assisted analysis of infrastructure project performance,
-                        cost, progress and risk.
-                    </p>
-
-                </div>
+    </div>
 
 
-                <div class="text-sm text-slate-500">
-                    Scope:
-                    <span class="font-semibold text-slate-700">
-                        Roads & Highways, Railways, Coal & Mining
-                    </span>
-                </div>
+    <!-- TIME & DELAY ANALYSIS -->
+    <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+
+        <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/70">
+            <div class="flex items-center gap-3">
+
+                <span class="w-1.5 h-8 rounded-full bg-amber-400"></span>
+
+                <h3 class="text-base font-semibold text-slate-900">
+                    Time & Delay Analysis
+                </h3>
 
             </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             ANALYTICS SUMMARY
-        ====================================================== -->
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-7">
+        </div>
 
 
-            <!-- TOTAL PROJECTS -->
-            <div class="bg-white border border-slate-200 rounded-lg p-5">
+        <div class="p-5 grid grid-cols-2 gap-4">
 
-                <p class="text-xs uppercase tracking-wide text-slate-500">
-                    Total Projects
+            <!-- Time Overrun Projects -->
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4
+                        transition-all duration-200 ease-out
+                        hover:border-[#18A5DC]
+                        hover:shadow-md
+                        hover:-translate-y-1">
+
+                <p class="text-xs text-slate-500">
+                    Time Overrun Projects
                 </p>
 
-                <p class="text-2xl font-bold text-slate-900 mt-2">
-                    92
-                </p>
-
-                <p class="text-xs text-slate-500 mt-1">
-                    Active portfolio
-                </p>
-
-            </div>
-
-
-            <!-- PHYSICAL PROGRESS -->
-            <div class="bg-white border border-slate-200 rounded-lg p-5">
-
-                <p class="text-xs uppercase tracking-wide text-slate-500">
-                    Avg. Physical Progress
-                </p>
-
-                <p class="text-2xl font-bold text-slate-900 mt-2">
-                    67.8%
-                </p>
-
-                <p class="text-xs text-slate-500 mt-1">
-                    Portfolio average
-                </p>
-
-            </div>
-
-
-            <!-- COST RISK -->
-            <div class="bg-white border border-slate-200 rounded-lg p-5">
-
-                <p class="text-xs uppercase tracking-wide text-slate-500">
-                    Cost Risk
-                </p>
-
-                <p class="text-2xl font-bold text-slate-900 mt-2">
-                    14
-                </p>
-
-                <p class="text-xs text-slate-500 mt-1">
-                    Projects with cost risk
-                </p>
-
-            </div>
-
-
-            <!-- TIME RISK -->
-            <div class="bg-white border border-slate-200 rounded-lg p-5">
-
-                <p class="text-xs uppercase tracking-wide text-slate-500">
-                    Time Risk
-                </p>
-
-                <p class="text-2xl font-bold text-slate-900 mt-2">
+                <p class="text-lg font-bold text-slate-900 mt-2">
                     19
                 </p>
 
-                <p class="text-xs text-slate-500 mt-1">
-                    Projects with delay risk
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             SECTOR-WISE ANALYSIS
-        ====================================================== -->
-        <section class="mb-7">
-
-            <div class="bg-white border border-slate-200 rounded-lg">
-
-                <div class="px-5 py-4 border-b border-slate-200">
-
-                    <h3 class="text-base font-semibold text-slate-900">
-                        Sector-wise Analysis
-                    </h3>
-
-                    <p class="text-xs text-slate-500 mt-1">
-                        Portfolio distribution across monitored infrastructure sectors.
-                    </p>
-
-                </div>
-
-
-                <div class="p-5 grid grid-cols-1 md:grid-cols-3 gap-5">
-
-
-                    <!-- ROADS -->
-                    <div class="border border-slate-200 rounded-md p-4">
-
-                        <div class="flex items-center justify-between">
-
-                            <div>
-                                <p class="font-semibold text-slate-800">
-                                    Roads & Highways
-                                </p>
-
-                                <p class="text-xs text-slate-500 mt-1">
-                                    42 Projects
-                                </p>
-                            </div>
-
-                            <span class="text-sm font-semibold text-[#15158A]">
-                                46%
-                            </span>
-
-                        </div>
-
-                        <div class="mt-4 h-2 bg-slate-100 rounded-full overflow-hidden">
-
-                            <div
-                                class="h-full bg-[#15158A] rounded-full"
-                                style="width:46%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- RAILWAYS -->
-                    <div class="border border-slate-200 rounded-md p-4">
-
-                        <div class="flex items-center justify-between">
-
-                            <div>
-                                <p class="font-semibold text-slate-800">
-                                    Railways
-                                </p>
-
-                                <p class="text-xs text-slate-500 mt-1">
-                                    31 Projects
-                                </p>
-                            </div>
-
-                            <span class="text-sm font-semibold text-[#15158A]">
-                                34%
-                            </span>
-
-                        </div>
-
-                        <div class="mt-4 h-2 bg-slate-100 rounded-full overflow-hidden">
-
-                            <div
-                                class="h-full bg-[#15158A] rounded-full"
-                                style="width:34%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- COAL -->
-                    <div class="border border-slate-200 rounded-md p-4">
-
-                        <div class="flex items-center justify-between">
-
-                            <div>
-                                <p class="font-semibold text-slate-800">
-                                    Coal & Mining
-                                </p>
-
-                                <p class="text-xs text-slate-500 mt-1">
-                                    19 Projects
-                                </p>
-
-                            </div>
-
-                            <span class="text-sm font-semibold text-[#15158A]">
-                                20%
-                            </span>
-
-                        </div>
-
-                        <div class="mt-4 h-2 bg-slate-100 rounded-full overflow-hidden">
-
-                            <div
-                                class="h-full bg-[#15158A] rounded-full"
-                                style="width:20%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             RISK DISTRIBUTION + PROGRESS
-        ====================================================== -->
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-7">
-
-
-            <!-- RISK DISTRIBUTION -->
-            <div class="bg-white border border-slate-200 rounded-lg">
-
-                <div class="px-5 py-4 border-b border-slate-200">
-
-                    <h3 class="text-base font-semibold text-slate-900">
-                        Risk Distribution
-                    </h3>
-
-                    <p class="text-xs text-slate-500 mt-1">
-                        Current AI risk classification across the portfolio.
-                    </p>
-
-                </div>
-
-
-                <div class="p-5 space-y-5">
-
-
-                    <!-- HIGH -->
-                    <div>
-
-                        <div class="flex justify-between text-sm mb-2">
-
-                            <span class="font-medium text-slate-700">
-                                High Risk
-                            </span>
-
-                            <span class="font-semibold text-slate-900">
-                                16 Projects
-                            </span>
-
-                        </div>
-
-                        <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
-
-                            <div
-                                class="h-full bg-red-500 rounded-full"
-                                style="width:17%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- MEDIUM -->
-                    <div>
-
-                        <div class="flex justify-between text-sm mb-2">
-
-                            <span class="font-medium text-slate-700">
-                                Medium Risk
-                            </span>
-
-                            <span class="font-semibold text-slate-900">
-                                24 Projects
-                            </span>
-
-                        </div>
-
-                        <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
-
-                            <div
-                                class="h-full bg-amber-400 rounded-full"
-                                style="width:26%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- LOW -->
-                    <div>
-
-                        <div class="flex justify-between text-sm mb-2">
-
-                            <span class="font-medium text-slate-700">
-                                Low Risk
-                            </span>
-
-                            <span class="font-semibold text-slate-900">
-                                52 Projects
-                            </span>
-
-                        </div>
-
-                        <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
-
-                            <div
-                                class="h-full bg-emerald-500 rounded-full"
-                                style="width:57%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
             </div>
 
 
-            <!-- PROGRESS ANALYSIS -->
-            <div class="bg-white border border-slate-200 rounded-lg">
-
-                <div class="px-5 py-4 border-b border-slate-200">
-
-                    <h3 class="text-base font-semibold text-slate-900">
-                        Progress Analysis
-                    </h3>
-
-                    <p class="text-xs text-slate-500 mt-1">
-                        Physical progress performance across sectors.
-                    </p>
-
-                </div>
-
-
-                <div class="p-5 space-y-5">
-
-
-                    <div>
-
-                        <div class="flex justify-between text-sm mb-2">
-
-                            <span class="font-medium text-slate-700">
-                                Roads & Highways
-                            </span>
-
-                            <span class="font-semibold">
-                                69%
-                            </span>
-
-                        </div>
-
-                        <div class="h-2 bg-slate-100 rounded-full">
-
-                            <div
-                                class="h-full bg-[#18A5DC] rounded-full"
-                                style="width:69%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div>
-
-                        <div class="flex justify-between text-sm mb-2">
-
-                            <span class="font-medium text-slate-700">
-                                Railways
-                            </span>
-
-                            <span class="font-semibold">
-                                66%
-                            </span>
-
-                        </div>
-
-                        <div class="h-2 bg-slate-100 rounded-full">
-
-                            <div
-                                class="h-full bg-[#18A5DC] rounded-full"
-                                style="width:66%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div>
-
-                        <div class="flex justify-between text-sm mb-2">
-
-                            <span class="font-medium text-slate-700">
-                                Coal & Mining
-                            </span>
-
-                            <span class="font-semibold">
-                                65%
-                            </span>
-
-                        </div>
-
-                        <div class="h-2 bg-slate-100 rounded-full">
-
-                            <div
-                                class="h-full bg-[#18A5DC] rounded-full"
-                                style="width:65%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="pt-3 border-t border-slate-100">
-
-                        <div class="flex justify-between">
-
-                            <span class="text-sm text-slate-600">
-                                Portfolio Average
-                            </span>
-
-                            <span class="text-sm font-bold text-[#15158A]">
-                                67.8%
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             COST & TIME ANALYSIS
-        ====================================================== -->
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-7">
-
-
-            <!-- COST -->
-            <div class="bg-white border border-slate-200 rounded-lg">
-
-                <div class="px-5 py-4 border-b border-slate-200">
-
-                    <h3 class="text-base font-semibold text-slate-900">
-                        Cost Analysis
-                    </h3>
-
-                </div>
-
-                <div class="p-5">
-
-                    <div class="grid grid-cols-2 gap-4">
-
-                        <div class="bg-slate-50 border border-slate-200 rounded-md p-4">
-
-                            <p class="text-xs text-slate-500">
-                                Original Approved Cost
-                            </p>
-
-                            <p class="text-lg font-bold text-slate-900 mt-2">
-                                ₹6.84L Cr
-                            </p>
-
-                        </div>
-
-
-                        <div class="bg-slate-50 border border-slate-200 rounded-md p-4">
-
-                            <p class="text-xs text-slate-500">
-                                Revised Cost
-                            </p>
-
-                            <p class="text-lg font-bold text-slate-900 mt-2">
-                                ₹7.42L Cr
-                            </p>
-
-                        </div>
-
-
-                        <div class="bg-slate-50 border border-slate-200 rounded-md p-4">
-
-                            <p class="text-xs text-slate-500">
-                                Cost Increase
-                            </p>
-
-                            <p class="text-lg font-bold text-red-600 mt-2">
-                                +8.5%
-                            </p>
-
-                        </div>
-
-
-                        <div class="bg-slate-50 border border-slate-200 rounded-md p-4">
-
-                            <p class="text-xs text-slate-500">
-                                Expenditure
-                            </p>
-
-                            <p class="text-lg font-bold text-slate-900 mt-2">
-                                ₹4.31L Cr
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- TIME -->
-            <div class="bg-white border border-slate-200 rounded-lg">
-
-                <div class="px-5 py-4 border-b border-slate-200">
-
-                    <h3 class="text-base font-semibold text-slate-900">
-                        Time & Delay Analysis
-                    </h3>
-
-                </div>
-
-                <div class="p-5">
-
-                    <div class="grid grid-cols-2 gap-4">
-
-                        <div class="bg-slate-50 border border-slate-200 rounded-md p-4">
-
-                            <p class="text-xs text-slate-500">
-                                Time Overrun Projects
-                            </p>
-
-                            <p class="text-lg font-bold text-slate-900 mt-2">
-                                19
-                            </p>
-
-                        </div>
-
-
-                        <div class="bg-slate-50 border border-slate-200 rounded-md p-4">
-
-                            <p class="text-xs text-slate-500">
-                                Milestone Risk
-                            </p>
-
-                            <p class="text-lg font-bold text-slate-900 mt-2">
-                                23
-                            </p>
-
-                        </div>
-
-
-                        <div class="bg-slate-50 border border-slate-200 rounded-md p-4">
-
-                            <p class="text-xs text-slate-500">
-                                Predicted Delay
-                            </p>
-
-                            <p class="text-lg font-bold text-red-600 mt-2">
-                                7.4 Months
-                            </p>
-
-                        </div>
-
-
-                        <div class="bg-slate-50 border border-slate-200 rounded-md p-4">
-
-                            <p class="text-xs text-slate-500">
-                                Model Confidence
-                            </p>
-
-                            <p class="text-lg font-bold text-[#15158A] mt-2">
-                                86.2%
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             AI RISK DRIVERS
-        ====================================================== -->
-        <section class="mb-7">
-
-            <div class="bg-white border border-slate-200 rounded-lg">
-
-                <div class="px-5 py-4 border-b border-slate-200">
-
-                    <h3 class="text-base font-semibold text-slate-900">
-                        AI Risk Drivers
-                    </h3>
-
-                    <p class="text-xs text-slate-500 mt-1">
-                        Key factors contributing to project-level risk.
-                    </p>
-
-                </div>
-
-
-                <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-4">
-
-
-                    <div class="border border-slate-200 rounded-md p-4">
-
-                        <div class="flex justify-between">
-
-                            <span class="font-medium text-slate-700">
-                                Physical Progress Slippage
-                            </span>
-
-                            <span class="font-semibold text-red-600">
-                                High
-                            </span>
-
-                        </div>
-
-                        <p class="text-xs text-slate-500 mt-2">
-                            Actual progress is below planned progress for multiple
-                            high-value projects.
-                        </p>
-
-                    </div>
-
-
-                    <div class="border border-slate-200 rounded-md p-4">
-
-                        <div class="flex justify-between">
-
-                            <span class="font-medium text-slate-700">
-                                Expenditure vs Output Gap
-                            </span>
-
-                            <span class="font-semibold text-amber-600">
-                                Medium
-                            </span>
-
-                        </div>
-
-                        <p class="text-xs text-slate-500 mt-2">
-                            Financial expenditure is progressing faster than
-                            corresponding physical output in selected projects.
-                        </p>
-
-                    </div>
-
-
-                    <div class="border border-slate-200 rounded-md p-4">
-
-                        <div class="flex justify-between">
-
-                            <span class="font-medium text-slate-700">
-                                Milestone Slippage
-                            </span>
-
-                            <span class="font-semibold text-red-600">
-                                High
-                            </span>
-
-                        </div>
-
-                        <p class="text-xs text-slate-500 mt-2">
-                            Delayed milestones indicate increasing schedule pressure.
-                        </p>
-
-                    </div>
-
-
-                    <div class="border border-slate-200 rounded-md p-4">
-
-                        <div class="flex justify-between">
-
-                            <span class="font-medium text-slate-700">
-                                External Factors
-                            </span>
-
-                            <span class="font-semibold text-amber-600">
-                                Medium
-                            </span>
-
-                        </div>
-
-                        <p class="text-xs text-slate-500 mt-2">
-                            Weather, approval-related constraints
-                            contribute to observed project risk.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             AI INSIGHTS
-        ====================================================== -->
-        <section class="mb-7">
-
-            <div class="bg-white border border-slate-200 rounded-lg">
-
-                <div class="px-5 py-4 border-b border-slate-200">
-
-                    <h3 class="text-base font-semibold text-slate-900">
-                        AI Insights
-                    </h3>
-
-                </div>
-
-
-                <div class="p-5">
-
-                    <div class="border-l-4 border-[#15158A] bg-blue-50 px-4 py-4">
-
-                        <p class="text-sm font-semibold text-slate-900">
-                            Portfolio-level observation
-                        </p>
-
-                        <p class="text-sm text-slate-600 mt-2 leading-6">
-                            High-risk projects are primarily associated with
-                            physical progress slippage, milestone delays and
-                            increasing cost exposure. Early intervention on
-                            these drivers can help reduce downstream schedule
-                            and cost impacts.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-    <footer class="border-t border-slate-200 bg-white mt-10">
-
-        <div class="max-w-7xl mx-auto px-6 py-5">
-
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <!-- Milestone Risk -->
+            <div class="bg-slate-50 border border-slate-200 rounded-lg p-4
+                        transition-all duration-200 ease-out
+                        hover:border-[#18A5DC]
+                        hover:shadow-md
+                        hover:-translate-y-1">
 
                 <p class="text-xs text-slate-500">
-                    INFRALENS — AI-Powered Infrastructure Monitoring
+                    Milestone Risk
                 </p>
 
-                <p class="text-xs text-slate-500">
-                    SIH 2026 Prototype
+                <p class="text-lg font-bold text-slate-900 mt-2">
+                    23
                 </p>
 
             </div>
 
+
+            <!-- Predicted Delay -->
+             
+            <div class="col-span-2 bg-red-50 border border-red-100 rounded-lg p-4
+                        transition-all duration-200 ease-out
+                        hover:border-red-400
+                        hover:shadow-md
+                        hover:-translate-y-1">
+
+                <p class="text-xs text-slate-500">
+                    Predicted Delay
+                </p>
+
+                <p class="text-lg font-bold text-red-600 mt-2">
+                    7.4 Months
+                </p>
+
+            </div>
+ 
         </div>
 
-    </footer>
+    </div>
 
+</section>
+    <section class="mb-7">
+        <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+            <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/70"><div class="flex items-center gap-3"><span class="w-1.5 h-8 rounded-full bg-red-500"></span><div><h3 class="text-base font-semibold text-slate-900">AI Risk Drivers</h3><p class="text-xs text-slate-500 mt-1">Key factors contributing to project-level risk.</p></div></div></div>
+            <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="border border-slate-200 rounded-lg p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"><div class="flex justify-between"><span class="font-medium text-slate-700">Physical Progress Slippage</span><span class="font-semibold text-red-600">High</span></div><p class="text-xs text-slate-500 mt-2">Actual progress is below planned progress for multiple high-value projects.</p></div>
+                <div class="border border-slate-200 rounded-lg p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"><div class="flex justify-between"><span class="font-medium text-slate-700">Expenditure vs Output Gap</span><span class="font-semibold text-amber-600">Medium</span></div><p class="text-xs text-slate-500 mt-2">Financial expenditure is progressing faster than corresponding physical output in selected projects.</p></div>
+                <div class="border border-slate-200 rounded-lg p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"><div class="flex justify-between"><span class="font-medium text-slate-700">Milestone Slippage</span><span class="font-semibold text-red-600">High</span></div><p class="text-xs text-slate-500 mt-2">Delayed milestones indicate increasing schedule pressure.</p></div>
+                <div class="border border-slate-200 rounded-lg p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"><div class="flex justify-between"><span class="font-medium text-slate-700">External Factors</span><span class="font-semibold text-amber-600">Medium</span></div><p class="text-xs text-slate-500 mt-2">Weather, approval-related constraints contribute to observed project risk.</p></div>
+            </div>
+        </div>
+    </section>
 
-    <!-- JAVASCRIPT -->
-    <script src="js/analytics.js"></script>
+    <section class="mb-7">
+        <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+            <div class="px-5 py-4 border-b border-slate-200 bg-slate-50/70"><div class="flex items-center gap-3"><span class="w-1.5 h-8 rounded-full bg-[#15158A]"></span><h3 class="text-base font-semibold text-slate-900">AI Insights</h3></div></div>
+            <div class="p-5"><div class="border-l-4 border-[#15158A] bg-blue-50 rounded-r-lg px-4 py-4"><p class="text-sm font-semibold text-slate-900">Portfolio-level observation</p><p class="text-sm text-slate-600 mt-2 leading-6">High-risk projects are primarily associated with physical progress slippage, milestone delays and increasing cost exposure. Early intervention on these drivers can help reduce downstream schedule and cost impacts.</p></div></div>
+        </div>
+    </section>
+</main>
+
+<footer class="border-t border-slate-200 bg-white mt-10">
+    <div class="max-w-7xl mx-auto px-6 py-5">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <p class="text-xs text-slate-500">INFRALENS — AI-Powered Infrastructure Monitoring</p>
+            <p class="text-xs text-slate-500">SIH 2026 Prototype</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/analytics.js"></script>
 <script src="js/api.js"></script>
 </body>
 </html>

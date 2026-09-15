@@ -7,6 +7,411 @@
     <title>Project Details | Infralens</title>
 
     <link rel="stylesheet" href="./src/output.css">
+
+<style>
+/* =========================================================
+   INFRALENS — UI ENHANCEMENT LAYER
+   Visual-only overrides. Existing HTML/JS functionality preserved.
+   ========================================================= */
+
+:root {
+    --il-primary: #15158a;
+    --il-primary-2: #2424b8;
+    --il-cyan: #06b6d4;
+    --il-bg: #f4f7fb;
+    --il-card: rgba(255,255,255,.96);
+    --il-border: #e5eaf2;
+    --il-text: #0f172a;
+    --il-muted: #64748b;
+    --il-shadow: 0 8px 28px rgba(15,23,42,.06);
+    --il-shadow-hover: 0 14px 34px rgba(21,21,138,.10);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(circle at 85% 0%, rgba(21,21,138,.07), transparent 28rem),
+        radial-gradient(circle at 0% 20%, rgba(6,182,212,.045), transparent 24rem),
+        var(--il-bg) !important;
+    color: var(--il-text);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", sans-serif;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: linear-gradient(110deg, #10106f 0%, #15158a 52%, #2020a6 100%) !important;
+    border-bottom: 1px solid rgba(255,255,255,.12) !important;
+    box-shadow: 0 5px 24px rgba(15,23,42,.16);
+    backdrop-filter: blur(12px);
+}
+
+header > div {
+    min-height: 68px;
+}
+
+header h1 {
+    letter-spacing: .12em;
+    text-shadow: 0 2px 10px rgba(0,0,0,.16);
+}
+
+header nav a {
+    position: relative;
+    padding: 9px 2px;
+    transition: color .2s ease, transform .2s ease;
+}
+
+header nav a:hover {
+    transform: translateY(-1px);
+}
+
+header nav a:not(.h-full)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    height: 2px;
+    border-radius: 99px;
+    background: #67e8f9;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .2s ease;
+}
+
+header nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Main width / rhythm */
+main {
+    padding-top: 28px !important;
+}
+
+main > section {
+    animation: ilFadeUp .45s ease both;
+}
+
+@keyframes ilFadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Breadcrumb */
+main > div:first-child {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 9px 13px;
+    width: fit-content;
+    border: 1px solid var(--il-border);
+    border-radius: 10px;
+    background: rgba(255,255,255,.72);
+    box-shadow: 0 3px 14px rgba(15,23,42,.035);
+}
+
+main > div:first-child .mx-2 {
+    color: #94a3b8;
+}
+
+/* Universal card polish */
+.bg-white.border {
+    border-color: var(--il-border) !important;
+    background: var(--il-card) !important;
+    box-shadow: var(--il-shadow);
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.bg-white.border:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--il-shadow-hover);
+    border-color: #d8def0 !important;
+}
+
+/* Project hero */
+section.bg-white.border.rounded-lg.p-6.mb-6 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px !important;
+    padding: 28px !important;
+}
+
+section.bg-white.border.rounded-lg.p-6.mb-6::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--il-primary), var(--il-cyan));
+}
+
+#projectId {
+    letter-spacing: .08em;
+}
+
+#projectName {
+    letter-spacing: -.025em;
+}
+
+#projectDescription {
+    line-height: 1.65;
+}
+
+#projectStatus,
+#riskZone {
+    box-shadow: 0 2px 8px rgba(239,68,68,.08);
+}
+
+#riskScore {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.04em;
+}
+
+.min-w-\[180px\] {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 24px rgba(220,38,38,.08);
+}
+
+.min-w-\[180px\]::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    right: -50px;
+    top: -55px;
+    border-radius: 50%;
+    background: rgba(239,68,68,.08);
+}
+
+/* Section headings */
+h3 {
+    letter-spacing: -.015em;
+}
+
+section > .mb-4,
+section > .mb-5 {
+    position: relative;
+}
+
+section > .mb-4 h3::before,
+section > .mb-5 h3::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 19px;
+    margin-right: 9px;
+    vertical-align: -3px;
+    border-radius: 99px;
+    background: linear-gradient(to bottom, var(--il-primary), var(--il-cyan));
+}
+
+/* Metric cards */
+.grid > .bg-white.border.rounded-lg.p-5 {
+    border-radius: 14px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.grid > .bg-white.border.rounded-lg.p-5::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 42px;
+    height: 3px;
+    border-radius: 0 99px 0 0;
+    background: #cbd5e1;
+    transition: width .25s ease;
+}
+
+.grid > .bg-white.border.rounded-lg.p-5:hover::after {
+    width: 76px;
+    background: linear-gradient(90deg, var(--il-primary), var(--il-cyan));
+}
+
+/* Progress bars */
+[class*="h-2"][class*="rounded-full"],
+[class*="h-3"][class*="rounded-full"],
+[class*="h-4"][class*="rounded-full"] {
+    overflow: hidden;
+}
+
+[id$="Bar"],
+.w-full > div.h-2,
+.h-4 > div,
+.h-3 > div {
+    box-shadow: 0 2px 8px rgba(21,21,138,.16);
+    transition: width .6s cubic-bezier(.2,.7,.2,1);
+}
+
+/* Comparison / AI observation */
+.bg-amber-50,
+.bg-blue-50,
+.bg-red-50 {
+    border-radius: 12px !important;
+}
+
+.bg-amber-50 {
+    box-shadow: inset 3px 0 0 #f59e0b;
+}
+
+.bg-red-50 {
+    box-shadow: inset 3px 0 0 #ef4444;
+}
+
+.bg-blue-50 {
+    box-shadow: inset 3px 0 0 #3b82f6;
+}
+
+/* Monthly chart container */
+#progressChart {
+    position: relative;
+    padding: 10px 4px 0;
+    border-bottom: 1px solid #e5e7eb;
+    background:
+        linear-gradient(to bottom,
+            transparent 24%,
+            rgba(148,163,184,.12) 25%,
+            transparent 26%,
+            transparent 49%,
+            rgba(148,163,184,.12) 50%,
+            transparent 51%,
+            transparent 74%,
+            rgba(148,163,184,.12) 75%,
+            transparent 76%);
+    border-radius: 10px 10px 0 0;
+}
+
+/* Milestones */
+.space-y-3 > div {
+    transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.space-y-3 > div:hover {
+    transform: translateX(3px);
+    background: #f8fafc;
+    border-color: #dbe3ef !important;
+}
+
+/* Risk cards */
+.text-2xl.font-bold.text-red-600,
+.text-2xl.font-bold.text-amber-600 {
+    letter-spacing: -.02em;
+}
+
+/* Prediction cards */
+.grid > .bg-slate-50.rounded-lg.p-4 {
+    border: 1px solid #e8edf4;
+    background: linear-gradient(145deg, #f8fafc, #f1f5f9) !important;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.grid > .bg-slate-50.rounded-lg.p-4:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(15,23,42,.07);
+}
+
+/* External factor cards */
+.grid > .bg-white.border.border-slate-200.rounded-lg.p-5 {
+    min-height: 148px;
+}
+
+/* Early warning rows */
+.bg-red-50.border,
+.bg-amber-50.border {
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.bg-red-50.border:hover,
+.bg-amber-50.border:hover {
+    transform: translateX(3px);
+    box-shadow: 0 7px 20px rgba(15,23,42,.06);
+}
+
+/* Playbook */
+.overflow-x-auto {
+    border: 1px solid #e6ebf2;
+    border-radius: 12px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+thead tr {
+    background: #f8fafc;
+}
+
+thead th {
+    letter-spacing: .06em;
+}
+
+tbody tr {
+    transition: background .18s ease;
+}
+
+tbody tr:hover {
+    background: #f8fbff;
+}
+
+tbody td {
+    line-height: 1.55;
+    border-color: #edf1f6 !important;
+}
+
+/* Footer */
+footer {
+    margin-top: 10px;
+    padding-top: 22px !important;
+}
+
+/* Responsive refinement */
+@media (max-width: 768px) {
+    main {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        padding-top: 18px !important;
+    }
+
+    section.bg-white.border.rounded-lg.p-6.mb-6,
+    .bg-white.border.rounded-lg.p-6 {
+        padding: 20px !important;
+    }
+
+    header > div {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    #projectName {
+        font-size: 1.55rem;
+    }
+
+    .min-w-\[180px\] {
+        min-width: 100% !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+
 </head>
 
 <body class="bg-slate-50 text-slate-800">
@@ -49,13 +454,9 @@
                 </a>
 
                 <a href="data-quality.html"
-                   class="h-full px-7
-                          flex items-center
-                          text-white text-sm
-                          hover:bg-white/10">
-
+                   class="h-full px-7 flex items-center
+                          text-white text-sm hover:bg-white/10">
                     data quality
-
                 </a>
 
                 <a href="exclusive-brief.html"
@@ -721,7 +1122,7 @@
 
                 <div class="space-y-3">
 
-                    <!-- MILESTONE -->
+                    <!-- MILESTONE 1 -->
                     <div class="flex flex-col md:flex-row
                                 md:items-center md:justify-between
                                 gap-3 p-4 border border-slate-100
@@ -729,7 +1130,10 @@
 
                         <div>
 
-                        
+                            <p class="font-semibold text-sm">
+                                Land Acquisition
+                            </p>
+
                             <p class="text-xs text-slate-500">
                                 Target: Mar 2025
                             </p>
@@ -745,6 +1149,7 @@
                     </div>
 
 
+                    <!-- MILESTONE 2 -->
                     <div class="flex flex-col md:flex-row
                                 md:items-center md:justify-between
                                 gap-3 p-4 border border-slate-100
@@ -771,6 +1176,7 @@
                     </div>
 
 
+                    <!-- MILESTONE 3 -->
                     <div class="flex flex-col md:flex-row
                                 md:items-center md:justify-between
                                 gap-3 p-4 border border-slate-100
@@ -881,8 +1287,6 @@
             </div>
 
         </section>
-
-
         <!-- =====================================================
              SECTION 7 — PREDICTIONS
         ====================================================== -->
@@ -1120,10 +1524,6 @@
                 </div>
 
 
-
-                </div>
-
-
                 <!-- MATERIAL -->
                 <div class="bg-white border border-slate-200
                             rounded-lg p-5">
@@ -1187,6 +1587,40 @@
                     <p class="text-xs text-slate-600 mt-4">
                         Approval dependency affecting one
                         construction package.
+                    </p>
+
+                </div>
+
+
+                <!-- LABOUR -->
+                <div class="bg-white border border-slate-200
+                            rounded-lg p-5">
+
+                    <div class="flex justify-between items-start">
+
+                        <div>
+
+                            <p class="text-sm font-semibold">
+                                Labour Availability
+                            </p>
+
+                            <p class="text-xs text-slate-500 mt-1">
+                                Workforce constraints
+                            </p>
+
+                        </div>
+
+                        <span class="px-2 py-1 rounded-full
+                                     bg-amber-50 text-amber-700
+                                     text-xs font-semibold">
+                            Medium
+                        </span>
+
+                    </div>
+
+                    <p class="text-xs text-slate-600 mt-4">
+                        Limited workforce availability may
+                        affect construction productivity.
                     </p>
 
                 </div>
@@ -1576,6 +2010,7 @@
 
     <!-- PROJECT DETAILS JS -->
     <script src="./js/project-details.js"></script>
-<script src="js/api.js"></script>
+    <script src="js/api.js"></script>
+
 </body>
 </html>
